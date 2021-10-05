@@ -1,0 +1,32 @@
+{
+    "name": "sib/manuscript",
+    "description": "PHP iiif",
+    "require": {
+        "bcosca/fatfree-core": "^3.7"
+    },
+    "authors": [
+        {
+            "name": "Silvano Aldà",
+            "email": "silvano.alda@sib.swiss"
+        },
+        {
+            "name": "Jonathan Barda",
+            "email": "jonathan.barda@sib.swiss"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "classes",
+            "apis",
+            "pages"
+        ],
+        "files": [
+            "inc/functions.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "testing/"
+        }
+    }
+}

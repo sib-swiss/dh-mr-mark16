@@ -1,0 +1,10 @@
+vendor
+composer.phar
+backups
+data/database.sqlite
+data/nakala.json
+htdocs/conf/config.json
+deploy.dev.conf
+deploy-on-dev.sh
+deploy.prod.conf
+deploy-on-prod.sh

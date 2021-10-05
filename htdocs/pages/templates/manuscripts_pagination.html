@@ -1,0 +1,27 @@
+<div class="d-flex justify-content-between align-items-center">
+    <div>{{ $total_rows }} manuscripts available</div>
+    <div>
+        <nav style="background:none; " aria-label="Page navigation">
+            <ul class="pagination">
+                <li class="page-item {{ $prevPage?'':'disabled' }}">
+                    <a class="page-link" href="{{ $prevPage }}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+
+                <loop from="{{ @i=0 }}" to="{{ @i < @total_pages }}" step="{{ @i++ }}">                
+                    <li class="page-item {{ @i+1==$pageno ? ' active':'' }}">
+                        <a class="page-link" href="?pageno={{ @i+1 }}">{{ @i+1 }}</a>
+                    </li>
+                </loop>
+                <li class="page-item {{ $nextPage?'':'disabled' }}">
+                    <a class="page-link" href="{{ $nextPage }}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>

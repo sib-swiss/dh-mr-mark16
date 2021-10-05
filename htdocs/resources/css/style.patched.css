@@ -1,0 +1,264 @@
+/**************************************************************
+ * Probably the worst CSS code I've ever seen in my life (JB) *
+ * Just a pain in the ass to modify and adapt it...           *
+ *                                                            *
+ * Thanks to the previous developer for this crappy code...   *
+ **************************************************************
+
+/*------------------------------
+* Generic styles
+* ------------------------------
+*/
+
+/* color scheme */
+:root {
+  --main-bg-color: #4a74ac; /* header/footer */ /*d7e8cb e4e6e1 a5ae9d*/
+  --light-bg-color: #d5d8cf; /* card bg, advanced search */  /* #edeeeb */
+  --text-title-color: #52574e; /* dark green */
+  --search-color: #ac4b73; /* orange */
+  --menu-color: #484848; /* light brown */
+}
+
+.btn-search {
+  color: #fff;
+  background-color: var(--search-color);
+  border-color: var(--search-color);
+}
+
+/* navbar */
+nav {
+  background-color: var(--main-bg-color);
+}
+
+/* navbar brand title */
+#title-style {
+  color: var(--main-bg-color);
+}
+.navbar-brand > img {
+  width: 10rem;
+}
+
+/*****************************************
+ * styling page title and general aspect *
+ *                                       *
+ * NEVER EVER DO THAT!!!                 *
+ * DON'T OVERWRITE FRAMEWORK CSS !!!!    *
+ *****************************************/
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/************************************
+ * page body styling                *
+ *                                  *
+ * WHY OVERWRITE FRAMEWORK CSS ???? *
+ ************************************/
+body {
+  position: relative;
+  padding-bottom: 5rem;
+  min-height: 100%;
+  font-family: Merriweather;
+  margin: 0 auto;
+}
+
+/* content container */
+#content {
+  margin-bottom: 1.5rem;
+  max-width: 99%;
+}
+
+/* maintenance container */
+#maintenance {
+  margin: 5% auto;
+  width: 90%;
+  text-align: center;
+}
+
+h1 {
+  padding-top: 16px; /* BT4 has removed space btw header and content */
+  padding-bottom: 16px;
+  color: var(--text-title-color);
+}
+
+h3 {
+  color: var(--text-title-color);
+}
+
+/******************************************************
+ * descriptive text in paragraphs                     *
+ *                                                    *
+ * !!!!!! NEVER EVER REWRITE FRAMEWORK CLASSES !!!!!! *
+ ******************************************************/
+/* .col-md-12 {
+  margin: 0 auto;
+  max-width: 750px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  text-align: justify;
+} */
+
+/* Footer Styles */
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: var(--main-bg-color);
+  text-align: center;
+}
+
+footer .poweredby { float: right; margin: 33px 10px 0 0;}
+footer .poweredby img { width: 120px; }
+
+.nav-link.active {
+  color: white !important;
+}
+
+/*------------------------------
+* Specific pages style
+* ------------------------------
+*/
+
+/*---------- Page: Index ----------*/
+
+.abstract {
+  color: gray;
+  /* font-size: 10pt; */
+  /* font-family: Gentium; */
+  /* font-family: 'Gentium Book'; */
+  font-family: 'Gentium Plus';
+}
+
+/*---------- Page: Show ----------*/
+
+div.page-header {
+  /* background-color:LightCyan; */
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+div.page-header > hr {
+  border: 1px solid var(--text-title-color);
+}
+.show-metadata {
+  font-weight:bold;
+}
+li span.heading{
+  display: none; /* ignore heading in the legend */
+}
+
+/* --------- Text Viewer ---------- */
+
+#text-container {
+  height: 557px;
+  margin-bottom: 11px;
+  padding: 0 5px;
+}
+#tei-viewer {
+  height: 511px !important;
+}
+.small-iframe, .large-iframe {
+  border: 0;
+  width: 100%;
+  height: 100%;
+  margin-top: 6px;
+}
+.large-iframe {
+  height: 600px;
+  margin-top: 0;
+}
+
+/* --------- IIIF Viewer ---------- */
+
+#image-viz {
+  flex-grow: 2; /* make the viewer take more space if possible */
+  margin-bottom: 11px; /* align image viewer to the bottom of the text viewer */
+  padding-left: 6px; /* fix weird spacing around the Mirador top menu */
+  padding-right: 6px; /* fix weird spacing around the Mirador top menu */
+}
+#image-viz .mirador-container .mirador-main-menu {
+  padding-top: 5px !important; /* fix misalign of the Mirador top menu elements */
+}
+#mirador {
+  width: 100%;
+  height: 100%;/* 600px */
+}
+
+/*---------- Manuscripts Languages Tabs ----------*/
+
+ul.tabs {
+  box-sizing: initial;
+  /* font-family: 'Open Sans', 'Lucida Grande', Verdana, Arial, sans-serif; */
+  font-size: 14px;
+  /* font-weight: bold; */
+  list-style: none;
+  padding: 0;
+  margin:0;
+  color: #bababa;
+}
+ul.tabs li.tab {
+  border: 1px solid #bababa;
+  background-color: #ffffff;
+  color: #212529;
+  display: table-cell;
+  text-align: center;
+  height: 25px;
+  width: 20%;
+  padding-top: 5pt;
+  cursor: pointer;
+}
+ul.tabs li.tab:hover, ul.tabs li.tab.active:hover {
+  color: #bababa;
+}
+ul.tabs li.tab.active {
+  border: 1px solid #bababa;
+  background-color: var(--menu-color);
+  color: #ffffff; /* #e5dee0 */
+  cursor: default;
+}
+/* if single tab, make it not visible (white). N.B. hide would have a side effect */
+/* ul.tabs li.tab.active.single {
+  pointer-events: none;
+  cursor: default;
+  border:none;
+  color: #bababa;
+} */
+
+/*---------- Manuscripts Display ----------*/
+
+.content_pane {
+  margin-top: 6px;
+  position: absolute;
+  width: 95%;
+  height: 91%;
+  overflow-y: scroll;
+  font-size: 100%;
+}
+
+p {
+  margin-bottom: 0rem;
+}
+
+/*---------- Page: Search ----------*/
+
+#search-form {
+  background-color: var(--light-bg-color);
+}
+
+/*---------- Page: Results ----------*/
+
+h1.show {
+  margin:0px;
+}
+
+hr {
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
