@@ -4,7 +4,7 @@ In the event that we accidentally failed to list a required notice, please
 bring it to our attention. Post an issue or email us: claire.clivaz[at]sib.swiss
 © 2021 SNSF MARK16, DH+, SIB Swiss Institute of Bioinformatics, Lausanne (CH)
 
-MIRADOR LICENSE ( https://github.com/ProjectMirador/mirador/blob/master/LICENSE)
+MIRADOR LICENSE (https://github.com/ProjectMirador/mirador/blob/master/LICENSE)
 
 Copyright 2020 The Board of Trustees of the Leland Stanford Junior University
 
