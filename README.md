@@ -1,4 +1,4 @@
-# SNSF MARK16 VRE Manuscript Room API
+# MARK16 MR API
 
 (C) Copyright SIB Swiss Institute of Bioinformatics 2021, available from https://github.com/sib-swiss/pftools3 under GNU GPL v3.0 See LICENSE.
 
