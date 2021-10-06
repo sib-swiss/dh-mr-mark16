@@ -13,7 +13,6 @@ SNSF MARK16 project: https://mark16.sib.swiss; DH+, SIB Swiss Institute of Bioin
 <!-- [TOC] -->
 <!-- {:toc} -->
 <!-- The winning format is below -->
-[[_TOC_]]
 
 ## Definition and credits
 
