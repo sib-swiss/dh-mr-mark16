@@ -1,6 +1,6 @@
 # VRE Manuscript
 
-This project is a part of the main [VRE](https://gitlab.sib.swiss/mark16-vre-group) project:
+This API is a part of the main [VRE](https://gitlab.sib.swiss/mark16-vre-group) project:
 
 * VRE: https://gitlab.isb-sib.ch/mark16-vre-group/vre
 * Manuscript Room (this project): https://gitlab.sib.swiss/mark16-vre-group/manuscript
