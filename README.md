@@ -1,11 +1,12 @@
 # VRE Manuscript
 
-This API is a part of the main [VRE](https://gitlab.sib.swiss/mark16-vre-group) project:
+This API is a part of the main SNSF MARK16 [VRE](https://gitlab.sib.swiss/mark16-vre-group) project:
 
 * VRE: https://gitlab.isb-sib.ch/mark16-vre-group/vre
 * Manuscript Room (this project): https://gitlab.sib.swiss/mark16-vre-group/manuscript
 * eTalk: https://gitlab.sib.swiss/mark16-vre-group/etalk
 
+SNSF MARK16 project: https://mark16.sib.swiss; DH+, SIB Swiss Institute of Bioinformatics, CH, 2020, ISSN 2673-9836
 
 <!-- [TOC] -->
 <!-- {:toc} -->
@@ -16,13 +17,13 @@ This API is a part of the main [VRE](https://gitlab.sib.swiss/mark16-vre-group) 
 
 This manuscript viewer makes it possible to view manuscripts along with their transcripts, and in some extent manipulate the images.
 
-This project owes a great deal to __Elisa Nury__'s advices about possible project structure and tools involved.
-
 The use of an internal image server to make [Mirador](https://projectmirador.org/) being able to work with images served locally is based on a test case available at https://iiif.github.io/training/intro-to-iiif/.
 
 The first implementation of this project has been made by __Jean-Bernard Dugied__.
 
 The project is now maintained by __Jonathan Barda__ and __Silvano Aldà__.
+
+The PI of the five-year SNSF MARK16 project is __Claire Clivaz__ and the team is composed of __Mina Monier__, post-doc, __Elisa Nury__, research scientist, with __Jonathan Barda__ and __Silvano Aldà__, Core-IT software developers. The project is hosted at Digital Humanities +, SIB Swiss Institute of Bioinformatics.
 
 ## Local setup
 
