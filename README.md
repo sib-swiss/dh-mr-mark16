@@ -1,4 +1,4 @@
-# VRE Manuscript
+# SNSF MARK16 VRE Manuscript Room API
 
 This API is a part of the main SNSF MARK16 [VRE](https://gitlab.sib.swiss/mark16-vre-group) project:
 
