@@ -172,10 +172,9 @@ class ManuscriptContentHtml extends ManuscriptContent
             $html
         );
 
-        // Increase font size
         $html = str_replace(
             '<div class="msstrans"',
-            '<div class="msstrans" style="font-size: 100% !important; text-size-adjust: 100% !important; padding-right: 0.5em !important; background-color: ' . $this->f3->get('MR_CONFIG')->iframe->background . ';"',
+            '<div class="msstrans" style="font-size: 100% !important; text-size-adjust: 100% !important; background-color: ' . $this->f3->get('MR_CONFIG')->iframe->background . ';"',
             $html
         );
 
