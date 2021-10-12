@@ -72,7 +72,7 @@
                             console.info(' - Folio name: ', folio);
 
                             // Build folio URL
-                            var folioURL = mr.getBaseURL() + 'view?id=' + manuscriptID + '&folio=' + btoa(folio) + '&alter=true';
+                            var folioURL = mr.getViewUrl() + '?id=' + manuscriptID + '&folio=' + btoa(newFolioName) + '&alter=true';                            
                             console.log('Encoded folio ID:', btoa(folio));
                             console.log('Folio URL:', folioURL);
     
@@ -94,7 +94,7 @@
                             console.info(' - Folio name: ', folio);
 
                             // Build folio URL
-                            var folioURL = mr.getBaseURL() + 'view?id=' + manuscriptID + '&folio=' + btoa(folio) + '&alter=true';
+                            var folioURL = mr.getBaseURL() + 'view?id=' + manuscriptID + '&folio=' + btoa(folio) + '&alter=true';                            
                             console.log('Encoded folio ID:', btoa(folio));
                             console.log('Folio URL:', folioURL);
 
