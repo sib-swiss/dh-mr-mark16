@@ -173,6 +173,7 @@ mr.api = {
 
                             // Build folio URL
                             var folioURL = mr.getViewUrl() + '?id=' + manuscriptID + '&folio=' + btoa(folio) + '&alter=true';
+                            
                             console.log('Encoded folio ID:', btoa(folio));
                             console.log('Folio URL:', folioURL);
 
@@ -217,7 +218,7 @@ mr.api = {
                             console.info(' - Folio name: ', folio);
 
                             // Build folio URL
-                            var folioURL = mr.getViewUrl() +'?id=' + manuscriptID + '&folio=' + btoa(folio) + '&alter=true';
+                            var folioURL = mr.getViewUrl() +'?id=' + manuscriptID + '&folio=' + btoa(folio) + '&alter=true';                            
                             console.log('Encoded folio ID:', btoa(folio));
                             console.log('Folio URL:', folioURL);
 
@@ -247,7 +248,7 @@ mr.api = {
                             console.info(' - Composed folio name: ', newFolioName);
 
                             // Build folio URL
-                            var folioURL = mr.getViewUrl() + '?id=' + manuscriptID + '&folio=' + btoa(newFolioName) + '&alter=true';
+                            var folioURL = mr.getViewUrl() + '?id=' + manuscriptID + '&folio=' + btoa(newFolioName) + '&alter=true';                            
                             console.log('Encoded folio ID:', btoa(newFolioName));
                             console.log('Folio URL:', folioURL);
 

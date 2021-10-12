@@ -13,7 +13,7 @@ if [[ $READY == false ]]; then
     rsync -rtvPhix --stats ${CONNECT_USER}@${CONNECT_HOST}:${PROJECT_FOLDER}/data/nakala.json $DATA_FOLDER --delete --dry-run
 else
     # Sync data folder
-    rsync -rtvPhix --stats ${CONNECT_USER}@${CONNECT_HOST}:${PROJECT_FOLDER}/data/manuscripts $DATA_FOLDER --delete
+    rsync -rtvPhix --stats --exclude ".gitignore" ${CONNECT_USER}@${CONNECT_HOST}:${PROJECT_FOLDER}/data/manuscripts $DATA_FOLDER --delete
     rsync -rtvPhix --stats ${CONNECT_USER}@${CONNECT_HOST}:${PROJECT_FOLDER}/data/database.sqlite $DATA_FOLDER --delete
     rsync -rtvPhix --stats ${CONNECT_USER}@${CONNECT_HOST}:${PROJECT_FOLDER}/data/nakala.json $DATA_FOLDER --delete
 fi
