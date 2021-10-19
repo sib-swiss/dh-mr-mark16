@@ -9,6 +9,8 @@ bring it to our attention. Post an issue or email us: claire.clivaz[at]sib.swiss
 - FAT FREE  (https://github.com/bcosca/fatfree-core/blob/master/COPYING)
 - JQUERY (https://github.com/jquery/jquery/blob/main/LICENSE.txt)
 - FOMANTIC-UI (https://github.com/fomantic/Fomantic-UI/blob/develop/LICENSE.md)
+- ADMINER (https://github.com/vrana/adminer)
+- OPCACHE-GUI (https://github.com/amnuts/opcache-gui)
 
 Copyright 2020 The Board of Trustees of the Leland Stanford Junior University
 
