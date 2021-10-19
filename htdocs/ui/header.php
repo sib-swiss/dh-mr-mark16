@@ -61,13 +61,6 @@ $page_title .= ($app_config->maintenance === true ? ' ' . $app_config->title->se
         <!-- <link rel="stylesheet" type="text/css" href="resources/css/style.css"> -->
         <link rel="stylesheet" type="text/css" href="resources/css/style.patched.css">
 
-        <?php if (isset($page_options) && $page_options->old_code === true): ?>
-
-        <!-- INTF style (not used anymore / now taken from HTML files) -->
-        <!-- <link rel="stylesheet" type="text/css" href="resources/css/NTTF.css"> -->
-
-        <?php endif; ?>
-
         <!-- Font-Awesome Icons -->
         <link rel="stylesheet" type="text/css" href="resources/fonts/fontawesome/css/all.css">
 

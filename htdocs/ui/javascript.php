@@ -17,18 +17,8 @@
 
         <?php endif; ?>
 
-        <?php if (isset($page_options) && $page_options->old_code === true): ?>
-
-        <!-- Old app code -->
-        <script type="text/javascript" src="resources/js/manuscript.js"></script>
-        <!-- <script type="text/javascript" src="resources/js/NTTF.js"></script> -->
-
-        <?php else: ?>
-
-        <!-- New app code -->
         <script type="text/javascript" src="resources/js/app.js"></script>
 
-        <?php endif; ?>
 
         <?php if (isset($page_options) && $page_options->mirador === true): ?>
 
