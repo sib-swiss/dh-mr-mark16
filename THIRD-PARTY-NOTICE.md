@@ -4,9 +4,10 @@ In the event that we accidentally failed to list a required notice, please
 bring it to our attention. Post an issue or email us: claire.clivaz[at]sib.swiss
 © 2021 SNSF MARK16, DH+, SIB Swiss Institute of Bioinformatics, Lausanne (CH)
 
+- FAT FREE  (https://github.com/bcosca/fatfree-core/blob/master/COPYING)
 - MIRADOR  (https://github.com/ProjectMirador/mirador/blob/master/LICENSE)
 - BOOTSTRAP  (https://github.com/twbs/bootstrap/blob/main/LICENSE)
-- FAT FREE  (https://github.com/bcosca/fatfree-core/blob/master/COPYING)
+- POPPER (https://github.com/popperjs/popper-core/blob/master/LICENSE.md)
 - JQUERY (https://github.com/jquery/jquery/blob/main/LICENSE.txt)
 - FOMANTIC-UI (https://github.com/fomantic/Fomantic-UI/blob/develop/LICENSE.md)
 - DARK-FOMANTIC-UI (https://github.com/Jiab77/dark-fomantic-ui/blob/master/LICENSE)
@@ -14,6 +15,18 @@ bring it to our attention. Post an issue or email us: claire.clivaz[at]sib.swiss
 - TABLESORT (https://github.com/kylefox/jquery-tablesort/blob/master/LICENSE)
 - ADMINER (https://github.com/vrana/adminer)
 - OPCACHE-GUI (https://github.com/amnuts/opcache-gui)
+- HOLDER (https://github.com/imsky/holder/blob/master/LICENSE)
+- EVENTEMITTER (https://github.com/Olical/EventEmitter/blob/master/UNLICENSE)
+- JS-COOKIE (https://github.com/js-cookie/js-cookie/blob/master/LICENSE)
+- FONTS
+  - Merriweather (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+  - Font Awesome Free (https://fontawesome.com/license/free)
+  - MaterialIcons (https://github.com/google/material-design-icons#license)
+  - Gentium (https://software.sil.org/gentium/) License: (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=ofl)
+  - AntinoouWeb (https://www.evertype.com/fonts/coptic/) (https://github.com/sib-swiss/dh-mr-mark16/blob/main/htdocs/resources/fonts/NTVMR/antinoou-licence.txt)
+  - Bokareis (Created by Prof. Carla Falluomini, University of Perugia (Italy), in licence GNU GPL v.0.3)
+
+
 
 Copyright 2020 The Board of Trustees of the Leland Stanford Junior University
 
