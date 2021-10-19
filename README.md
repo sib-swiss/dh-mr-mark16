@@ -86,7 +86,6 @@ Hardware:
 * CPUs: 4 vCPUs
 * RAM: 4 GB
 * Disk: 32 GB
-* Network: ULZ
 
 OS:
 
