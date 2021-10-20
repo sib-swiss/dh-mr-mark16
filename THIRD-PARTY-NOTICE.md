@@ -708,6 +708,7 @@ THE SOFTWARE.
 ******************************************************************************
 END OF BOOTSRAP NOTICES, INFORMATION, AND LICENSE
 
+
 POPPER NOTICES, INFORMATION, AND LICENSE BEGIN HERE
 ******************************************************************************
 The MIT License (MIT)
@@ -722,6 +723,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ******************************************************************************
 END OF POPPER NOTICES, INFORMATION, AND LICENSE
+
 
 JQUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
 ******************************************************************************
