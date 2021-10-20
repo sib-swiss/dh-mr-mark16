@@ -32,10 +32,10 @@ Do Not Translate or Localize
 22. Noto Sans Coptic (https://fonts.google.com/noto/specimen/Noto+Sans+Coptic/about)
 
 
-%% fatfree NOTICES, INFORMATION, AND LICENSE BEGIN HERE
-=========================================
+fatfree NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+****************************************************
 Copyright (c) 2011-2012 Michael Diolosa (@mbrio)
 Permission 
-=========================================
+
 END OF fatfree NOTICES, INFORMATION, AND LICENSE
 
