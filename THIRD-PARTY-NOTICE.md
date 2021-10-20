@@ -22,7 +22,7 @@ Do Not Translate or Localize
 12. HOLDER (https://github.com/imsky/holder/blob/master/LICENSE)
 13. EVENTEMITTER (https://github.com/Olical/EventEmitter/blob/master/UNLICENSE)
 14. JS-COOKIE (https://github.com/js-cookie/js-cookie/blob/master/LICENSE)
-15. MERRIWEATHER (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+15. MERRIWEATHER (https://fonts.google.com/specimen/Merriweather#license)
 16. FONT AWSOME FREE (https://fontawesome.com/license/free)
 17. MATERIALICONS (https://github.com/google/material-design-icons#license)
 18. GENTIUM (https://software.sil.org/gentium/) License: (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=ofl)
@@ -973,12 +973,16 @@ SOFTWARE.
 END OF JSCOOKIE NOTICES, INFORMATION, AND LICENSE
 
 
-QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+MERRIWEATHER NOTICES, INFORMATION, AND LICENSE BEGIN HERE
 ******************************************************************************
-Copyright OpenJS Foundation and other contributors, https://openjsf.org/
+These fonts are licensed under the [Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL),
+
+You can use them freely in your products & projects - print or digital, commercial or otherwise.
+
+This isn't legal advice, please consider consulting a lawyer and see the full license for all details. 
 
 ******************************************************************************
-END OF JQUERY NOTICES, INFORMATION, AND LICENSE
+END OF MERRIWEATHER NOTICES, INFORMATION, AND LICENSE
 
 
 QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
