@@ -819,8 +819,6 @@ END OF UI-WRAPPERS NOTICES, INFORMATION, AND LICENSE
 
 TABLESORT NOTICES, INFORMATION, AND LICENSE BEGIN HERE
 ******************************************************************************
-# License
-
 jQuery tablesort is distributed under the MIT License.
 Learn more at http://opensource.org/licenses/mit-license.php
 
