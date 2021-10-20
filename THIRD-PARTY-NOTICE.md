@@ -1062,17 +1062,15 @@ END OF ANTINOOUWEB NOTICES, INFORMATION, AND LICENSE
 BOKAREIS NOTICES, INFORMATION, AND LICENSE BEGIN HERE
 ******************************************************************************
 Fount created by Prof. Carla Falluomini, University of Perugia (IT), in licence [GNU GPL v.3.0](https://www.gnu.org/licenses/gpl-3.0.fr.html)
-
 ******************************************************************************
 END OF BOKAREIS NOTICES, INFORMATION, AND LICENSE
 
 
-QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+PONOMAR NOTICES, INFORMATION, AND LICENSE BEGIN HERE
 ******************************************************************************
-Copyright OpenJS Foundation and other contributors, https://openjsf.org/
-
+License OFL ([SIL Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL))
 ******************************************************************************
-END OF JQUERY NOTICES, INFORMATION, AND LICENSE
+END OF PONOMAR NOTICES, INFORMATION, AND LICENSE
 
 UERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
 ******************************************************************************
