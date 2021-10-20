@@ -28,6 +28,7 @@ Do Not Translate or Localize
 18. GENTIUM (https://software.sil.org/gentium/) License: (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=ofl)
 19. ANTINOOUWEB (https://www.evertype.com/fonts/coptic/) (https://github.com/sib-swiss/dh-mr-mark16/blob/main/htdocs/resources/fonts/NTVMR/antinoou-licence.txt)
 20. BOKAREIS (Fount created by Prof. Carla Falluomini, University of Perugia (IT), in licence GNU GPL v.3.0)
+21. PONOMAR (https://fontlibrary.org/en/font/ponomar-unicode)
 
 Copyright 2020 The Board of Trustees of the Leland Stanford Junior University
 
