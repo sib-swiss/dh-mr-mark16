@@ -2,6 +2,8 @@
 
 # Automated CRON backup script
 #
+# Made by Jonathan Barda / SIB - 2021
+#
 # Used references:
 # - https://www.unixmen.com/performing-incremental-backups-using-tar/
 # - https://www.gnu.org/software/tar/manual/html_node/exclude.html
@@ -12,7 +14,7 @@
 #
 # put this in 'crontab -e' every night
 #
-# 0 0 * * * cd FULLPATH_OF_PROJECTt && ./cron-backup-data.sh
+# 0 0 * * * cd FULLPATH_OF_PROJECT && ./cron-backup-data.sh
 
 # Config
 DATA_FOLDER="data"
