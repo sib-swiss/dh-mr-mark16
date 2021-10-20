@@ -756,3 +756,123 @@ Copyright OpenJS Foundation and other contributors, https://openjsf.org/
 
 ******************************************************************************
 END OF JQUERY NOTICES, INFORMATION, AND LICENSE
+
+
+QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+******************************************************************************
+Copyright OpenJS Foundation and other contributors, https://openjsf.org/
+
+******************************************************************************
+END OF JQUERY NOTICES, INFORMATION, AND LICENSE
+
+
+QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+******************************************************************************
+Copyright OpenJS Foundation and other contributors, https://openjsf.org/
+
+******************************************************************************
+END OF JQUERY NOTICES, INFORMATION, AND LICENSE
+
+
+QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+******************************************************************************
+Copyright OpenJS Foundation and other contributors, https://openjsf.org/
+
+******************************************************************************
+END OF JQUERY NOTICES, INFORMATION, AND LICENSE
+
+
+QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+******************************************************************************
+Copyright OpenJS Foundation and other contributors, https://openjsf.org/
+
+******************************************************************************
+END OF JQUERY NOTICES, INFORMATION, AND LICENSE
+
+
+QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+******************************************************************************
+Copyright OpenJS Foundation and other contributors, https://openjsf.org/
+
+******************************************************************************
+END OF JQUERY NOTICES, INFORMATION, AND LICENSE
+
+
+QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+******************************************************************************
+Copyright OpenJS Foundation and other contributors, https://openjsf.org/
+
+******************************************************************************
+END OF JQUERY NOTICES, INFORMATION, AND LICENSE
+
+
+QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+******************************************************************************
+Copyright OpenJS Foundation and other contributors, https://openjsf.org/
+
+******************************************************************************
+END OF JQUERY NOTICES, INFORMATION, AND LICENSE
+
+
+QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+******************************************************************************
+Copyright OpenJS Foundation and other contributors, https://openjsf.org/
+
+******************************************************************************
+END OF JQUERY NOTICES, INFORMATION, AND LICENSE
+
+
+QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+******************************************************************************
+Copyright OpenJS Foundation and other contributors, https://openjsf.org/
+
+******************************************************************************
+END OF JQUERY NOTICES, INFORMATION, AND LICENSE
+
+
+QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+******************************************************************************
+Copyright OpenJS Foundation and other contributors, https://openjsf.org/
+
+******************************************************************************
+END OF JQUERY NOTICES, INFORMATION, AND LICENSE
+
+
+QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+******************************************************************************
+Copyright OpenJS Foundation and other contributors, https://openjsf.org/
+
+******************************************************************************
+END OF JQUERY NOTICES, INFORMATION, AND LICENSE
+
+
+QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+******************************************************************************
+Copyright OpenJS Foundation and other contributors, https://openjsf.org/
+
+******************************************************************************
+END OF JQUERY NOTICES, INFORMATION, AND LICENSE
+
+
+QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+******************************************************************************
+Copyright OpenJS Foundation and other contributors, https://openjsf.org/
+
+******************************************************************************
+END OF JQUERY NOTICES, INFORMATION, AND LICENSE
+
+
+QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+******************************************************************************
+Copyright OpenJS Foundation and other contributors, https://openjsf.org/
+
+******************************************************************************
+END OF JQUERY NOTICES, INFORMATION, AND LICENSE
+
+
+QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+******************************************************************************
+Copyright OpenJS Foundation and other contributors, https://openjsf.org/
+
+******************************************************************************
+END OF JQUERY NOTICES, INFORMATION, AND LICENSE
