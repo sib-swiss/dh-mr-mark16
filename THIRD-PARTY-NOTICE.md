@@ -1,8 +1,11 @@
-The MARK16 MR API uses third party material from the project Mirador, under Apache 2.0 License (see below).
+The SNSF MARK16 MR API uses third party material from uses third party material from the projects listed below.
+The original copyright notice and the license under which MARK16
+received such third party material are set forth below. MARK16
+reserves all other rights not expressly granted, whether by
+implication, estoppel or otherwise.
 
 In the event that we accidentally failed to list a required notice, please
 bring it to our attention. Post an issue or email us: claire.clivaz[at]sib.swiss
-© 2021 SNSF MARK16, DH+, SIB Swiss Institute of Bioinformatics, Lausanne (CH)
 
 - FAT FREE  (https://github.com/bcosca/fatfree-core/blob/master/COPYING)
 - MIRADOR  (https://github.com/ProjectMirador/mirador/blob/master/LICENSE)
@@ -26,7 +29,7 @@ bring it to our attention. Post an issue or email us: claire.clivaz[at]sib.swiss
   - AntinoouWeb (https://www.evertype.com/fonts/coptic/) (https://github.com/sib-swiss/dh-mr-mark16/blob/main/htdocs/resources/fonts/NTVMR/antinoou-licence.txt)
   - Bokareis (Created by Prof. Carla Falluomini, University of Perugia (Italy), in licence GNU GPL v.0.3)
 
-
+© 2021 SNSF MARK16, DH+, SIB Swiss Institute of Bioinformatics, Lausanne (CH)
 
 Copyright 2020 The Board of Trustees of the Leland Stanford Junior University
 
