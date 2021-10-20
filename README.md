@@ -97,9 +97,3 @@ OS:
 ![image](./doc/centos8-server-package-selection.png)
 ![image](./doc/centos8-server-setup-summary.png)
 
-
-## TODO
-
-* Finish this document :grin:
-
-> This document is a draft, it will be improved later.
