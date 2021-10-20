@@ -729,6 +729,12 @@ JQUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
 ******************************************************************************
 Copyright OpenJS Foundation and other contributors, https://openjsf.org/
 
+Projects referencing this document are released under the terms of the MIT license.
+The MIT License is simple and easy to understand and it places almost no restrictions on what you can do with the Project.
+You are free to use the Project in any other project (even commercial projects) as long as the copyright header is left intact.
+
+MIT License
+
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
 "Software"), to deal in the Software without restriction, including
