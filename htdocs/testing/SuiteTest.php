@@ -17,7 +17,7 @@
  *  php testing/SuiteTest.php PresentationApiTest
  *
  * run specific testFile->method
- *  php testing/SuiteTest.php ManuscripContentImagetTest testUpdatePartnerUrl
+ *  php testing/SuiteTest.php ManuscripContentImageTest testUpdatePartnerUrl
  */
 
 require __DIR__ . '/../vendor/autoload.php';
