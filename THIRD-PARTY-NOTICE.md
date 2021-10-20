@@ -3,7 +3,7 @@ The SNSF [MARK16 MR API](https://mr-mark16.sib.swiss/) uses third party material
 The original copyright notice and the license under which MARK16 received such third party material are set forth below. MARK16 reserves all other rights not expressly granted, whether by implication, estoppel or otherwise.
 
 In the event that we accidentally failed to list a required notice, please
-bring it to our attention by email to us: claire.clivaz@sib.swiss
+bring it to our attention and email us: claire.clivaz@sib.swiss
 
 THIRD-PARTY SOFTWARE NOTICES AND INFORMATION
 Do Not Translate or Localize
