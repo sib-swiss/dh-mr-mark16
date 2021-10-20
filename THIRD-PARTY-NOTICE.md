@@ -4,33 +4,35 @@ The original copyright notice and the license under which MARK16 received such t
 
 In the event that we accidentally failed to list a required notice, please
 bring it to our attention and email us: claire.clivaz@sib.swiss
+© 2021 SNSF MARK16, DH+, SIB Swiss Institute of Bioinformatics, Lausanne (CH)
 
 THIRD-PARTY SOFTWARE NOTICES AND INFORMATION
+
 Do Not Translate or Localize
 
-- FAT FREE  (https://github.com/bcosca/fatfree-core/blob/master/COPYING)
-- MIRADOR  (https://github.com/ProjectMirador/mirador/blob/master/LICENSE)
-- BOOTSTRAP  (https://github.com/twbs/bootstrap/blob/main/LICENSE)
-- POPPER (https://github.com/popperjs/popper-core/blob/master/LICENSE.md)
-- JQUERY (https://github.com/jquery/jquery/blob/main/LICENSE.txt)
-- FOMANTIC-UI (https://github.com/fomantic/Fomantic-UI/blob/develop/LICENSE.md)
-- DARK-FOMANTIC-UI (https://github.com/Jiab77/dark-fomantic-ui/blob/master/LICENSE)
-- UI-WRAPPERS (https://github.com/Jiab77/ui-wrappers/blob/master/LICENSE)
-- TABLESORT (https://github.com/kylefox/jquery-tablesort/blob/master/LICENSE)
-- ADMINER (https://github.com/vrana/adminer)
-- OPCACHE-GUI (https://github.com/amnuts/opcache-gui)
-- HOLDER (https://github.com/imsky/holder/blob/master/LICENSE)
-- EVENTEMITTER (https://github.com/Olical/EventEmitter/blob/master/UNLICENSE)
-- JS-COOKIE (https://github.com/js-cookie/js-cookie/blob/master/LICENSE)
-- FONTS
-  - Merriweather (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
-  - Font Awesome Free (https://fontawesome.com/license/free)
-  - MaterialIcons (https://github.com/google/material-design-icons#license)
-  - Gentium (https://software.sil.org/gentium/) License: (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=ofl)
-  - AntinoouWeb (https://www.evertype.com/fonts/coptic/) (https://github.com/sib-swiss/dh-mr-mark16/blob/main/htdocs/resources/fonts/NTVMR/antinoou-licence.txt)
-  - Bokareis (Created by Prof. Carla Falluomini, University of Perugia (Italy), in licence GNU GPL v.0.3)
+1. FAT FREE  (https://github.com/bcosca/fatfree-core/blob/master/COPYING)
+2. MIRADOR  (https://github.com/ProjectMirador/mirador/blob/master/LICENSE)
+3. BOOTSTRAP  (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+4. POPPER (https://github.com/popperjs/popper-core/blob/master/LICENSE.md)
+5. JQUERY (https://github.com/jquery/jquery/blob/main/LICENSE.txt)
+6. FOMANTIC-UI (https://github.com/fomantic/Fomantic-UI/blob/develop/LICENSE.md)
+7. DARK-FOMANTIC-UI (https://github.com/Jiab77/dark-fomantic-ui/blob/master/LICENSE)
+8. UI-WRAPPERS (https://github.com/Jiab77/ui-wrappers/blob/master/LICENSE)
+9. TABLESORT (https://github.com/kylefox/jquery-tablesort/blob/master/LICENSE)
+10. ADMINER (https://github.com/vrana/adminer)
+11. OPCACHE-GUI (https://github.com/amnuts/opcache-gui)
+12. HOLDER (https://github.com/imsky/holder/blob/master/LICENSE)
+13. EVENTEMITTER (https://github.com/Olical/EventEmitter/blob/master/UNLICENSE)
+14. JS-COOKIE (https://github.com/js-cookie/js-cookie/blob/master/LICENSE)
+15. FONTS
+  15.1  Merriweather (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+  15.2  Font Awesome Free (https://fontawesome.com/license/free)
+  15.3  MaterialIcons (https://github.com/google/material-design-icons#license)
+  15.4  Gentium (https://software.sil.org/gentium/) License: (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=ofl)
+  15.5  AntinoouWeb (https://www.evertype.com/fonts/coptic/) (https://github.com/sib-swiss/dh-mr-mark16/blob/main/htdocs/resources/fonts/NTVMR/antinoou-licence.txt)
+  15.6  Bokareis (Created by Prof. Carla Falluomini, University of Perugia (Italy), in licence GNU GPL v.0.3)
 
-© 2021 SNSF MARK16, DH+, SIB Swiss Institute of Bioinformatics, Lausanne (CH)
+
 
 Copyright 2020 The Board of Trustees of the Leland Stanford Junior University
 
