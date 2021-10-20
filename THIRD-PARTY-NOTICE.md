@@ -985,20 +985,47 @@ This isn't legal advice, please consider consulting a lawyer and see the full li
 END OF MERRIWEATHER NOTICES, INFORMATION, AND LICENSE
 
 
-QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+FREE AWSOME NOTICES, INFORMATION, AND LICENSE BEGIN HERE
 ******************************************************************************
-Copyright OpenJS Foundation and other contributors, https://openjsf.org/
+Font Awesome Free is free, open source, and GPL friendly. You can use it for commercial projects, open source projects, or really almost whatever you want.
+Icons — CC BY 4.0 License
 
+In the Font Awesome Free download, the CC BY 4.0 license applies to all icons packaged as
+.svg and
+
+.js files types.
+Fonts — SIL OFL 1.1 License
+
+In the Font Awesome Free download, the SIL OFL license applies to all icons packaged as web and desktop font files.
+Code — MIT License
+
+In the Font Awesome Free download, the MIT license applies to all non-font and non-icon files.
+Attribution
+
+Attribution is required by MIT, SIL OFL, and CC BY licenses. Downloaded Font Awesome Free files already contain embedded comments with sufficient attribution, so you shouldn't need to do anything additional when using these files normally.
+
+We've kept attribution comments terse, so we ask that you do not actively work to remove them from files, especially code. They're a great way for folks to learn about Font Awesome. 
 ******************************************************************************
-END OF JQUERY NOTICES, INFORMATION, AND LICENSE
+END OF FREEAWSOME NOTICES, INFORMATION, AND LICENSE
 
 
-QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+MATERIALICONS NOTICES, INFORMATION, AND LICENSE BEGIN HERE
 ******************************************************************************
-Copyright OpenJS Foundation and other contributors, https://openjsf.org/
+We have made these icons available for you to incorporate into your products under the Apache License Version 2.0. Feel free to remix and re-share these icons and documentation in your products. We'd love attribution in your app's about screen, but it's not required.
 
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
 ******************************************************************************
-END OF JQUERY NOTICES, INFORMATION, AND LICENSE
+END OF MATERIALICONS NOTICES, INFORMATION, AND LICENSE
 
 
 QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
