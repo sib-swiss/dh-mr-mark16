@@ -1061,7 +1061,7 @@ END OF ANTINOOUWEB NOTICES, INFORMATION, AND LICENSE
 
 BOKAREIS NOTICES, INFORMATION, AND LICENSE BEGIN HERE
 ******************************************************************************
-Fount created by Prof. Carla Falluomini, University of Perugia (IT), in licence [GNU GPL v.3.0](https://www.gnu.org/licenses/gpl-3.0.fr.html)
+Fount created by Prof. Carla Falluomini, University of Perugia (IT), in licence [GNU GPL v.3.0](https://www.gnu.org/licenses/gpl-3.0.fr.html). Inquiries about BOKAREIS have to be addressed to  <carla_falluomini@hotmail.com> 
 ******************************************************************************
 END OF BOKAREIS NOTICES, INFORMATION, AND LICENSE
 
