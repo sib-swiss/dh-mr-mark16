@@ -1,34 +1,38 @@
 The SNSF MARK16 MR API uses third party material from uses third party material from the projects listed below.
+
 The original copyright notice and the license under which MARK16 received such third party material are set forth below. MARK16 reserves all other rights not expressly granted, whether by implication, estoppel or otherwise. In the event that we accidentally failed to list a required notice, please bring it to our attention and email us: claire.clivaz@sib.swiss
+
 © 2021 SNSF MARK16, DH+, SIB Swiss Institute of Bioinformatics, Lausanne (CH)
+
+
 THIRD-PARTY SOFTWARE NOTICES AND INFORMATION
 Do Not Translate or Localize
 
-FAT FREE  (https://github.com/bcosca/fatfree-core/blob/master/COPYING)
-MIRADOR  (https://github.com/ProjectMirador/mirador/blob/master/LICENSE)
-BOOTSTRAP  (https://github.com/twbs/bootstrap/blob/main/LICENSE)
-POPPER (https://github.com/popperjs/popper-core/blob/master/LICENSE.md)
-JQUERY (https://github.com/jquery/jquery/blob/main/LICENSE.txt)
-FOMANTIC-UI (https://github.com/fomantic/Fomantic-UI/blob/develop/LICENSE.md)
-DARK-FOMANTIC-UI (https://github.com/Jiab77/dark-fomantic-ui/blob/master/LICENSE)
-UI-WRAPPERS (https://github.com/Jiab77/ui-wrappers/blob/master/LICENSE)
-TABLESORT (https://github.com/kylefox/jquery-tablesort/blob/master/LICENSE)
-ADMINER (https://github.com/vrana/adminer)
-OPCACHE-GUI (https://github.com/amnuts/opcache-gui)
-HOLDER (https://github.com/imsky/holder/blob/master/LICENSE)
-EVENTEMITTER (https://github.com/Olical/EventEmitter/blob/master/UNLICENSE)
-JS-COOKIE (https://github.com/js-cookie/js-cookie/blob/master/LICENSE)
-MERRIWEATHER (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
-FONT AWSOME FREE (https://fontawesome.com/license/free)
-MATERIALICONS (https://github.com/google/material-design-icons#license)
-GENTIUM (https://software.sil.org/gentium/) License: (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=ofl)
-ANTINOOUWEB (https://www.evertype.com/fonts/coptic/) (https://github.com/sib-swiss/dh-mr-mark16/blob/main/htdocs/resources/fonts/NTVMR/antinoou-licence.txt)
-BOKAREIS (Fount created by Prof. Carla Falluomini, University of Perugia (IT), in licence GNU GPL v.3.0)
-PONOMAR (https://fontlibrary.org/en/font/ponomar-unicode)
-Noto Sans Coptic (https://fonts.google.com/noto/specimen/Noto+Sans+Coptic/about)
+1. FAT FREE  (https://github.com/bcosca/fatfree-core/blob/master/COPYING)
+2. MIRADOR  (https://github.com/ProjectMirador/mirador/blob/master/LICENSE)
+3. BOOTSTRAP  (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+4. POPPER (https://github.com/popperjs/popper-core/blob/master/LICENSE.md)
+5. JQUERY (https://github.com/jquery/jquery/blob/main/LICENSE.txt)
+6. FOMANTIC-UI (https://github.com/fomantic/Fomantic-UI/blob/develop/LICENSE.md)
+7. DARK-FOMANTIC-UI (https://github.com/Jiab77/dark-fomantic-ui/blob/master/LICENSE)
+8. UI-WRAPPERS (https://github.com/Jiab77/ui-wrappers/blob/master/LICENSE)
+9. TABLESORT (https://github.com/kylefox/jquery-tablesort/blob/master/LICENSE)
+10. ADMINER (https://github.com/vrana/adminer)
+11. OPCACHE-GUI (https://github.com/amnuts/opcache-gui)
+12. HOLDER (https://github.com/imsky/holder/blob/master/LICENSE)
+13. EVENTEMITTER (https://github.com/Olical/EventEmitter/blob/master/UNLICENSE)
+14. JS-COOKIE (https://github.com/js-cookie/js-cookie/blob/master/LICENSE)
+15. MERRIWEATHER (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+16. FONT AWSOME FREE (https://fontawesome.com/license/free)
+17. MATERIALICONS (https://github.com/google/material-design-icons#license)
+18. GENTIUM (https://software.sil.org/gentium/) License: (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=ofl)
+19. ANTINOOUWEB (https://www.evertype.com/fonts/coptic/) (https://github.com/sib-swiss/dh-mr-mark16/blob/main/htdocs/resources/fonts/NTVMR/antinoou-licence.txt)
+20. BOKAREIS (Fount created by Prof. Carla Falluomini, University of Perugia (IT), in licence GNU GPL v.3.0)
+21. PONOMAR (https://fontlibrary.org/en/font/ponomar-unicode)
+22. Noto Sans Coptic (https://fonts.google.com/noto/specimen/Noto+Sans+Coptic/about)
 
 fatfree NOTICES, INFORMATION, AND LICENSE BEGIN HERE
-
+******************************************************
 GNU GENERAL PUBLIC LICENSE
 Version 3, 29 June 2007
 Copyright (C) 2007 Free Software Foundation, Inc. http://fsf.org/
@@ -577,19 +581,32 @@ reviewing courts shall apply local law that most closely approximates
 an absolute waiver of all civil liability in connection with the
 Program, unless a warranty or assumption of liability accompanies a
 copy of the Program in return for a fee.
-
+******************************************************************************
 END OF fatfree NOTICES, INFORMATION, AND LICENSE
-MIRADOR NOTICES, INFORMATION, AND LICENSE BEGIN HERE
 
+MIRADOR NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+******************************************************************************
 Copyright 2020 The Board of Trustees of the Leland Stanford Junior University
+
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
-http://www.apache.org/licenses/LICENSE-2.0
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
+*****************************************************************************
 END OF MIRADOR NOTICES, INFORMATION, AND LICENSE
+
+
+
+MIRADOR NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+******************************************************************************
+
+
+******************************************************************************
+END OF fatfree NOTICES, INFORMATION, AND LICENSE
