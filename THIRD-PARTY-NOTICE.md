@@ -22,14 +22,14 @@ Do Not Translate or Localize
 12. HOLDER (https://github.com/imsky/holder/blob/master/LICENSE)
 13. EVENTEMITTER (https://github.com/Olical/EventEmitter/blob/master/UNLICENSE)
 14. JS-COOKIE (https://github.com/js-cookie/js-cookie/blob/master/LICENSE)
-15. MERRIWEATHER (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+15. MERRIWEATHER (https://fonts.google.com/specimen/Merriweather#license)
 16. FONT AWSOME FREE (https://fontawesome.com/license/free)
 17. MATERIALICONS (https://github.com/google/material-design-icons#license)
-18. GENTIUM (https://software.sil.org/gentium/) License: (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=ofl)
+18. GENTIUM (https://software.sil.org/gentium/)
 19. ANTINOOUWEB (https://www.evertype.com/fonts/coptic/) (https://github.com/sib-swiss/dh-mr-mark16/blob/main/htdocs/resources/fonts/NTVMR/antinoou-licence.txt)
 20. BOKAREIS (Fount created by Prof. Carla Falluomini, University of Perugia (IT), in licence GNU GPL v.3.0)
 21. PONOMAR (https://fontlibrary.org/en/font/ponomar-unicode)
-22. Noto Sans Coptic (https://fonts.google.com/noto/specimen/Noto+Sans+Coptic/about)
+22. NOTO-SANS-COPTIC (https://fonts.google.com/noto/specimen/Noto+Sans+Coptic/about)
 
 FATFREE NOTICES, INFORMATION, AND LICENSE BEGIN HERE
 ******************************************************
@@ -887,81 +887,196 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 END OF OPCACHE-GUI NOTICES, INFORMATION, AND LICENSE
 
 
-QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+HOLDER NOTICES, INFORMATION, AND LICENSE BEGIN HERE
 ******************************************************************************
-Copyright OpenJS Foundation and other contributors, https://openjsf.org/
+The MIT License (MIT)
+
+Copyright (c) 2012-2021 Ivan Malopinsky
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+******************************************************************************
+END OF HOLDER NOTICES, INFORMATION, AND LICENSE
+
+
+EVENTEMITTER NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+******************************************************************************
+The UNLICENSE
+
+This is free and unencumbered software released into the public domain.
+
+Anyone is free to copy, modify, publish, use, compile, sell, or
+distribute this software, either in source code form or as a compiled
+binary, for any purpose, commercial or non-commercial, and by any
+means.
+
+In jurisdictions that recognize copyright laws, the author or authors
+of this software dedicate any and all copyright interest in the
+software to the public domain. We make this dedication for the benefit
+of the public at large and to the detriment of our heirs and
+successors. We intend this dedication to be an overt act of
+relinquishment in perpetuity of all present and future rights to this
+software under copyright law.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+
+For more information, please refer to <http://unlicense.org/>
+******************************************************************************
+END OF EVENTEMITTER NOTICES, INFORMATION, AND LICENSE
+
+
+JSCOOKIE NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+******************************************************************************
+MIT License
+
+Copyright (c) 2018 Copyright 2018 Klaus Hartl, Fagner Brack, GitHub Contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+******************************************************************************
+END OF JSCOOKIE NOTICES, INFORMATION, AND LICENSE
+
+
+MERRIWEATHER NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+******************************************************************************
+These fonts are licensed under the [Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL),
+
+You can use them freely in your products & projects - print or digital, commercial or otherwise.
+
+This isn't legal advice, please consider consulting a lawyer and see the full license for all details. 
 
 ******************************************************************************
-END OF JQUERY NOTICES, INFORMATION, AND LICENSE
+END OF MERRIWEATHER NOTICES, INFORMATION, AND LICENSE
 
 
-QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+FREE AWSOME NOTICES, INFORMATION, AND LICENSE BEGIN HERE
 ******************************************************************************
-Copyright OpenJS Foundation and other contributors, https://openjsf.org/
+Font Awesome Free is free, open source, and GPL friendly. You can use it for commercial projects, open source projects, or really almost whatever you want.
+Icons — CC BY 4.0 License
 
+In the Font Awesome Free download, the CC BY 4.0 license applies to all icons packaged as
+.svg and
+
+.js files types.
+Fonts — SIL OFL 1.1 License
+
+In the Font Awesome Free download, the SIL OFL license applies to all icons packaged as web and desktop font files.
+Code — MIT License
+
+In the Font Awesome Free download, the MIT license applies to all non-font and non-icon files.
+Attribution
+
+Attribution is required by MIT, SIL OFL, and CC BY licenses. Downloaded Font Awesome Free files already contain embedded comments with sufficient attribution, so you shouldn't need to do anything additional when using these files normally.
+
+We've kept attribution comments terse, so we ask that you do not actively work to remove them from files, especially code. They're a great way for folks to learn about Font Awesome. 
 ******************************************************************************
-END OF JQUERY NOTICES, INFORMATION, AND LICENSE
+END OF FREEAWSOME NOTICES, INFORMATION, AND LICENSE
 
 
-QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+MATERIALICONS NOTICES, INFORMATION, AND LICENSE BEGIN HERE
 ******************************************************************************
-Copyright OpenJS Foundation and other contributors, https://openjsf.org/
+We have made these icons available for you to incorporate into your products under the Apache License Version 2.0. Feel free to remix and re-share these icons and documentation in your products. We'd love attribution in your app's about screen, but it's not required.
 
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
 ******************************************************************************
-END OF JQUERY NOTICES, INFORMATION, AND LICENSE
+END OF MATERIALICONS NOTICES, INFORMATION, AND LICENSE
 
 
-QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+GENTIUM NOTICES, INFORMATION, AND LICENSE BEGIN HERE
 ******************************************************************************
-Copyright OpenJS Foundation and other contributors, https://openjsf.org/
-
+This font software is free to use, modify and redistribute according to the terms of the [SIL Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL).
 ******************************************************************************
-END OF JQUERY NOTICES, INFORMATION, AND LICENSE
+END OF GENTIUM NOTICES, INFORMATION, AND LICENSE
 
 
-QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+ANTINOOUWEB NOTICES, INFORMATION, AND LICENSE BEGIN HERE
 ******************************************************************************
-Copyright OpenJS Foundation and other contributors, https://openjsf.org/
+Antinoou copyright notice
 
+Antinoou is copyright © 2007-2011 Michael Everson and IACS (the International Association for Coptic Studies). All rights including moral rights reserved. Antinoou is a trademark of Michael Everson and IACS. Conversion or alteration of these coded font programs in any way, including conversion into other formats or for any other platform is strictly prohibited. If you wish to see these fonts available in other formats, please contact the copyright holders.
+
+Antinoou available at the Evertype site in Ireland (evertype.com/fonts/coptic/) Antinoou may not be made available through any other medium, including shareware disks, shareware CDs, or commercial bulletin boards, without permission. You may make copies on disk for others as long as no fee whatsoever is charged and as long as this documentation is included.
+
+Antinoou Licence
+
+Antinoou is freeware. It may be used freely, embedded in documents, given to printers. It may not be sold. 
+
+Your licence is permission to use these fonts; you do not own them and may not alter them in any way whatsoever.
+
+If your company is interested in licensing Antinoou for bundling with your software, please get in touch with the copyright holders directly.
+
+If you are extremely enthusiastic about Antinoou and wish to offer a contribution for its continued development, you may make a donation by PayPal (www.paypal.com) to everson@evertype.com.
+
+Michael Everson, Evertype, Cnoc Sceichin, Leac an Anfa, Cathair na Mart, Co. Mhaigh Eo, Eire, 2011-07-04
+everson@evertype.com
 ******************************************************************************
-END OF JQUERY NOTICES, INFORMATION, AND LICENSE
+END OF ANTINOOUWEB NOTICES, INFORMATION, AND LICENSE
 
 
-QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+BOKAREIS NOTICES, INFORMATION, AND LICENSE BEGIN HERE
 ******************************************************************************
-Copyright OpenJS Foundation and other contributors, https://openjsf.org/
-
+Fount created by Prof. Carla Falluomini, University of Perugia (IT), in licence [GNU GPL v.3.0](https://www.gnu.org/licenses/gpl-3.0.fr.html). Inquiries about BOKAREIS have to be addressed to  <carla_falluomini@hotmail.com> 
 ******************************************************************************
-END OF JQUERY NOTICES, INFORMATION, AND LICENSE
+END OF BOKAREIS NOTICES, INFORMATION, AND LICENSE
 
 
-QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+PONOMAR NOTICES, INFORMATION, AND LICENSE BEGIN HERE
 ******************************************************************************
-Copyright OpenJS Foundation and other contributors, https://openjsf.org/
-
+License OFL ([SIL Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL))
 ******************************************************************************
-END OF JQUERY NOTICES, INFORMATION, AND LICENSE
+END OF PONOMAR NOTICES, INFORMATION, AND LICENSE
 
 
-QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+NOTO-SANS-COPTIC NOTICES, INFORMATION, AND LICENSE BEGIN HERE
 ******************************************************************************
-Copyright OpenJS Foundation and other contributors, https://openjsf.org/
-
+These fonts are licensed under the [Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL).
+You can use them freely in your products & projects - print or digital, commercial or otherwise.
+This isn't legal advice, please consider consulting a lawyer and see the full license for all details. 
 ******************************************************************************
-END OF JQUERY NOTICES, INFORMATION, AND LICENSE
-
-
-QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
-******************************************************************************
-Copyright OpenJS Foundation and other contributors, https://openjsf.org/
-
-******************************************************************************
-END OF JQUERY NOTICES, INFORMATION, AND LICENSE
-
-
-QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
-******************************************************************************
-Copyright OpenJS Foundation and other contributors, https://openjsf.org/
-
-******************************************************************************
-END OF JQUERY NOTICES, INFORMATION, AND LICENSE
+END OF NOTO-SANS-COPTIC NOTICES, INFORMATION, AND LICENSE
