@@ -1,9 +1,6 @@
 The SNSF [MARK16 MR API](https://mr-mark16.sib.swiss/) uses third party material from uses third party material from the projects listed below.
 
-The original copyright notice and the license under which MARK16 received such third party material are set forth below. MARK16 reserves all other rights not expressly granted, whether by implication, estoppel or otherwise.
-
-In the event that we accidentally failed to list a required notice, please
-bring it to our attention and email us: claire.clivaz@sib.swiss
+The original copyright notice and the license under which MARK16 received such third party material are set forth below. MARK16 reserves all other rights not expressly granted, whether by implication, estoppel or otherwise. In the event that we accidentally failed to list a required notice, please bring it to our attention and email us: claire.clivaz@sib.swiss
 
 © 2021 SNSF MARK16, DH+, SIB Swiss Institute of Bioinformatics, Lausanne (CH)
 
@@ -25,21 +22,12 @@ Do Not Translate or Localize
 12. HOLDER (https://github.com/imsky/holder/blob/master/LICENSE)
 13. EVENTEMITTER (https://github.com/Olical/EventEmitter/blob/master/UNLICENSE)
 14. JS-COOKIE (https://github.com/js-cookie/js-cookie/blob/master/LICENSE)
-15. FONTS
-
-  15.1  Merriweather (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
-
-  15.2  Font Awesome Free (https://fontawesome.com/license/free)
-
-  15.3  MaterialIcons (https://github.com/google/material-design-icons#license)
-
-  15.4  Gentium (https://software.sil.org/gentium/) License: (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=ofl)
-
-  15.5  AntinoouWeb (https://www.evertype.com/fonts/coptic/) (https://github.com/sib-swiss/dh-mr-mark16/blob/main/htdocs/resources/fonts/NTVMR/antinoou-licence.txt)
-  
-  15.6  Bokareis (Created by Prof. Carla Falluomini, University of Perugia (Italy), in licence GNU GPL v.0.3)
-
-
+15. Merriweather (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+16. Font Awesome Free (https://fontawesome.com/license/free)
+17. MaterialIcons (https://github.com/google/material-design-icons#license)
+18. Gentium (https://software.sil.org/gentium/) License: (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=ofl)
+19. AntinoouWeb (https://www.evertype.com/fonts/coptic/) (https://github.com/sib-swiss/dh-mr-mark16/blob/main/htdocs/resources/fonts/NTVMR/antinoou-licence.txt)
+20. Bokareis (Created by Prof. Carla Falluomini, University of Perugia (Italy), in licence GNU GPL v.0.3)
 
 Copyright 2020 The Board of Trustees of the Leland Stanford Junior University
 
