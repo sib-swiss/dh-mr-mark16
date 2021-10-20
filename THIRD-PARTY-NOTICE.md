@@ -681,7 +681,6 @@ limitations under the License.
 END OF MIRADOR NOTICES, INFORMATION, AND LICENSE
 
 
-
 BOOTSTRAP NOTICES, INFORMATION, AND LICENSE BEGIN HERE
 ******************************************************************************
 The MIT License (MIT)
@@ -706,6 +705,17 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-
 ******************************************************************************
 END OF BOOTSRAP NOTICES, INFORMATION, AND LICENSE
+
+POPPER NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+******************************************************************************
+
+******************************************************************************
+END OF POPPER NOTICES, INFORMATION, AND LICENSE
+
+JQUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+******************************************************************************
+
+******************************************************************************
+END OF JQUERY NOTICES, INFORMATION, AND LICENSE
