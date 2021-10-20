@@ -749,3 +749,10 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ******************************************************************************
 END OF JQUERY NOTICES, INFORMATION, AND LICENSE
+
+JQUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+******************************************************************************
+Copyright OpenJS Foundation and other contributors, https://openjsf.org/
+
+******************************************************************************
+END OF JQUERY NOTICES, INFORMATION, AND LICENSE
