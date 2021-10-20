@@ -29,7 +29,7 @@ Do Not Translate or Localize
 19. ANTINOOUWEB (https://www.evertype.com/fonts/coptic/) (https://github.com/sib-swiss/dh-mr-mark16/blob/main/htdocs/resources/fonts/NTVMR/antinoou-licence.txt)
 20. BOKAREIS (Fount created by Prof. Carla Falluomini, University of Perugia (IT), in licence GNU GPL v.3.0)
 21. PONOMAR (https://fontlibrary.org/en/font/ponomar-unicode)
-22. Noto Sans Coptic (https://fonts.google.com/noto/specimen/Noto+Sans+Coptic/about)
+22. NOTO-SANS-COPTIC (https://fonts.google.com/noto/specimen/Noto+Sans+Coptic/about)
 
 FATFREE NOTICES, INFORMATION, AND LICENSE BEGIN HERE
 ******************************************************
@@ -1072,13 +1072,11 @@ License OFL ([SIL Open Font License](https://scripts.sil.org/cms/scripts/page.ph
 ******************************************************************************
 END OF PONOMAR NOTICES, INFORMATION, AND LICENSE
 
+
 NOTO-SANS-COPTIC NOTICES, INFORMATION, AND LICENSE BEGIN HERE
 ******************************************************************************
 These fonts are licensed under the [Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL).
-
 You can use them freely in your products & projects - print or digital, commercial or otherwise.
-
 This isn't legal advice, please consider consulting a lawyer and see the full license for all details. 
-
 ******************************************************************************
 END OF NOTO-SANS-COPTIC NOTICES, INFORMATION, AND LICENSE
