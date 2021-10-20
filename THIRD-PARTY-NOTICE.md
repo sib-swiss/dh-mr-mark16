@@ -1059,6 +1059,14 @@ everson@evertype.com
 END OF ANTINOOUWEB NOTICES, INFORMATION, AND LICENSE
 
 
+BOKAREIS NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+******************************************************************************
+Fount created by Prof. Carla Falluomini, University of Perugia (IT), in licence [GNU GPL v.3.0](https://www.gnu.org/licenses/gpl-3.0.fr.html)
+
+******************************************************************************
+END OF BOKAREIS NOTICES, INFORMATION, AND LICENSE
+
+
 QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
 ******************************************************************************
 Copyright OpenJS Foundation and other contributors, https://openjsf.org/
@@ -1066,8 +1074,7 @@ Copyright OpenJS Foundation and other contributors, https://openjsf.org/
 ******************************************************************************
 END OF JQUERY NOTICES, INFORMATION, AND LICENSE
 
-
-QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+UERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
 ******************************************************************************
 Copyright OpenJS Foundation and other contributors, https://openjsf.org/
 
