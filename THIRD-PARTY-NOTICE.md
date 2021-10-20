@@ -662,8 +662,6 @@ END OF TERMS AND CONDITIONS
 ******************************************************************************
 END OF FATFREE NOTICES, INFORMATION, AND LICENSE
 
-
-
 MIRADOR NOTICES, INFORMATION, AND LICENSE BEGIN HERE
 ******************************************************************************
 Copyright 2020 The Board of Trustees of the Leland Stanford Junior University
@@ -681,7 +679,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 *****************************************************************************
 END OF MIRADOR NOTICES, INFORMATION, AND LICENSE
-
 
 
 BOOTSTRAP NOTICES, INFORMATION, AND LICENSE BEGIN HERE
@@ -708,10 +705,8 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-
 ******************************************************************************
 END OF BOOTSRAP NOTICES, INFORMATION, AND LICENSE
-
 
 
 POPPER NOTICES, INFORMATION, AND LICENSE BEGIN HERE
@@ -728,7 +723,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ******************************************************************************
 END OF POPPER NOTICES, INFORMATION, AND LICENSE
-
 
 
 JQUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
@@ -821,3 +815,153 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ******************************************************************************
 END OF UI-WRAPPERS NOTICES, INFORMATION, AND LICENSE
+
+
+TABLESORT NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+******************************************************************************
+jQuery tablesort is distributed under the MIT License.
+Learn more at http://opensource.org/licenses/mit-license.php
+
+Copyright (c) 2012 Kyle Fox
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+******************************************************************************
+END OF TABLESORT NOTICES, INFORMATION, AND LICENSE
+
+
+ADMINER NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+******************************************************************************
+Adminer - Database management in a single PHP file
+Adminer Editor - Data manipulation for end-users
+
+https://www.adminer.org/
+Supports: MySQL, MariaDB, PostgreSQL, SQLite, MS SQL, Oracle, Elasticsearch, MongoDB, SimpleDB (plugin), Firebird (plugin), ClickHouse (plugin)
+Requirements: PHP 5+
+Apache License 2.0 or GPL 2
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+******************************************************************************
+END OF ADMINER NOTICES, INFORMATION, AND LICENSE
+
+
+OPCACHE-GUI NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+******************************************************************************
+The MIT License (MIT)
+
+Copyright © 2021 Andrew Collington, http://www.amnuts.com/ <andy@amnuts.com>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+******************************************************************************
+END OF OPCACHE-GUI NOTICES, INFORMATION, AND LICENSE
+
+
+QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+******************************************************************************
+Copyright OpenJS Foundation and other contributors, https://openjsf.org/
+
+******************************************************************************
+END OF JQUERY NOTICES, INFORMATION, AND LICENSE
+
+
+QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+******************************************************************************
+Copyright OpenJS Foundation and other contributors, https://openjsf.org/
+
+******************************************************************************
+END OF JQUERY NOTICES, INFORMATION, AND LICENSE
+
+
+QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+******************************************************************************
+Copyright OpenJS Foundation and other contributors, https://openjsf.org/
+
+******************************************************************************
+END OF JQUERY NOTICES, INFORMATION, AND LICENSE
+
+
+QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+******************************************************************************
+Copyright OpenJS Foundation and other contributors, https://openjsf.org/
+
+******************************************************************************
+END OF JQUERY NOTICES, INFORMATION, AND LICENSE
+
+
+QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+******************************************************************************
+Copyright OpenJS Foundation and other contributors, https://openjsf.org/
+
+******************************************************************************
+END OF JQUERY NOTICES, INFORMATION, AND LICENSE
+
+
+QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+******************************************************************************
+Copyright OpenJS Foundation and other contributors, https://openjsf.org/
+
+******************************************************************************
+END OF JQUERY NOTICES, INFORMATION, AND LICENSE
+
+
+QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+******************************************************************************
+Copyright OpenJS Foundation and other contributors, https://openjsf.org/
+
+******************************************************************************
+END OF JQUERY NOTICES, INFORMATION, AND LICENSE
+
+
+QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+******************************************************************************
+Copyright OpenJS Foundation and other contributors, https://openjsf.org/
+
+******************************************************************************
+END OF JQUERY NOTICES, INFORMATION, AND LICENSE
+
+
+QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+******************************************************************************
+Copyright OpenJS Foundation and other contributors, https://openjsf.org/
+
+******************************************************************************
+END OF JQUERY NOTICES, INFORMATION, AND LICENSE
+
+
+QUERY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+******************************************************************************
+Copyright OpenJS Foundation and other contributors, https://openjsf.org/
+
+******************************************************************************
+END OF JQUERY NOTICES, INFORMATION, AND LICENSE
