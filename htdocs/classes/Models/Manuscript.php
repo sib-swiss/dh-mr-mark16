@@ -138,7 +138,7 @@ class Manuscript extends Mapper
         if (is_dir($path)) {
             $images = array_merge($images, glob($path . '/*.{jpg,jpeg,png,gif}', GLOB_BRACE));
             foreach (scandir($path) as $contentPath) {
-                if (is_dir($path . '/' . $contentPath) && $contentPath != '.' && $contentPath != '..') {
+                if (is_dir($path . '/' . $contentPath) && $contentPath !== '.' && $contentPath !== '..') {
                     $images = array_merge($images, glob($path . '/' . $contentPath . '/*.{jpg,jpeg,png,gif}', GLOB_BRACE));
                 }
             }

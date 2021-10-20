@@ -25,7 +25,7 @@ require __DIR__ . '/../vendor/autoload.php';
 $tests = glob(__DIR__ . '/*Test.php');
 foreach ($tests as $testFullpath) {
     $testClass = substr(str_replace(__DIR__ . '/', '', $testFullpath), 0, -4);
-    if ($testClass != 'SuiteTest'
+    if ($testClass !== 'SuiteTest'
         && (
             count($argv) == 1
             || $argv[1] == $testClass
