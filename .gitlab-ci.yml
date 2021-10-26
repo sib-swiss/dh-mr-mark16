@@ -15,6 +15,6 @@ deploy_staging:
     name: staging
     url: $DEV_HOSTNAME
   script:
-    - ssh $DEV_USERNAME@$DEV_HOSTNAME "cd $DEV_PATH && git checkout dev && git pull origin dev && exit"
+    - ssh $DEV_USERNAME@$DEV_HOSTNAME "cd $DEV_PATH && git checkout dev && git pull origin dev && cd htdocs && composer install && exit"
   only:
     - dev
