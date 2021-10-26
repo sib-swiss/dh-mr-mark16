@@ -9,10 +9,10 @@ before_script:
   - mkdir -p ~/.ssh
   - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
     
-deploy_staging:
+deploy_dev:
   type: deploy
   environment:
-    name: staging
+    name: dev
     url: $DEV_HOSTNAME
   script:
     - ssh $DEV_USERNAME@$DEV_HOSTNAME "cd $DEV_PATH && git checkout dev && git pull origin dev && cd htdocs && composer install && exit"
