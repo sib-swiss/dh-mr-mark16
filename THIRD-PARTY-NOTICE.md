@@ -1,4 +1,4 @@
-The SNSF MARK16 MR API uses third party material from uses third party material from the projects listed below.
+The SNSF MARK16 MR API uses third party material from the projects listed below.
 
 The original copyright notice and the license under which MARK16 received such third party material are set forth below. MARK16 reserves all other rights not expressly granted, whether by implication, estoppel or otherwise. In the event that we accidentally failed to list a required notice, please bring it to our attention and email us: claire.clivaz@sib.swiss
 
