@@ -52,5 +52,9 @@
     },
     "seo": {
         "enabled": false
+    },
+    "admin": {
+        "username": "YOURUSERNAME",
+        "password": "YOURPASSWORD"
     }
 }
