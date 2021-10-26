@@ -97,3 +97,26 @@ OS:
 ![image](./doc/centos8-server-package-selection.png)
 ![image](./doc/centos8-server-setup-summary.png)
 
+### SELinux
+
+If `SELinux` is enabled on the server, you will then need to apply the following contexts:
+
+* `httpd_sys_script_exec_t`
+  * on folder __`[web-root]/htdocs`__
+* `httpd_sys_rw_content_t`
+  * on folder __`[web-root]/data`__
+* `httpd_log_t`
+  * on folder __`[web-root]/data/logs`__
+  * on folder __`[web-root]/logs`__
+
+Using the following commands:
+
+```bash
+# Set SELinux context
+sudo semanage fcontext -a <context> "<target>(/.*)?"
+
+# Apply SELinux context
+sudo restorecon -Rv <target>
+```
+
+See [here](https://www.serverlab.ca/tutorials/linux/web-servers-linux/configuring-selinux-policies-for-apache-web-servers/) for more details.
