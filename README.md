@@ -9,6 +9,7 @@ This API is a part of the main SNSF MARK16 [VRE](https://gitlab.sib.swiss/mark16
 * eTalk: https://gitlab.sib.swiss/mark16-vre-group/etalk
 
 SNSF MARK16 project: https://mark16.sib.swiss; DH+, SIB Swiss Institute of Bioinformatics, CH, 2020, ISSN 2673-9836
+See also License and Third Party documents.
 
 <!-- [TOC] -->
 <!-- {:toc} -->
