@@ -25,7 +25,7 @@ deploy_prod:
     url: $PROD_HOSTNAME
   script:
     - ssh-add <(echo "$PROD_SSH_PRIVATE_KEY")
-    - ssh $PROD_USERNAME@$PROD_HOSTNAME "cd $PROD_PATH && git checkout dev && git pull origin dev && cd htdocs && composer install && exit"
+    - ssh $PROD_USERNAME@$PROD_HOSTNAME "cd $PROD_PATH && git checkout master && git pull origin master && cd htdocs && composer install && exit"
   only:
     - master
   when: manual
