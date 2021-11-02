@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Simple data sync script
+#
+# Made by Jonathan Barda / SIB - 2020
+
 # [[ $# -eq 0 ]] && echo -e "\n /!\ READ THE CODE BEFORE EXEC /!\ \n" && exit
 
 # Config

@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Simple project deployment script [template version]
+#
+# Made by Jonathan Barda / SIB - 2021
+
 [[ $# -eq 0 ]] && echo -e "\n /!\ READ THE CODE BEFORE EXEC /!\ \n" && exit
 
 # Config

@@ -1086,4 +1086,3 @@ You can use them freely in your products & projects - print or digital, commerci
 This isn't legal advice, please consider consulting a lawyer and see the full license for all details. 
 ******************************************************************************
 END OF NOTO-SANS-COPTIC NOTICES, INFORMATION, AND LICENSE
-

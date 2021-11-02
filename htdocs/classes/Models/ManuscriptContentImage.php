@@ -145,7 +145,7 @@ class ManuscriptContentImage extends ManuscriptContent
         $width = $details['size'][0];
         $height = $details['size'][1];
         $extension = $details['info']['extension'];
-        if ($extension != 'jpg' && $extension != 'jpeg') {
+        if ($extension !== 'jpg' && $extension !== 'jpeg') {
             return 'Error Extension: ' . $extension;
         }
         $img = imagecreatefromjpeg($original_image);
@@ -232,7 +232,7 @@ class ManuscriptContentImage extends ManuscriptContent
 
         $original_image = $this->getFullPath(true);
         $extension = $details['info']['extension'];
-        if ($extension != 'jpg' && $extension != 'jpeg') {
+        if ($extension !== 'jpg' && $extension !== 'jpeg') {
             return 'Error Extension: ' . $extension;
         }
         $src = imagecreatefromjpeg($original_image);
