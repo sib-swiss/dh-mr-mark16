@@ -1,6 +1,6 @@
 # MARK16 MR API
 
-(C) Copyright SIB Swiss Institute of Bioinformatics 2021, available from [text](https://github.com/sib-swiss/dh-mr-mark16) under GNU GPL v3.0 See LICENSE.
+(C) Copyright SIB Swiss Institute of Bioinformatics 2021, available from https://github.com/sib-swiss/dh-mr-mark16 under GNU GPL v3.0 See LICENSE.
 
 This API is a part of the main SNSF MARK16 [VRE](https://gitlab.sib.swiss/mark16-vre-group) project:
 
