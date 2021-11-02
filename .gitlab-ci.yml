@@ -29,3 +29,11 @@ deploy_prod:
   only:
     - master
   when: manual
+
+merge-master-to-mirrored:
+  only:
+    - master
+  script:
+    - git checkout mirrored
+    - git merge master
+    - git push origin mirrored
