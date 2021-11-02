@@ -34,7 +34,7 @@ merge-master-to-mirrored:
   only:
     - master
   script:
-    - git clone --single-branch --branch=mirrored git@gitlab.sib.swiss:mark16-vre-group/manuscript.git
+    - git clone --single-branch --branch=mirrored $OAUTH2_REPO_URL
     - cd manuscript
     - git config remote.origin.fetch "+refs/heads/master:refs/remotes/origin/master"
     - git fetch origin
