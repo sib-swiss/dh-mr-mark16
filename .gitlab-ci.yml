@@ -40,4 +40,6 @@ merge-master-to-mirrored:
     - git fetch origin
     - MESSAGE=$(git log -n 1 origin/master)
     - git merge origin/master -m "${MESSAGE}"
+    - git config --global user.email "silvano.alda@sib.swiss"
+    - git config --global user.name "Pipeline"
     - git push origin mirrored
