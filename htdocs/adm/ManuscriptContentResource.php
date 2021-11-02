@@ -149,7 +149,7 @@ class ManuscriptContentResource extends BaseResource
         }
 
         // update copyright
-        if ($this->f3->get('POST.manuscript_folio_image_copyright') && $this->f3->get('POST.manuscript_folio_image_copyright') != $manuscripContentImage->getCopyrightText()) {
+        if ($this->f3->get('POST.manuscript_folio_image_copyright') && $this->f3->get('POST.manuscript_folio_image_copyright') !== $manuscripContentImage->getCopyrightText()) {
             // check if there is original
             if (!$manuscripContentImage->originalExists()) {
                 $response->debug['actions'][] = 'orignal not exist: ' . $manuscripContentImage->getImagePath(true);
@@ -214,7 +214,7 @@ class ManuscriptContentResource extends BaseResource
         $manuscripContentParnter = ManuscriptContentImage::findBy('id', $id);
 
         $newUrl = $this->f3->get('POST.manuscript_partner_url');
-        if ($newUrl != $manuscripContentParnter->url) {
+        if ($newUrl !== $manuscripContentParnter->url) {
             $response->success = true;
             $response->debug['actions'][] = $manuscripContentParnter->url . '   TO   ' . $newUrl;
             $manuscripContentParnter->url = $newUrl;

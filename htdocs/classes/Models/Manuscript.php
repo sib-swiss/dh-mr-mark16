@@ -138,7 +138,7 @@ class Manuscript extends Mapper
         if (is_dir($path)) {
             $images = array_merge($images, glob($path . '/*.{jpg,jpeg,png,gif}', GLOB_BRACE));
             foreach (scandir($path) as $contentPath) {
-                if (is_dir($path . '/' . $contentPath) && $contentPath != '.' && $contentPath != '..') {
+                if (is_dir($path . '/' . $contentPath) && $contentPath !== '.' && $contentPath !== '..') {
                     $images = array_merge($images, glob($path . '/' . $contentPath . '/*.{jpg,jpeg,png,gif}', GLOB_BRACE));
                 }
             }
@@ -195,7 +195,7 @@ class Manuscript extends Mapper
     /**
      * return nakala url
      * metadata collection xml
-     * ex: for GA 03 https://api.nakala.fr/datas/11280/73240506
+     * ex: for GA 099 page 161 and page 162 https://api.nakala.fr/datas/10.34847/nkl.d3d1coro
      *
      * @return string
      */
@@ -209,11 +209,35 @@ class Manuscript extends Mapper
 
             // Rewrite nakala page URL to add the missing part
             $nakala_page_url = str_replace('data', 'page/data', $nakala_page_url);
+
+            // Return rewritten nakala URL from old manuscripts format
             return $nakala_page_url;
         }
 
-        // Retrieve nakala URL from new format
+        // Return nakala URL from new manuscripts format
         return $this->url;
+    }
+
+    /**
+     * return nakala public url
+     * metadata collection page
+     * ex: for GA 099 page 161 and page 162 https://nakala.fr/10.34847/nkl.d3d1coro
+     *
+     * @return string
+     */
+    public function getNakalaPublicUrl()
+    {
+        // Get Nakala document URL from API
+        $nakala_doc_url_from_api = $this->getNakalaUrl();
+
+        // Rewrite base URL first
+        $nakala_public_url = str_replace('api.', '', $nakala_doc_url_from_api);
+
+        // Remove the extra '/datas' from the URL
+        $nakala_public_url = str_replace('/datas', '', $nakala_public_url);
+
+        // Return rewritten nakala URL from new manuscripts format or default URL
+        return (isset($nakala_public_url) && !empty($nakala_public_url) ? $nakala_public_url : $nakala_doc_url_from_api);
     }
 
     /**

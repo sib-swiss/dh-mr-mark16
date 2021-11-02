@@ -1,8 +1,12 @@
 #!/bin/bash
 
+# Simple PHP version switch script
+#
+# Made by Jonathan Barda / SIB - 2020
+#
 # References:
-# https://www.tecmint.com/install-different-php-versions-in-ubuntu/
-# https://www.cyberciti.biz/faq/grep-regular-expressions/
+# - https://www.tecmint.com/install-different-php-versions-in-ubuntu/
+# - https://www.cyberciti.biz/faq/grep-regular-expressions/
 
 ((!$#)) && echo -e "\nUsage: $0 <version>\n" && exit 1
 

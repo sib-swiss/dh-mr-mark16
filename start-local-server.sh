@@ -1,8 +1,12 @@
 #!/bin/bash
 
-# Try to speed-up the local server with:
-# https://stackoverflow.com/questions/30238602/how-to-execute-a-php-file-using-a-php5-fpm-pool-socket
-# https://stackoverflow.com/questions/54417514/how-to-get-php-fpm-status-via-cli-or-pure-fastcgi
+# Simple PHP local webserver bootstrap script
+#
+# Made by Jonathan Barda / SIB - 2020
+#
+# Accelerated PHP local server with:
+# - https://stackoverflow.com/questions/30238602/how-to-execute-a-php-file-using-a-php5-fpm-pool-socket
+# - https://stackoverflow.com/questions/54417514/how-to-get-php-fpm-status-via-cli-or-pure-fastcgi
 
 # Config
 LISTEN_ADDRESS=localhost
