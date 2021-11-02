@@ -4,7 +4,6 @@ before_script:
   # Setup SSH deploy keys
   - "which ssh-agent || ( apt-get install -qq openssh-client )"
   - eval $(ssh-agent -s)
-  - ssh-add <(echo "$SSH_PRIVATE_KEY")
   - mkdir -p ~/.ssh
   - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
 
@@ -14,6 +13,7 @@ deploy_dev:
     name: dev
     url: $DEV_HOSTNAME
   script:
+    - ssh-add <(echo "$SSH_PRIVATE_KEY")
     - ssh $DEV_USERNAME@$DEV_HOSTNAME "cd $DEV_PATH && git checkout dev && git pull origin dev && cd htdocs && composer install && exit"
   only:
     - dev
@@ -24,6 +24,7 @@ deploy_prod:
     name: prod
     url: $PROD_HOSTNAME
   script:
+    - ssh-add <(echo "$PROD_SSH_PRIVATE_KEY")
     - ssh $PROD_USERNAME@$PROD_HOSTNAME "cd $PROD_PATH && git checkout dev && git pull origin dev && cd htdocs && composer install && exit"
   only:
     - master
