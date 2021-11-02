@@ -172,7 +172,7 @@ class ManuscriptContentImage extends ManuscriptContent
                 $fontSize,
                 0,
                 10,
-                $height - 27,
+                $height - $fontSize * 2,
                 $black,
                 $font,
                 $text
