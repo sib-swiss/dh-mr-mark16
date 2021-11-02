@@ -34,10 +34,12 @@ merge-master-to-mirrored:
   only:
     - master
   script:
-    - git clone --single-branch --branch=mirrored git@gitlab.sib.swiss:mark16-vre-group/manuscript.git
+    - git clone --single-branch --branch=mirrored $OAUTH2_REPO_URL
     - cd manuscript
     - git config remote.origin.fetch "+refs/heads/master:refs/remotes/origin/master"
     - git fetch origin
+    - git config --global user.email "silvano.alda@sib.swiss"
+    - git config --global user.name "Pipeline"
     - MESSAGE=$(git log -n 1 origin/master)
     - git merge origin/master -m "${MESSAGE}"
     - git push origin mirrored
