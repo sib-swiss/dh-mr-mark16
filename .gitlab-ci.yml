@@ -14,11 +14,7 @@ deploy_dev:
     name: dev
     url: $DEV_HOSTNAME
   script:
-    - ssh $DEV_USERNAME@$DEV_HOSTNAME "cd $DEV_PATH \
-      && git checkout dev
-      && git pull origin dev 1
-      && cd htdocs 1
-      && composer install 1
+    - ssh $DEV_USERNAME@$DEV_HOSTNAME "cd $DEV_PATH && git checkout dev && git pull origin dev && cd htdocs && composer install && exit"
   only:
     - dev
 
@@ -28,11 +24,7 @@ deploy_prod:
     name: prod
     url: $PROD_HOSTNAME
   script:
-    - ssh $PROD_USERNAME@$PROD_HOSTNAME "cd $PROD_PATH \
-      && git checkout master
-      && git pull origin master 1
-      && cd htdocs 1
-      && composer install 1
+    - ssh $PROD_USERNAME@$PROD_HOSTNAME "cd $PROD_PATH && git checkout dev && git pull origin dev && cd htdocs && composer install && exit"
   only:
     - master
   when: manual
