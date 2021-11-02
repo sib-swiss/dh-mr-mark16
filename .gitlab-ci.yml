@@ -1,14 +1,13 @@
-
 before_script:
   - apt-get update -qq
   - apt-get install -qq git
   # Setup SSH deploy keys
-  - 'which ssh-agent || ( apt-get install -qq openssh-client )'
+  - "which ssh-agent || ( apt-get install -qq openssh-client )"
   - eval $(ssh-agent -s)
   - ssh-add <(echo "$SSH_PRIVATE_KEY")
   - mkdir -p ~/.ssh
   - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
-    
+
 deploy_dev:
   type: deploy
   environment:
@@ -16,15 +15,10 @@ deploy_dev:
     url: $DEV_HOSTNAME
   script:
     - ssh $DEV_USERNAME@$DEV_HOSTNAME "cd $DEV_PATH \
-        && git checkout dev
-        && git pull origin dev 1
-        && cd htdocs 1
-        && composer install 1
-        && if test $(curl --silent --output /dev/stderr --write-out "%{http_code}" https://$DEV_HOSTNAME) -ne 200; \
-        && then \
-        && echo "STATUS CODE NOT 200: ${http_code}"
-        && exit 1 \
-        && fi  
+      && git checkout dev
+      && git pull origin dev 1
+      && cd htdocs 1
+      && composer install 1
   only:
     - dev
 
@@ -35,10 +29,10 @@ deploy_prod:
     url: $PROD_HOSTNAME
   script:
     - ssh $PROD_USERNAME@$PROD_HOSTNAME "cd $PROD_PATH \
-        && git checkout master
-        && git pull origin master 1
-        && cd htdocs 1
-        && composer install 1       
+      && git checkout master
+      && git pull origin master 1
+      && cd htdocs 1
+      && composer install 1
   only:
     - master
-  when: manual 
+  when: manual
