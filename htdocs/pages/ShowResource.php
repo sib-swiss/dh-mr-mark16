@@ -15,7 +15,7 @@ class ShowResource extends BaseResource
             return $this->returnResponse('Manuscript Not found');
         }
 
-        if ($manuscript->published != 1) {
+        if ((bool)$manuscript->published !== true) {
             return $this->returnResponse('Manuscript Not Pulished');
         }
         $this->f3->set('template_layout', 'ui/templates/layout.html');

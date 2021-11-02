@@ -24,6 +24,10 @@ class BackendTest extends TestCase
             'position' => ''
         ];
         $this->test = new Test();
+        include(__DIR__ . '/../inc/config.php');
+
+        $_SERVER['PHP_AUTH_USER'] = $app_config->admin->username;
+        $_SERVER['PHP_AUTH_PW'] =  $app_config->admin->password;
     }
 
     /**

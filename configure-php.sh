@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Simple PHP configuration script
+#
+# Made by Jonathan Barda / SIB - 2020
+#
 # TODO: Implement ini file reader
 
 # Config

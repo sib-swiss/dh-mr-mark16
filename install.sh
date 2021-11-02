@@ -1,9 +1,8 @@
 #!/bin/bash
 
-# References:
-# https://getcomposer.org/doc/faqs/how-to-install-composer-programmatically.md
-# https://github.com/composer/getcomposer.org/commits/master
-# https://github.com/composer/getcomposer.org/commit/e3e43bde99447de1c13da5d1027545be81736b27
+# Simple project install script
+#
+# Made by Jonathan Barda / SIB - 2020
 
 # Config
 PHP_VER="7.4"

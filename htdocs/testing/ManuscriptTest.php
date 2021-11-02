@@ -57,6 +57,38 @@ class ManuscriptTest extends TestCase
         }
     }
 
+    public function testManuscriptGetNakalaPublicUrl()
+    {
+        $manuscripts = [
+            'GA2604' => 'https://api.nakala.fr/datas/10.34847/nkl.cfac1n0c'
+        ];
+        $this->test = new Test();
+        foreach ($manuscripts as $name => $url) {
+            $manuscript = Manuscript::findBy('name', $name);
+            if (!$manuscript) {
+                (new ManuscriptContentNakalaSeeder($url))->handle();
+                $manuscript = Manuscript::findBy('name', $name);
+            }
+
+            $this->test->expect(
+                $manuscript->name == $name,
+                $manuscript->name . ' Should be ' . $name
+            );
+            $getNakalaPublicUrl = $manuscript->getNakalaPublicUrl();
+            $this->test->expect(
+                $getNakalaPublicUrl == $url,
+                $getNakalaPublicUrl . ' Should be ' . $url
+            );
+
+            $this->test->expect(
+                count($manuscript->contentsHtml()) > 0,
+                $manuscript->name . ' count(contentsHtml()) Should > 0 '
+            );
+
+            return $this->test;
+        }
+    }
+
     public function XXtestPublishedAfterSeeding()
     {
         $this->checkDbSeeded(true);
