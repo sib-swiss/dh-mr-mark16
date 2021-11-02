@@ -148,7 +148,7 @@ class ManuscriptContentHtml extends ManuscriptContent
 
         $html = str_replace(
             '<div class="msstrans"',
-            '<div class="msstrans" style="width: 100%; font-size: 100% !important; text-size-adjust: 100% !important; background-color: ' . $this->f3->get('MR_CONFIG')->iframe->background . ';"',
+            '<div class="msstrans" style="width: max-content; font-size: 100% !important; text-size-adjust: 100% !important; background-color: ' . $this->f3->get('MR_CONFIG')->iframe->background . ';"',
             $html
         );
 
