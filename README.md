@@ -1,14 +1,9 @@
 # MARK16 MR API
 
-(C) Copyright SIB Swiss Institute of Bioinformatics 2021, available from https://github.com/sib-swiss/pftools3 under GNU GPL v3.0 See LICENSE.
+(C) Copyright SIB Swiss Institute of Bioinformatics 2021, available from https://github.com/sib-swiss/dh-mr-mark16 under GNU GPL v3.0 See LICENSE and THIRD-PARTY-NOTICE.
 
-This API is a part of the main SNSF MARK16 [VRE](https://gitlab.sib.swiss/mark16-vre-group) project:
-
-* VRE: https://gitlab.isb-sib.ch/mark16-vre-group/vre
-* Manuscript Room (this project): https://gitlab.sib.swiss/mark16-vre-group/manuscript
-* eTalk: https://gitlab.sib.swiss/mark16-vre-group/etalk
-
-SNSF MARK16 project: https://mark16.sib.swiss; DH+, SIB Swiss Institute of Bioinformatics, CH, 2020, ISSN 2673-9836
+This API is a part of the main SNSF MARK16 project: https://mark16.sib.swiss
+DH+, SIB Swiss Institute of Bioinformatics, CH, 2020, ISSN 2673-9836
 
 <!-- [TOC] -->
 <!-- {:toc} -->

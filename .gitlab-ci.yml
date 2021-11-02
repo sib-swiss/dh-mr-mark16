@@ -29,3 +29,15 @@ deploy_prod:
   only:
     - master
   when: manual
+
+merge-master-to-mirrored:
+  only:
+    - master
+  script:
+    - git clone --single-branch --branch=mirrored git@gitlab.sib.swiss:mark16-vre-group/manuscript.git
+    - cd manuscript
+    - git config remote.origin.fetch "+refs/heads/master:refs/remotes/origin/master"
+    - git fetch origin
+    - MESSAGE=$(git log -n 1 origin/master)
+    - git merge origin/master -m "${MESSAGE}"
+    - git push origin mirrored
