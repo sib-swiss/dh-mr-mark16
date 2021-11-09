@@ -15,6 +15,7 @@ deploy_dev:
   script:
     - ssh-add <(echo "$SSH_PRIVATE_KEY")
     - ssh $DEV_USERNAME@$DEV_HOSTNAME "cd $DEV_PATH && git checkout dev && git pull origin dev && cd htdocs && composer install && exit"
+    - curl '$DEV_URL/admin/cache/clear' -H 'Authorization: Basic $BASE64_ADMIN_AUTH' 
   only:
     - dev
 
@@ -26,6 +27,7 @@ deploy_prod:
   script:
     - ssh-add <(echo "$PROD_SSH_PRIVATE_KEY")
     - ssh $PROD_USERNAME@$PROD_HOSTNAME "cd $PROD_PATH && git checkout master && git pull origin master && cd htdocs && composer install && exit"
+    - curl '$PROD_URL/admin/cache/clear' -H 'Authorization: Basic $BASE64_ADMIN_AUTH' 
   only:
     - master
   when: manual
