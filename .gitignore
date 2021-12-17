@@ -8,4 +8,4 @@ deploy.dev.conf
 deploy-on-dev.sh
 deploy.prod.conf
 deploy-on-prod.sh
-logs    #   apache default log folder
+logs
