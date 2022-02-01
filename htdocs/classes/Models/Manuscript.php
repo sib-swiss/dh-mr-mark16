@@ -673,8 +673,10 @@ class Manuscript extends Mapper
         $imagesAssociatedToFolios = [];
         foreach ($this->contentsFolios() as $contentsFolio) {
             $folioImage = $contentsFolio->getFolioImage();
-            $imagesAssociatedToFolios[] = $folioImage->getImagePath(true);
-            $imagesAssociatedToFolios[] = $folioImage->getImagePath();
+            if ($folioImage) {
+                $imagesAssociatedToFolios[] = $folioImage->getImagePath(true);
+                $imagesAssociatedToFolios[] = $folioImage->getImagePath();
+            }
             // $contentsFolio()
         }
         foreach ($this->contentPartners() as $contentPartner) {
