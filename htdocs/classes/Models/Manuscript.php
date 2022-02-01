@@ -524,14 +524,14 @@ class Manuscript extends Mapper
             $f3->set('prevPage', $f3->get('pageno') > 1 ? '?pageno=' . ($f3->get('pageno') - 1) : null);
             $f3->set('nextPage', $f3->get('pageno') < $f3->get('total_pages') ? '?pageno=' . ($f3->get('pageno') + 1) : null);
             return (new static())
-                    ->find(
-                        ['published=?', $published ? 1 : 0],
-                        [
-                            'order' => 'temporal ASC',
-                            'offset' => $offset,
-                            'limit' => $f3->get('perpage')
-                        ]
-                    );
+                ->find(
+                    ['published=?', $published ? 1 : 0],
+                    [
+                        'order' => 'temporal ASC',
+                        'offset' => $offset,
+                        'limit' => $f3->get('perpage')
+                    ]
+                );
         }
 
         return (new static())
@@ -638,5 +638,64 @@ class Manuscript extends Mapper
     public function getDisplayname()
     {
         return $this->getMeta('dcterm-bibliographicCitation');
+    }
+
+
+    /**
+     * clean orphan contentsImage and files
+     *
+     * @return array
+     */
+    public function clean(): array
+    {
+        $return = [
+            'contentImages' => []
+        ];
+        $folioNames = [];
+        foreach ($this->contentsFolios() as $contentsFolio) {
+            $folioNames[] = $contentsFolio->getFolioName();
+        }
+        $contentImagesAssociatedWithFolio = [];
+        foreach ($this->contentsImage() as $contentImages) {
+            if (!in_array($contentImages->getFolioName(), $folioNames)) {
+                $return['contentImages'][] = $contentImages->getImagePath();
+                $contentImages->remove();
+                // it is in folio but duplicated row
+            } else if (in_array($contentImages->getFolioName(), $contentImagesAssociatedWithFolio)) {
+                $return['contentImages'][] = $contentImages->getImagePath() .  " [keeping files as duplicated record]";
+                $contentImages->remove(false);
+            } else {
+                $contentImagesAssociatedWithFolio[] = $contentImages->getFolioName();
+            }
+        }
+
+        // FS
+        $imagesAssociatedToFolios = [];
+        foreach ($this->contentsFolios() as $contentsFolio) {
+            $folioImage = $contentsFolio->getFolioImage();
+            if ($folioImage) {
+                $imagesAssociatedToFolios[] = $folioImage->getImagePath(true);
+                $imagesAssociatedToFolios[] = $folioImage->getImagePath();
+            }
+            // $contentsFolio()
+        }
+        foreach ($this->contentPartners() as $contentPartner) {
+            $imagesAssociatedToFolios[] = $contentPartner->getImagePath(true);
+            $imagesAssociatedToFolios[] = $contentPartner->getImagePath();
+        }
+        $orphanFiles = array_diff(
+            $this->filesystemsImages(),
+            $imagesAssociatedToFolios
+        );
+        $return = array_merge($return, [
+            'imagesAssociatedToFolios' => $imagesAssociatedToFolios,
+            'filesystemsImages' => $this->filesystemsImages(),
+            'orphanFiles' => $orphanFiles
+        ]);
+        foreach ($orphanFiles as $orphanFile) {
+            unlink($orphanFile);
+        }
+
+        return $return;
     }
 }
