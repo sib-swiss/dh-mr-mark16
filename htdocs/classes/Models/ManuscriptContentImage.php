@@ -15,9 +15,9 @@ class ManuscriptContentImage extends ManuscriptContent
      * get fullpath of image
      * if not name then return _original fullpath
      *
-     * @return void
+     * @return string
      */
-    private function getFullPath(bool $original = false)
+    private function getFullPath(bool $original = false): string
     {
         // return the name, ex:
         // $this->f3->get('MR_DATA_PATH'). /GA1210/GA1210_f.104v/GA1210_f.104v.jpg
@@ -253,18 +253,31 @@ class ManuscriptContentImage extends ManuscriptContent
     }
 
     /**
-     * remove record from db and its related files (ex. delete imagefolios and partners)
+     * remove record from db 
+     * and its related files (ex. delete imagefolios and partners)
      *
      * @return void
      */
-    public function remove()
+    public function remove(bool $deleteFiles = true)
     {
-        if (is_file($this->getFullPath(true))) {
-            unlink($this->getFullPath(true));
+        if ($deleteFiles) {
+            if (is_file($this->getFullPath(true))) {
+                unlink($this->getFullPath(true));
+            }
+            if (is_file($this->getFullPath())) {
+                unlink($this->getFullPath());
+            }
+            $dirname = dirname($this->getImagePath());
+            if ($dirname !== $this->manuscript->getFullPath()) {
+                array_map('unlink', glob("$dirname/*.*"));
+                //echo  "\n *** {$dirname} ";
+                if (is_dir($dirname)) {
+                    rmdir($dirname);
+                }
+            }
         }
-        if (is_file($this->getFullPath())) {
-            unlink($this->getFullPath());
-        }
+
+
         $this->erase();
     }
 }
