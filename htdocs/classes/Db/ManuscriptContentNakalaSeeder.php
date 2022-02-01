@@ -91,6 +91,9 @@ class ManuscriptContentNakalaSeeder
             }
         }
 
+        // clean manuscript from orphan content records and/or files in fs
+        $manuscript->clean();
+
         return [
             'success' => true,
             'data' => json_decode($manuscript->content),
@@ -98,7 +101,13 @@ class ManuscriptContentNakalaSeeder
         ];
     }
 
-    public function seedManuscript($manuscripData)
+    /**
+     * seed Manuscript
+     *
+     * @param [array] $manuscripData
+     * @return Manuscript
+     */
+    public function seedManuscript($manuscripData): Manuscript
     {
         $manuscript = Manuscript::findBy('name', $manuscripData['name']);
         if ($manuscript) {
