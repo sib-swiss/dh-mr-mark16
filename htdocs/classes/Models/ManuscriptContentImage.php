@@ -157,13 +157,7 @@ class ManuscriptContentImage extends ManuscriptContent
             $white = imagecolorallocatealpha($img, 255, 255, 255, 50);
             $font = $this->f3->get('MR_PATH') . '/resources/fonts/MR/Gentium_Basic/GentiumBasic-Regular.ttf';
 
-            //$logger = new Log(str_replace('\\', '-', __CLASS__) . '.log');
-            $fontSize = 12;
-            if ($width > 1500) {
-                $fontSize = 24;
-            } elseif ($width > 1000) {
-                $fontSize = 18;
-            }
+            $fontSize = $this->getCopyrightFontSize();
             //$logger->write($this->name . ' w: ' . $width . ' fontSize: ' . $fontSize);
 
             imagefilledrectangle($img, 0, $height - 50, $width, $height, $white);
@@ -205,6 +199,33 @@ class ManuscriptContentImage extends ManuscriptContent
 
         return '';
     }
+
+    /**
+     * return copyright font size
+     *
+     * @return string
+     */
+    public function getCopyrightFontSize()
+    {
+        $contentDecoded = json_decode($this->content);
+        if ($contentDecoded && $contentDecoded->fontsize) {
+            return $contentDecoded->fontsize;
+        }
+
+        $details = $this->details(true);
+        $width = $details['size'][0];
+
+        $fontSize = 12;
+        if ($width > 1500) {
+            $fontSize = 24;
+        } elseif ($width > 1000) {
+            $fontSize = 18;
+        }
+
+        return $fontSize;
+    }
+
+
 
     /**
      * resizeOriginalImage if needed: check max width + height
