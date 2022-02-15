@@ -60,7 +60,7 @@ class ManuscriptTest extends TestCase
     public function testManuscriptGetNakalaPublicUrl()
     {
         $manuscripts = [
-            'GA2604' => 'https://api.nakala.fr/datas/10.34847/nkl.cfac1n0c'
+            'GA2604' => 'https://nakala.fr/10.34847/nkl.cfac1n0c'
         ];
         $this->test = new Test();
         foreach ($manuscripts as $name => $url) {

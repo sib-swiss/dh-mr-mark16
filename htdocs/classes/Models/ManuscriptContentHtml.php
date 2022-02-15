@@ -2,6 +2,9 @@
 
 namespace classes\Models;
 
+use DOMDocument;
+use ErrorException;
+
 /**
  * ManuscriptContentHtml
  * Dependedencies: Fat free framework
@@ -30,12 +33,36 @@ class ManuscriptContentHtml extends ManuscriptContent
         return $this->manuscript()->getLangCode();
     }
 
+
     /**
-     * return altered HTML
+     * return altered HTML using DOMDocument
      *
      * @return string
      */
-    public function getAlteredHtml()
+    public function getAlteredHtml():string
+    {
+        libxml_use_internal_errors(true);
+        $dom = new DOMDocument();
+
+        $html = $this->getAlteredHtmlOld();
+
+
+        $dom->loadHTML(mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8'));
+
+        $dom->getElementsByTagName('body')[0]
+            ->setAttribute('style', 'margin: 0 !important; line-height: 1.5 !important; color: ' . $this->f3->get('MR_CONFIG')->iframe->color . '; background-color: ' . $this->f3->get('MR_CONFIG')->iframe->background . ';');
+
+        $content =  $dom->saveHTML($dom->documentElement);
+
+        return $content;
+    }
+
+    /**
+     * return altered HTML using replace
+     *
+     * @return string
+     */
+    public function getAlteredHtmlOld()
     {
         // Detect folio language
         $folio_lang = $this->getLangCode();
@@ -75,8 +102,9 @@ class ManuscriptContentHtml extends ManuscriptContent
             '<html style="margin-top: -16px;" ',
             $html
         );
+
         $html = str_replace(
-            ['<body>', '<body lang="la">', '<body lang="grc">'],
+            ['<body>', '<body lang="la">', '<body lang="grc">', '<body style="margin: 0 !important; line-height: 1.5 !important; color: #212529;">'],
             // '<body style="margin: 0 !important; line-height: 1.5 !important; color: #212529; background-color: #FAE6C3;">',
             '<body style="margin: 0 !important; line-height: 1.5 !important; color: ' . $this->f3->get('MR_CONFIG')->iframe->color . '; background-color: ' . $this->f3->get('MR_CONFIG')->iframe->background . ';">',
             $html

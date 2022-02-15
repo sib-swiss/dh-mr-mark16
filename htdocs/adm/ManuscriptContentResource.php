@@ -158,9 +158,22 @@ class ManuscriptContentResource extends BaseResource
                 return $this->returnResponse($response);
             }
             $response->debug['actions'][] = 'update copyright: FROM ' . $manuscripContentImage->getCopyrightText() . ' TO ' . $this->f3->get('POST.manuscript_folio_image_copyright');
-            $manuscripContentImage->updateContent(['copyright' => $this->f3->get('POST.manuscript_folio_image_copyright')]);
+            $manuscripContentImage->updateContent([
+                'copyright' => $this->f3->get('POST.manuscript_folio_image_copyright')
+            ]);
             $response->debug['actions'][] = 'updated copyright: ' . $manuscripContentImage->getCopyrightText();
         }
+
+        // update copyright
+        if ($this->f3->get('POST.manuscript_folio_image_copyright_fontsize') && $this->f3->get('POST.manuscript_folio_image_copyright_fontsize') !== $manuscripContentImage->getCopyrightFontSize()) {
+
+            $response->debug['actions'][] = 'update copyright FontSize: FROM ' . $manuscripContentImage->getCopyrightFontSize() . ' TO ' . $this->f3->get('POST.manuscript_folio_image_copyright_fontsize');
+            $manuscripContentImage->updateContent([
+                'fontsize'=> $this->f3->get('POST.manuscript_folio_image_copyright_fontsize')
+            ]);
+            $response->debug['actions'][] = 'updated copyright fontSize: ' . $manuscripContentImage->getCopyrightFontSize();
+        }
+        
 
         $manuscripContentImage->updateFromOriginal();
         $response->debug['actions'][] = 'updateFromOriginal';
