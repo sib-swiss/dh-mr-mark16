@@ -168,6 +168,7 @@ if (isset($params['id'])) {
 													$folio_image_content = $folio_image->imageContent();
 													$folio_image_type = $folio_image->imageType();
 													$folio_image_text = $folio_image->getCopyrightText();
+													$folio_image_text_font_size = $folio_image->getCopyrightFontSize();
 												}
 
 												// Image card
@@ -250,10 +251,23 @@ if (isset($params['id'])) {
 												$html_modal_image_edit .= "\t\t\t\t\t\t\t\t" . '</div>' . PHP_EOL;
 												$html_modal_image_edit .= "\t\t\t\t\t\t\t" . '</div>' . PHP_EOL;
 												$html_modal_image_edit .= "\t\t\t\t\t\t" . '</div>' . PHP_EOL;
+												
+												// copyright text
 												$html_modal_image_edit .= "\t\t\t\t\t\t" . '<div class="required field">' . PHP_EOL;
 												$html_modal_image_edit .= "\t\t\t\t\t\t\t" . '<label>Text</label>' . PHP_EOL;
 												$html_modal_image_edit .= "\t\t\t\t\t\t\t" . '<textarea class="manuscript folio image copyright" name="manuscript_folio_image_copyright" placeholder="Copyright text to put on the image" required>' . $folio_image_text . '</textarea>' . PHP_EOL;
 												$html_modal_image_edit .= "\t\t\t\t\t\t" . '</div>' . PHP_EOL;
+
+												// copyright font size
+												$html_modal_image_edit .= "\t\t\t\t\t\t" . '<div class="required field">' . PHP_EOL;
+												$html_modal_image_edit .= "\t\t\t\t\t\t\t" . '<label>Font Size</label>' . PHP_EOL;
+												$html_modal_image_edit .= "\t\t\t\t\t\t\t" . '<select name="manuscript_folio_image_copyright_fontsize">';
+												foreach(range(12, 40) as $fontSize){
+													$html_modal_image_edit .=  '<option value="'.$fontSize.'" '.($fontSize===$folio_image_text_font_size ?'selected':'').'>'.$fontSize.'px</option>';
+												}
+												$html_modal_image_edit .=  '</select>' . PHP_EOL;
+												$html_modal_image_edit .= "\t\t\t\t\t\t" . '</div>' . PHP_EOL;
+
 												$html_modal_image_edit .= "\t\t\t\t\t\t" . '<div class="field" data-tooltip="Feature disabled for the moment" data-position="top center">' . PHP_EOL;
 												$html_modal_image_edit .= "\t\t\t\t\t\t\t" . '<label>Position</label>' . PHP_EOL;
 												$html_modal_image_edit .= "\t\t\t\t\t\t\t" . '<div class="ui selection disabled dropdown">' . PHP_EOL;

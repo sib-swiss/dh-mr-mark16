@@ -142,7 +142,7 @@ class BackendTest extends TestCase
     {
         $this->setup();
 
-        $file = $this->f3->get('MR_DATA_PATH') . '/SA14L/sa14L_f.5v/sa14L_f.5v.jpg';
+        $file = $this->f3->get('MR_DATA_PATH') . '/SA14L/sa14L_f.5v.jpg';
         $this->postData['manuscript_folio_image_type'] = '';
         $this->postData['manuscript_folio_image_content'] = base64_encode(file_get_contents($file));
 
@@ -169,7 +169,7 @@ class BackendTest extends TestCase
     {
         $this->setup();
 
-        $file = $this->f3->get('MR_DATA_PATH') . '/SA14L/sa14L_f.5v/sa14L_f.5v.jpg';
+        $file = $this->f3->get('MR_DATA_PATH') . '/SA14L/sa14L_f.5v.jpg';
         $this->postData['manuscript_folio_image_type'] = '';
         $this->postData['manuscript_folio_image_content'] = base64_encode(file_get_contents($file));
         $this->postData['manuscript_folio_image_copyright'] = '';
