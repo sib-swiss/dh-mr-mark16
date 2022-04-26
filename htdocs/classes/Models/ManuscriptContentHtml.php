@@ -3,6 +3,7 @@
 namespace classes\Models;
 
 use DOMDocument;
+use DOMXPath;
 use ErrorException;
 
 /**
@@ -39,7 +40,7 @@ class ManuscriptContentHtml extends ManuscriptContent
      *
      * @return string
      */
-    public function getAlteredHtml():string
+    public function getAlteredHtml(): string
     {
         libxml_use_internal_errors(true);
         $dom = new DOMDocument();
@@ -51,6 +52,23 @@ class ManuscriptContentHtml extends ManuscriptContent
 
         $dom->getElementsByTagName('body')[0]
             ->setAttribute('style', 'margin: 0 !important; line-height: 1.5 !important; color: ' . $this->f3->get('MR_CONFIG')->iframe->color . '; background-color: ' . $this->f3->get('MR_CONFIG')->iframe->background . ';');
+
+
+        // fix mstrans class overriding/adding linine css styles
+        $finder = new DOMXPath($dom);
+        $classname = "msstrans";
+        foreach ($finder->query("//*[contains(concat(' ', normalize-space(@class), ' '), ' $classname ')]") as $node) {
+            $styles = explode(";", $node->getAttribute('style'));
+            array_push(
+                $styles,
+                'width: max-content',
+                'font-size: 100% !important',
+                'text-size-adjust: 100% !important',
+                'background-color: ' . $this->f3->get('MR_CONFIG')->iframe->background
+            );
+            $updatesStyle = implode("; ", array_filter($styles));
+            $node->setAttribute('style', $updatesStyle);
+        }
 
         $content =  $dom->saveHTML($dom->documentElement);
 
@@ -174,11 +192,12 @@ class ManuscriptContentHtml extends ManuscriptContent
             $html
         );
 
-        $html = str_replace(
-            '<div class="msstrans"',
-            '<div class="msstrans" style="width: max-content; font-size: 100% !important; text-size-adjust: 100% !important; background-color: ' . $this->f3->get('MR_CONFIG')->iframe->background . ';"',
-            $html
-        );
+        // handled on line 60
+        // $html = str_replace(
+        //     '<div class="msstrans"',
+        //     '<div class="msstrans" style="width: max-content; font-size: 100% !important; text-size-adjust: 100% !important; background-color: ' . $this->f3->get('MR_CONFIG')->iframe->background . ';"',
+        //     $html
+        // );
 
         // Change relative paths
         $html = str_replace('/community/fonts', '/resources/fonts/NTVMR', $html);
