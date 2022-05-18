@@ -391,17 +391,21 @@ class Manuscript extends Mapper
 
         // Manuscript partner URL definition
         foreach ($known_partners as $partner) {
-            if ($this->f3->app_config->debug === true) {
-                echo '<!-- Searching static partner [' . $partner['id'] . '] / Manuscript partner [' . $this->getMeta('dcterm-temporal') . '] -->' . PHP_EOL;
-            }
+            // JSON config never loaded here, no the test below will fail and raise an error on PHP 8.1.x
+            // Needs to disable the test until further debugging
+            // if ($this->f3->app_config->debug === true) {
+            //     echo '<!-- Searching static partner [' . $partner['id'] . '] / Manuscript partner [' . $this->getMeta('dcterm-temporal') . '] -->' . PHP_EOL;
+            // }
 
             if ((int)$partner['id'] === (int)$this->getMeta('dcterm-temporal')) {
                 // Define new partner URL from list
                 $manuscript_partner_url = $partner['url'];
 
-                if ($this->f3->app_config->debug === true) {
-                    echo '<!-- Known partner URL: ' . $manuscript_partner_url . ' -->' . PHP_EOL;
-                }
+                // JSON config never loaded here, no the test below will fail and raise an error on PHP 8.1.x
+                // Needs to disable the test until further debugging
+                // if ($this->f3->app_config->debug === true) {
+                //     echo '<!-- Known partner URL: ' . $manuscript_partner_url . ' -->' . PHP_EOL;
+                // }
 
                 // Leave the loop once partner found
                 break;
@@ -413,9 +417,11 @@ class Manuscript extends Mapper
             // Define new partner URL from manuscript
             $manuscript_partner_url = parse_url($this->getMeta('dcterm-isVersionOf'));
 
-            if ($this->f3->app_config->debug === true) {
-                echo '<!-- Extracted partner URL: ' . print_r($manuscript_partner_url, true) . ' -->' . PHP_EOL;
-            }
+            // JSON config never loaded here, no the test below will fail and raise an error on PHP 8.1.x
+            // Needs to disable the test until further debugging
+            // if ($this->f3->app_config->debug === true) {
+            //     echo '<!-- Extracted partner URL: ' . print_r($manuscript_partner_url, true) . ' -->' . PHP_EOL;
+            // }
         }
         return $manuscript_partner_url;
     }
