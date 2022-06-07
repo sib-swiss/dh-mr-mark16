@@ -27,9 +27,8 @@ Do Not Translate or Localize
 17. MATERIALICONS (https://github.com/google/material-design-icons#license)
 18. GENTIUM (https://software.sil.org/gentium/)
 19. ANTINOOUWEB (https://www.evertype.com/fonts/coptic/) (https://github.com/sib-swiss/dh-mr-mark16/blob/main/htdocs/resources/fonts/NTVMR/antinoou-licence.txt)
-20. BOKAREIS (Fount created by Prof. Carla Falluomini, University of Perugia (IT), in licence GNU GPL v.3.0)
-21. PONOMAR (https://fontlibrary.org/en/font/ponomar-unicode)
-22. NOTO-SANS-COPTIC (https://fonts.google.com/noto/specimen/Noto+Sans+Coptic/about)
+20. PONOMAR (https://fontlibrary.org/en/font/ponomar-unicode)
+21. NOTO-SANS-COPTIC (https://fonts.google.com/noto/specimen/Noto+Sans+Coptic/about)
 
 FATFREE NOTICES, INFORMATION, AND LICENSE BEGIN HERE
 ******************************************************
@@ -1063,13 +1062,6 @@ Michael Everson, Evertype, Cnoc Sceichin, Leac an Anfa, Cathair na Mart, Co. Mha
 everson@evertype.com
 ******************************************************************************
 END OF ANTINOOUWEB NOTICES, INFORMATION, AND LICENSE
-
-
-BOKAREIS NOTICES, INFORMATION, AND LICENSE BEGIN HERE
-******************************************************************************
-Fount created by Prof. Carla Falluomini, University of Perugia (IT), in licence [GNU GPL v.3.0](https://www.gnu.org/licenses/gpl-3.0.fr.html). Inquiries about BOKAREIS have to be addressed to  <carla_falluomini@hotmail.com> 
-******************************************************************************
-END OF BOKAREIS NOTICES, INFORMATION, AND LICENSE
 
 
 PONOMAR NOTICES, INFORMATION, AND LICENSE BEGIN HERE
