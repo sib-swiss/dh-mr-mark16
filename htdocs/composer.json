@@ -2,7 +2,7 @@
     "name": "sib/manuscript",
     "description": "PHP iiif",
     "require": {
-        "bcosca/fatfree-core": "^3.7"
+        "bcosca/fatfree-core": "^3.8"
     },
     "authors": [
         {
