@@ -176,7 +176,7 @@
                     <li class="tab fullscreen text-white" style="float: right; background-color: var(--menu-color);"
                         data-toggle="modal" data-target="#large-manuscript" title="Click to better view the manuscript text">Enlarge</li>
 
-                    <li class="tab {{ (count(explode('_', $manuscript_folio_id)) > 2 ? ' ' : ' active ') }} diplomatic"
+                    <li class="tab {{ (!is_null($manuscript_folio_id) && count(explode('_', $manuscript_folio_id)) > 2 ? ' ' : ' active ') }} diplomatic"
                         onclick="mr.getFolio('{{ $manuscript->getEncodedId() }}');">Diplomatic</li>
 
                     <repeat group="{{@contentsTranslations}}" value="{{ @contentTranslations}}">

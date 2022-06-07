@@ -391,7 +391,9 @@ class Manuscript extends Mapper
 
         // Manuscript partner URL definition
         foreach ($known_partners as $partner) {
-            if ($this->f3->app_config->debug === true) {
+            // JSON config never loaded here, no the test below will fail and raise an error on PHP 8.1.x
+            // Needs to disable the test until further debugging
+            if ($this->f3->get('MR_CONFIG')->debug === true) {
                 echo '<!-- Searching static partner [' . $partner['id'] . '] / Manuscript partner [' . $this->getMeta('dcterm-temporal') . '] -->' . PHP_EOL;
             }
 
@@ -399,7 +401,9 @@ class Manuscript extends Mapper
                 // Define new partner URL from list
                 $manuscript_partner_url = $partner['url'];
 
-                if ($this->f3->app_config->debug === true) {
+                // JSON config never loaded here, no the test below will fail and raise an error on PHP 8.1.x
+                // Needs to disable the test until further debugging
+                if ($this->f3->get('MR_CONFIG')->debug === true) {
                     echo '<!-- Known partner URL: ' . $manuscript_partner_url . ' -->' . PHP_EOL;
                 }
 
@@ -413,7 +417,9 @@ class Manuscript extends Mapper
             // Define new partner URL from manuscript
             $manuscript_partner_url = parse_url($this->getMeta('dcterm-isVersionOf'));
 
-            if ($this->f3->app_config->debug === true) {
+            // JSON config never loaded here, no the test below will fail and raise an error on PHP 8.1.x
+            // Needs to disable the test until further debugging
+            if ($this->f3->get('MR_CONFIG')->debug === true) {
                 echo '<!-- Extracted partner URL: ' . print_r($manuscript_partner_url, true) . ' -->' . PHP_EOL;
             }
         }
@@ -660,8 +666,8 @@ class Manuscript extends Mapper
             if (!in_array($contentImages->getFolioName(), $folioNames)) {
                 $return['contentImages'][] = $contentImages->getImagePath();
                 $contentImages->remove();
-                // it is in folio but duplicated row
-            } else if (in_array($contentImages->getFolioName(), $contentImagesAssociatedWithFolio)) {
+            // it is in folio but duplicated row
+            } elseif (in_array($contentImages->getFolioName(), $contentImagesAssociatedWithFolio)) {
                 $return['contentImages'][] = $contentImages->getImagePath() .  " [keeping files as duplicated record]";
                 $contentImages->remove(false);
             } else {
