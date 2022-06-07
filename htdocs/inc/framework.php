@@ -86,8 +86,8 @@ if (isset($app_config)) {
 $f3->set('LOGS', $f3->get('MR_DATA_DIR') . '/logs/');
 
 // Create log folder if missing
-if (!is_dir($f3->get('LOGS'))) {
-    mkdir($f3->get('LOGS'));
+if (!is_dir(realpath($f3->get('LOGS')))) {
+    mkdir(realpath($f3->get('LOGS')));
 }
 
 // Define UI path
