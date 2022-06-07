@@ -193,7 +193,7 @@ class ManuscriptContentImage extends ManuscriptContent
     public function getCopyrightText()
     {
         $contentDecoded = json_decode($this->content);
-        if ($contentDecoded && $contentDecoded->copyright) {
+        if (isset($contentDecoded->copyright)) {
             return $contentDecoded->copyright;
         }
 
@@ -208,7 +208,7 @@ class ManuscriptContentImage extends ManuscriptContent
     public function getCopyrightFontSize()
     {
         $contentDecoded = json_decode($this->content);
-        if ($contentDecoded && $contentDecoded->fontsize) {
+        if (isset($contentDecoded->fontsize)) {
             return $contentDecoded->fontsize;
         }
 
@@ -248,8 +248,8 @@ class ManuscriptContentImage extends ManuscriptContent
         }
 
         $factor = ($w + $h) / $maxWplusH;
-        $newwidth = $w / $factor;
-        $newheight = $h / $factor;
+        $newwidth = (int)($w / $factor);
+        $newheight = (int)($h / $factor);
 
         $original_image = $this->getFullPath(true);
         $extension = $details['info']['extension'];
@@ -274,7 +274,7 @@ class ManuscriptContentImage extends ManuscriptContent
     }
 
     /**
-     * remove record from db 
+     * remove record from db
      * and its related files (ex. delete imagefolios and partners)
      *
      * @return void
