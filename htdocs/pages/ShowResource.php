@@ -62,9 +62,9 @@ class ShowResource extends BaseResource
             $parsed_query_string = [];
         }
         // Rebuild and sanitize request uri
-        $request_uri = ($_SERVER['HTTPS'] === true ? 'https' : 'http');
+        $request_uri = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === true ? 'https' : 'http');
         $request_uri .= '://';
-        $request_uri .= htmlentities(strip_tags($_SERVER['HTTP_HOST']));
+        $request_uri .= isset($_SERVER['HTTP_HOST']) ? htmlentities(strip_tags($_SERVER['HTTP_HOST'])) : '';
         $request_uri .= htmlentities(strip_tags(str_replace('/index.php', '/view', $_SERVER['SCRIPT_NAME'])));
         $request_uri .= (isset($parsed_query_string['id']) ? '?id=' . $parsed_query_string['id'] : '');
         $this->f3->set('request_uri', $request_uri);
