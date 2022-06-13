@@ -112,11 +112,11 @@ class ImageApi
 
             exit;
         } */
-
+        $this->f3->get('MR_CONFIG')->route->ttl;
         // Temporary testing / fixing code
         if (is_file($this->imageCacheFullPath) &&
             $this->f3->get('MR_CONFIG')->cache->clear !== true &&
-            $this->f3->get('MR_CONFIG')->route->ttl->debug !== true) {
+            $this->f3->get('MR_CONFIG')->routes->ttl->debug !== true) {
             $this->logger->write('CachedImageFound: ' . $this->imageCacheFullPath);
             header('Content-Type: ' . $this->manuscriptContent->details()['mime']);
             if ($this->f3->get('MR_CONFIG')->routes->ttl->debug === true) {
