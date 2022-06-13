@@ -8,7 +8,7 @@ before_script:
   - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
 
 deploy_dev:
-  type: deploy
+  stage: deploy
   environment:
     name: dev
     url: $DEV_HOSTNAME
@@ -20,7 +20,7 @@ deploy_dev:
     - dev
 
 deploy_prod:
-  type: deploy
+  stage: deploy
   environment:
     name: prod
     url: $PROD_HOSTNAME
