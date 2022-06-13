@@ -112,7 +112,6 @@ class ImageApi
 
             exit;
         } */
-        $this->f3->get('MR_CONFIG')->route->ttl;
         // Temporary testing / fixing code
         if (is_file($this->imageCacheFullPath) &&
             $this->f3->get('MR_CONFIG')->cache->clear !== true &&
