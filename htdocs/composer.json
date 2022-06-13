@@ -8,6 +8,10 @@
         {
             "name": "Silvano Aldà",
             "email": "silvano.alda@sib.swiss"
+        },
+        {
+            "name": "Jonathan Barda",
+            "email": "jonathan.barda@sib.swiss"
         }
     ],
     "autoload": {
