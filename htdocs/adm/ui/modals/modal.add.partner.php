@@ -18,20 +18,20 @@
 									<!-- TODO: Replace this value by the FUI API -->
 									<input type="hidden" name="manuscript_add_partner" value="true">
 									<!-- END TODO -->
-									<input type="hidden" name="manuscript_partner_image_content" id="manuscript_partner_image_content_<?php echo $manuscript->id; ?>">
-									<input type="hidden" name="manuscript_partner_image_metas" id="manuscript_partner_image_metas_<?php echo $manuscript->id; ?>">
+									<input type="hidden" name="manuscript_partner_image_content" id="manuscript_partner_image_content_<?php echo (isset($manuscript) ?: $manuscript->id); ?>">
+									<input type="hidden" name="manuscript_partner_image_metas" id="manuscript_partner_image_metas_<?php echo (isset($manuscript) ?: $manuscript->id); ?>">
 									<h4 class="ui dividing header">Partner Details</h4>
 									<div class="required field">
 										<label>Image</label>
-										<input type="file" name="manuscript_partner_image" id="manuscript_partner_image_<?php echo $manuscript->id; ?>" placeholder="Image file" accept="image/png"' . (!$manuscript_partner_image ? ' required' : '') . '>
-										<div class="ui pointing blue basic label transition hidden" id="manuscript_partner_image_entry_<?php echo $manuscript->id; ?>">
+										<input type="file" name="manuscript_partner_image" id="manuscript_partner_image_<?php echo (isset($manuscript) ?: $manuscript->id); ?>" placeholder="Image file" accept="image/png" required>
+										<div class="ui pointing blue basic label transition hidden" id="manuscript_partner_image_entry_<?php echo (isset($manuscript) ?: $manuscript->id); ?>">
 											Size
-											<div class="detail" id="manuscript_partner_image_size_<?php echo $manuscript->id; ?>"></div>
+											<div class="detail" id="manuscript_partner_image_size_<?php echo (isset($manuscript) ?: $manuscript->id); ?>"></div>
 										</div>
 									</div>
 									<div class="required field">
 										<label>Url</label>
-										<input type="url" name="manuscript_partner_url" placeholder="Enter partner URL">
+										<input type="url" name="manuscript_partner_url" placeholder="Enter partner URL" required>
 									</div>
 									<div class="ui center aligned basic segment">
 										<div class="ui primary submit partner details button" data-action="partner add" data-id="<?php echo $params['id']; ?>">Add</div>

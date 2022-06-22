@@ -21,7 +21,7 @@
                         <tr>
                             <th scope="col">#</th>
 
-                            <check if="{{ $page_options->display_list_images === true }}">
+                            <check if="{{ $MR_CONFIG->images->frontend->display === true }}">
                                 <th scope="col">Image</th>
                             </check>
 
@@ -40,9 +40,9 @@
                                 </span>
                             </th>
                             
-                            <check if="{{ $page_options->display_list_images === true }}">
+                            <check if="{{ $MR_CONFIG->images->frontend->display === true }}">
                                 <td>
-                                    <check if="{{ count($manuscript->contentsImage($page_options->authorized_extensions)) }}">
+                                    <check if="{{ count($manuscript->contentsImage($MR_CONFIG->images->authorized_extensions)) }}">
                                         <true>
                                             <check if="{{ $MR_CONFIG->images->format->base64 === true }}">
                                                 <true>

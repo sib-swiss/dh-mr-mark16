@@ -10,9 +10,9 @@ if (isset($page_options) && !is_object($page_options)) {
 // Building page title
 $page_title  = 'MR - Admin';
 $page_title .= (isset($page_options->title) && !empty($page_options->title) ? ' / ' . $page_options->title : '');
-// $page_title .= ($app_config->debug === true ? ' ' . $app_config->title->separator . ' ' . $app_config->title->end : '');
-$page_title .= ($app_config->debug === true ? ' [Debug Mode]' : '');
-$page_title .= ($app_config->maintenance === true ? ' ' . $app_config->title->separator . ' [Maintenance]' : '');
+// $page_title .= ($f3->get('MR_CONFIG')->debug === true ? ' ' . $f3->get('MR_CONFIG')->title->separator . ' ' . $f3->get('MR_CONFIG')->title->end : '');
+$page_title .= ($f3->get('MR_CONFIG')->debug === true ? ' [Debug Mode]' : '');
+$page_title .= ($f3->get('MR_CONFIG')->maintenance === true ? ' ' . $f3->get('MR_CONFIG')->title->separator . ' [Maintenance]' : '');
 ?>
 <!doctype html>
 <html lang="en">

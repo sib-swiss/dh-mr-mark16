@@ -11,8 +11,8 @@ $page_options = new stdClass();
 $page_options->title = 'Home';
 
 // Display manuscript image in the list
-$page_options->display_list_images = true;
-$page_options->authorized_extensions = ['jpg', 'jpeg'];
+// $page_options->display_list_images = true;
+// $page_options->authorized_extensions = ['jpg', 'jpeg'];
 ?>
 <?php require $f3->get('MR_PATH') . '/adm/ui/header.php'; ?>
 
@@ -71,6 +71,9 @@ $page_options->authorized_extensions = ['jpg', 'jpeg'];
 
 									</td>
 									<td class="center aligned"><?php echo $manuscript->getMeta('dcterm-temporal'); ?></td>
+
+									<?php if ($f3->get('MR_CONFIG')->images->frontend->display === true): ?>
+
 									<td>
 										<h4 class="ui image header">
 											
@@ -106,6 +109,28 @@ $page_options->authorized_extensions = ['jpg', 'jpeg'];
 											</div>
 										</h4>
 									</td>
+
+									<?php else: ?>
+
+									<td>
+										<h4 class="ui header">
+											<div class="content">
+												<a class="styled" href="<?php echo 'admin/view/' . base64_encode($manuscript->name); ?>" class="tooltipped" title="View manuscript" data-position="right center"><?php echo $manuscript->getDisplayname(); ?></a>
+												<div class="sub header">
+
+													<?php
+													echo count($manuscript->getMetas('dcterm-creator')) . ' creator' . (count($manuscript->getMetas('dcterm-creator')) > 1 ? 's' : '') . '<br>' . PHP_EOL;
+													echo count($manuscript->contentsFolios()) . ' folio' . (count($manuscript->contentsFolios()) > 1 ? 's' : '') . '<br>' . PHP_EOL;
+													echo count($manuscript->contentsImage()) . ' image' . (count($manuscript->contentsImage()) > 1 ? 's' : '') . PHP_EOL;
+													?>
+
+												</div>
+											</div>
+										</h4>
+									</td>
+									
+									<?php endif; ?>
+
 									<td class="center aligned"><a class="styled update link" href="#!" data-action="manuscript update status" data-id="<?php echo base64_encode($manuscript->name); ?>" data-published="<?php echo ((bool)$manuscript->published !== true ? 'false' : 'true'); ?>" data-status="<?php echo ((bool)$manuscript->published === true ? 'Published' : 'Not Published') . PHP_EOL; ?>" style="will-change: content;"><?php echo ((bool)$manuscript->published === true ? 'Published' : 'Not Published') . PHP_EOL; ?></a></td>
 									<td class="tooltipped" title="<?php echo htmlentities($manuscript->getMeta('dcterm-abstract')); ?>" data-position="right center"><?php echo htmlentities($manuscript->getMeta('dcterm-abstract')); ?></td>
 								</tr>
