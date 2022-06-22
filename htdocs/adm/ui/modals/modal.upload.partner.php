@@ -26,8 +26,8 @@
 							<!-- TODO: Replace this value by the FUI API -->
 							<input type="hidden" name="manuscript_add_partner" value="true">
 							<!-- END TODO -->
-							<input type="hidden" name="manuscript_partner_image_content" id="manuscript_partner_image_content_<?php echo $manuscript->id; ?>">
-							<input type="hidden" name="manuscript_partner_image_metas" id="manuscript_partner_image_metas_<?php echo $manuscript->id; ?>">
+							<input type="hidden" name="manuscript_partner_image_content" id="manuscript_partner_image_content_<?php (isset($manuscript) ?: $manuscript->id); ?>">
+							<input type="hidden" name="manuscript_partner_image_metas" id="manuscript_partner_image_metas_<?php (isset($manuscript) ?: $manuscript->id); ?>">
 							<div class="ui accordion field">
 								<div class="title">
 									<i class="icon dropdown"></i>
@@ -35,7 +35,7 @@
 								</div>
 								<div class="content field">
 									<div class="ui action input">
-										<input type="url" name="manuscript_partner_image_url" id="manuscript_partner_image_url_<?php echo $manuscript->id; ?>" placeholder="Partner image URL">
+										<input type="url" name="manuscript_partner_image_url" id="manuscript_partner_image_url_<?php (isset($manuscript) ?: $manuscript->id); ?>" placeholder="Partner image URL">
 										<button class="ui blue download right labeled icon button">
 											<i class="download icon"></i>
 											Download
@@ -50,15 +50,15 @@
 								</div>
 								<div class="content field">
 									<div class="ui action input">
-										<input type="file" name="manuscript_partner_image" id="manuscript_partner_image_file_<?php echo $manuscript->id; ?>" placeholder="Partner image file" accept="image/png">
+										<input type="file" name="manuscript_partner_image" id="manuscript_partner_image_file_<?php (isset($manuscript) ?: $manuscript->id); ?>" placeholder="Partner image file" accept="image/png">
 										<button class="ui blue upload right labeled icon button" data-action="partner image upload" data-id="<?php echo $params['id']; ?>">
 											<i class="upload icon"></i>
 											Upload
 										</button>
 									</div>
-									<div class="ui pointing blue basic label" id="manuscript_partner_image_entry_<?php echo $manuscript->id; ?>" style="display: none;">
+									<div class="ui pointing blue basic label" id="manuscript_partner_image_entry_<?php (isset($manuscript) ?: $manuscript->id); ?>" style="display: none;">
 										Size
-										<div class="detail" id="manuscript_partner_image_size_<?php echo $manuscript->id; ?>"></div>
+										<div class="detail" id="manuscript_partner_image_size_<?php (isset($manuscript) ?: $manuscript->id); ?>"></div>
 									</div>
 								</div>
 							</div>
