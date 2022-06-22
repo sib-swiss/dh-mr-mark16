@@ -13,6 +13,7 @@ class ViewResource
 
     public function get()
     {
+        // Show maintenance content if enabled
         if ($this->f3->get('MR_CONFIG')->maintenance === true) {
             $this->f3->set('template_content', 'pages/templates/maintenance.html');
             echo \Template::instance()->render($this->f3->get('template_layout'));
