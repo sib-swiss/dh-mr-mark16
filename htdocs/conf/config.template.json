@@ -48,7 +48,8 @@
         },
         "format": {
             "base64": false
-        }
+        },
+        "authorized_extensions": ["jpg", "jpeg"]
     },
     "seo": {
         "enabled": false
