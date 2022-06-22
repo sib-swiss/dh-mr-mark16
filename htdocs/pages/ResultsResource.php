@@ -31,12 +31,14 @@ class ResultsResource
         $page_title .= ($app_config->maintenance === true ? ' ' . html_entity_decode($app_config->title->separator) . ' [Maintenance]' : '');
         $this->f3->set('page_title', $page_title);
 
+        // Show maintenance content if enabled
         if ($this->f3->get('MR_CONFIG')->maintenance === true) {
             $this->f3->set('template_content', 'pages/templates/maintenance.html');
             echo \Template::instance()->render($this->f3->get('template_layout'));
             return;
         }
 
+        // Set page options
         $this->f3->set('page_options', $page_options);
 
         // Reconstruct request uri

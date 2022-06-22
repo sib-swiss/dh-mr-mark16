@@ -1,8 +1,9 @@
-<div id="content"
-     class="container">
+<div id="content" class="container">
     <div class="row">
         <div class="col-md-12">
             <check if="$MR_CONFIG->debug === true">
+                <h1 class="h1">Search data</h1>
+                <hr>
                 <pre>Received data: {~ print_r($GET) ~}</pre>
             </check>
             <check if="count($GET) > 0 ">
@@ -17,7 +18,7 @@
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
-                                        <check if="$page_options->display_list_images === true">
+                                        <check if="$MR_CONFIG->images->frontend->display === true">
                                             <th scope="col">Image</th>
                                         </check>
                                         <th scope="col">Details</th>
@@ -35,20 +36,29 @@
                                                             <dcterms:temporal>{{ $manuscript->getMeta('dcterm-temporal') }}</dcterms:temporal>
                                                         </span>
                                                     </th>
-                                                    <check if="$page_options->display_list_images === true">
+
+                                                    <check if="{{ $MR_CONFIG->images->frontend->display === true }}">
                                                         <td>
-                                                            <check if="{{ count($manuscript->contentsImage($page_options->authorized_extensions)) }}">
+                                                            <check if="{{ count($manuscript->contentsImage($MR_CONFIG->images->authorized_extensions)) }}">
                                                                 <true>
-                                                                    <img class="img-thumbnail"
-                                                                         src="data:{{ $manuscript->contentsImage()[0]->imageType() }};base64,{{ $manuscript->contentsImage()[0]->imageContent() }}"
-                                                                         style="max-width: 150px;">
+                                                                    <check if="{{ $MR_CONFIG->images->format->base64 === true }}">
+                                                                        <true>
+                                                                            <img class="img-thumbnail" 
+                                                                                 src="data:{{ $manuscript->contentsImage()[0]->imageType() }};base64,{{ $manuscript->contentsImage()[0]->imageContent() }}"
+                                                                                 style="max-width: 100px;">
+                                                                        </true>
+                                                                        <false>
+                                                                            <img class="img-thumbnail" src="{{ $MR_PATH_WEB . 'api/iiif/2-1/images/' . $manuscript->name . '-page1/full/100,/0/default.jpg' }}" style="max-width: 100px;" loading="lazy">
+                                                                        </false>
+                                                                    </check>
                                                                 </true>
                                                                 <false>
-                                                                    <img class="img-thumbnail" data-src="holder.js/150x150?random=yes">
+                                                                    <img class="img-thumbnail" data-src="holder.js/100x100?random=yes">
                                                                 </false>
                                                             </check>
                                                         </td>
                                                     </check>
+
                                                     <td style="white-space: nowrap;">
                                                         <a href="{{ $request_uri }}show?id={{ $manuscript->getEncodedId() }}">
                                                             <dcterms:bibliographicCitation>{{ $manuscript->getDisplayname() }}</dcterms:bibliographicCitation>
@@ -68,7 +78,7 @@
                                         </true>
                                         <false>
                                             <tr>
-                                                <td colspan="{{ $page_options->display_list_images === true ? 4 : 3 }}">
+                                                <td colspan="{{ $MR_CONFIG->images->frontend->display === true ? 4 : 3 }}">
                                                     <p style="text-align: center;">
                                                         Sorry, nothing found. Please try to change your search query.
                                                     </p>

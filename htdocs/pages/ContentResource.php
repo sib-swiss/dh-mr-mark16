@@ -27,6 +27,7 @@ class ContentResource extends BaseResource
         $page_title .= ($app_config->maintenance === true ? ' ' . html_entity_decode($app_config->title->separator) . ' [Maintenance]' : '');
         $this->f3->set('page_title', $page_title);
 
+        // Show maintenance content if enabled
         if ($this->f3->get('MR_CONFIG')->maintenance === true) {
             $this->f3->set('template_content', 'pages/templates/maintenance.html');
             return $this->returnResponse(\Template::instance()->render($this->f3->get('template_layout')));
@@ -41,8 +42,10 @@ class ContentResource extends BaseResource
         $this->f3->set('navigation_pages', $navigation_pages);
 
         // Display manuscript image in the list
-        $page_options->display_list_images = $this->f3->get('MR_CONFIG')->images->frontend->display;
-        $page_options->authorized_extensions = ['jpg', 'jpeg'];
+        // $page_options->display_list_images = $this->f3->get('MR_CONFIG')->images->frontend->display;
+        // $page_options->authorized_extensions = ['jpg', 'jpeg'];
+
+        // Set page options
         $this->f3->set('page_options', $page_options);
 
         // Reconstruct request uri
