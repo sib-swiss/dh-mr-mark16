@@ -84,7 +84,7 @@ mr.api = {
 
         // Rewrite parsed URL
         var baseURL  = parsedURL.protocol + '//';
-            baseURL += parsedURL.host + (parsedURL.hostname === 'localhost' ? '/htdocs/' : '/');
+            baseURL += parsedURL.host + (parsedURL.hostname === 'localhost' ? '/' : '/');
 
         console.group('URL Parser');
         console.log('Parsed URL:', parsedURL);

@@ -13,7 +13,7 @@ LISTEN_ADDRESS=localhost
 LISTEN_PORT=8000
 DOC_ROOT="."
 FOLDER="htdocs"
-ROUTER="htdocs/router.php"
+ROUTER="htdocs/public/router.php"
 
 # Colors
 NC="\033[0m"

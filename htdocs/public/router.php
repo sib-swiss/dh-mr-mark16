@@ -80,7 +80,7 @@ elseif (stripos($path, 'f3') !== false) {
 else {
     // Check if path contains DIRECTORY_INDEX
     if (stripos($path, DIRECTORY_INDEX) !== false) {
-        require DIRECTORY_INDEX;
+        require __DIR__. "/../" .DIRECTORY_INDEX;
     }
 
     // Static file
