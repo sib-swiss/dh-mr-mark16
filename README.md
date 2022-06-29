@@ -67,6 +67,18 @@ To clean-up everything, simply run the following command:
 docker-compose down --rmi all --remove-orphans
 ```
 
+#### Synchronize changes to the test VM (_optional_)
+
+This is only required when using a test VM to run the docker stack.
+
+```bash
+# Test
+rsync -rtvPhix --stats projects/manuscript-refactor-public/ projects-tests/manuscript-refactor-public/ --exclude data --exclude vendor --delete --dry-run
+
+# Real
+rsync -rtvPhix --stats projects/manuscript-refactor-public/ projects-tests/manuscript-refactor-public/ --exclude data --exclude vendor --delete
+```
+
 ### Access to the application
 
 The application is reachable only from __HTTP__ when ran locally:
