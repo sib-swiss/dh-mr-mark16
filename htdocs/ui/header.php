@@ -52,17 +52,17 @@ $page_title .= ($app_config->maintenance === true ? ' ' . $app_config->title->se
         <title><?php echo (isset($page_title) && !empty($page_title) ? $page_title : 'Page title not defined') ?></title>
 
         <!-- Favicon -->
-        <link rel="shortcut icon" href="resources/img/mr-favicon.ico">
+        <link rel="shortcut icon" href="resources/frontend/img/mr-favicon.ico">
 
         <!-- Bootstrap -->
-        <link rel="stylesheet" type="text/css" href="resources/css/bootstrap-4.3.1.min.css">
+        <link rel="stylesheet" type="text/css" href="resources/frontend/css/bootstrap-4.3.1.min.css">
 
         <!-- Custom style -->
-        <!-- <link rel="stylesheet" type="text/css" href="resources/css/style.css"> -->
-        <link rel="stylesheet" type="text/css" href="resources/css/style.patched.css">
+        <!-- <link rel="stylesheet" type="text/css" href="resources/frontend/css/style.css"> -->
+        <link rel="stylesheet" type="text/css" href="resources/frontend/css/style.patched.css">
 
         <!-- Font-Awesome Icons -->
-        <link rel="stylesheet" type="text/css" href="resources/fonts/fontawesome/css/all.css">
+        <link rel="stylesheet" type="text/css" href="resources/frontend/fonts/fontawesome/css/all.css">
 
         <!-- Google Font -->
         <!-- <link href="https://fonts.googleapis.com/css?family=Cardo|Merriweather|Open+Sans|Droid+Serif&display=swap" rel="stylesheet"> -->
@@ -70,7 +70,7 @@ $page_title .= ($app_config->maintenance === true ? ' ' . $app_config->title->se
         <?php if (isset($page_options) && $page_options->mirador === true): ?>
 
         <!-- Mirador IIIF Viewer -->
-        <link rel="stylesheet" type="text/css" href="<?php echo 'resources/js/mirador-v' . $app_config->mirador->version . '/css/mirador-combined.css'; ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo 'resources/frontend/js/mirador-v' . $app_config->mirador->version . '/css/mirador-combined.css'; ?>">
 
         <?php endif; ?>
 

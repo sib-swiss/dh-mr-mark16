@@ -26,13 +26,13 @@ $page_title .= ($f3->get('MR_CONFIG')->maintenance === true ? ' ' . $f3->get('MR
         <title><?php echo $page_title; ?></title>
 
         <!-- Favicon -->
-        <link rel="shortcut icon" href="<?php echo $f3->get('MR_PATH_WEB') . 'resources/img/mr-favicon.ico'; ?>">
+        <link rel="shortcut icon" href="<?php echo $f3->get('MR_PATH_WEB') . 'resources/frontend/img/mr-favicon.ico'; ?>">
 
         <!-- Fomantic-UI CSS -->
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.7/semantic.min.css" integrity="sha512-g/MzOGVPy3OQ4ej1U+qe4D/xhLwUn5l5xL0Fa7gdC258ZWVJQGwsbIR47SWMpRxSPjD0tfu/xkilTy+Lhrl3xg==" crossorigin="anonymous" />
 
         <!-- Custom CSS -->
-        <link rel="stylesheet" type="text/css" href="<?php echo $f3->get('MR_PATH_WEB') . 'adm/css/ui.css'; ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo $f3->get('MR_PATH_WEB') . 'resources/backend/css/ui.css'; ?>">
 
         <!-- Custom Style -->
         <style type="text/css"></style>

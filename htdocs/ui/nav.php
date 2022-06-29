@@ -1,7 +1,7 @@
 
             <nav class="navbar navbar-expand-sm navbar-light" role="navigation">
                 <a class="navbar-brand" href="<?php echo $f3->get('MR_PATH_WEB'); ?>content-old">
-                    <img src="resources/img/logo-manuscript-blue.png" style="width: 200px">
+                    <img src="resources/frontend/img/logo-manuscript-blue.png" style="width: 200px">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon">
