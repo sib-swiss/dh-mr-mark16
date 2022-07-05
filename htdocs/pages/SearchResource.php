@@ -50,6 +50,9 @@ class SearchResource
         // Read available languages from config file
         $available_languages = [];
         foreach ($this->f3->get('MR_CONFIG')->languages as $key => $value) {
+            if (in_array($key, ['en', 'fr'])) {
+                continue;
+            }
             $available_languages[] = ['code' => strtolower($key), 'name' => $value->name];
         }
         $this->f3->set('search_languages', $available_languages);
