@@ -18,6 +18,9 @@ if (isset($params['id'])) {
 	// Append manuscript name to page title
 	$page_options->title .= ' / ' . $manuscript_display_name;
 }
+else {
+	$manuscript = false; // Explicitly set as false to avoid validation issue with php 8.x
+}
 ?>
 <?php require_once $f3->get('MR_PATH') . '/adm/ui/header.php'; ?>
 
