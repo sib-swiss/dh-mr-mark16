@@ -1,9 +1,9 @@
 # Rewrite for F3
 RewriteEngine On
 
-# Avoid access to config files
-RewriteRule ^(app|conf|dict|libs|ns|tmp)\/|\.ini$ - [R=404]
-RewriteRule ^(composer\.json|composer\.lock)$ - [R=404]
+# # Avoid access to config files
+# RewriteRule ^(app|conf|dict|libs|ns|tmp)\/|\.ini$ - [R=404]
+# RewriteRule ^(composer\.json|composer\.lock)$ - [R=404]
 
 RewriteCond %{REQUEST_FILENAME} !-l
 RewriteCond %{REQUEST_FILENAME} !-f

@@ -84,7 +84,7 @@ mr.api = {
 
         // Rewrite parsed URL
         var baseURL  = parsedURL.protocol + '//';
-            baseURL += parsedURL.host + (parsedURL.hostname === 'localhost' ? '/htdocs/' : '/');
+            baseURL += parsedURL.host + (parsedURL.hostname === 'localhost' ? '/' : '/');
 
         console.group('URL Parser');
         console.log('Parsed URL:', parsedURL);
@@ -317,7 +317,7 @@ mr.api = {
         // Create Mirador instance
         var mirador = Mirador({
             id: "mirador",
-            buildPath: "resources/js/mirador-v2.7.0/",
+            buildPath: "resources/frontend/js/mirador-v2.7.0/",
             data: [{
                 // manifestUri: mr.state.manifest['@id'],
                 // manifest: mr.state.manifest,

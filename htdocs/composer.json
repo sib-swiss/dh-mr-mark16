@@ -2,7 +2,8 @@
     "name": "sib/manuscript",
     "description": "PHP iiif",
     "require": {
-        "bcosca/fatfree-core": "^3.8"
+        "bcosca/fatfree-core": "^3.8",
+        "amnuts/opcache-gui": "3.3.1"
     },
     "authors": [
         {
