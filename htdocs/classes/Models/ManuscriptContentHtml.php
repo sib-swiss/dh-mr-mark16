@@ -142,7 +142,7 @@ class ManuscriptContentHtml extends ManuscriptContent
                 $fonts_to_import  = PHP_EOL;
                 $fonts_to_import .= '@font-face {' . PHP_EOL;
                 $fonts_to_import .= "\t" . 'font-family: \'Gentium Plus\';' . PHP_EOL;
-                $fonts_to_import .= "\t" . 'src: url(\'resources/fonts/MR/Gentium_Plus/GentiumPlus-R.ttf\') format(\'truetype\');' . PHP_EOL;
+                $fonts_to_import .= "\t" . 'src: url(\'resources/frontend/fonts/MR/Gentium_Plus/GentiumPlus-R.ttf\') format(\'truetype\');' . PHP_EOL;
                 $fonts_to_import .= "\t" . 'font-weight: normal;' . PHP_EOL;
                 $fonts_to_import .= "\t" . 'font-style: normal;' . PHP_EOL;
                 $fonts_to_import .= '}' . PHP_EOL;
@@ -151,7 +151,7 @@ class ManuscriptContentHtml extends ManuscriptContent
                 $fonts_to_import  = PHP_EOL;
                 $fonts_to_import .= '@font-face {' . PHP_EOL;
                 $fonts_to_import .= "\t" . 'font-family: \'Bokareis\';' . PHP_EOL;
-                $fonts_to_import .= "\t" . 'src: url(\'resources/fonts/MR/Bokareis/Bokareis-Normal.ttf\') format(\'truetype\');' . PHP_EOL;
+                $fonts_to_import .= "\t" . 'src: url(\'resources/frontend/fonts/MR/Bokareis/Bokareis-Normal.ttf\') format(\'truetype\');' . PHP_EOL;
                 $fonts_to_import .= "\t" . 'font-weight: normal;' . PHP_EOL;
                 $fonts_to_import .= "\t" . 'font-style: normal;' . PHP_EOL;
                 $fonts_to_import .= '}' . PHP_EOL;
@@ -200,7 +200,7 @@ class ManuscriptContentHtml extends ManuscriptContent
         // );
 
         // Change relative paths
-        $html = str_replace('/community/fonts', '/resources/fonts/NTVMR', $html);
+        $html = str_replace('/community/fonts', '/resources/frontend/fonts/NTVMR', $html);
 
         // some manuscript has already https://ntvmr.uni-muenster.de/community/images... in place, replace only if not the case
         if (strpos($html, 'https://ntvmr.uni-muenster.de/community/images') === false) {

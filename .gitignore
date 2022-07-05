@@ -8,4 +8,5 @@ deploy.dev.conf
 deploy-on-dev.sh
 deploy.prod.conf
 deploy-on-prod.sh
+web-access.sh
 logs

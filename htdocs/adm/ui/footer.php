@@ -44,16 +44,16 @@
 		<script type="text/javascript" id="jquery-serialize-obj-js" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-serialize-object/2.5.0/jquery.serialize-object.min.js" integrity="sha512-Gn0tSSjkIGAkaZQWjx3Ctl/0dVJuTmjW/f9QyB302kFjU4uTNP4HtA32U2qXs/TRlEsK5CoEqMEMs7LnzLOBsA==" crossorigin="anonymous"></script>
 		<!-- <script type="text/javascript" id="page-js" src="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.11.6/page.js" integrity="sha512-MkYIEFfyoRmnQFt8ZoTflIGLT8RR+PfZSHtsG5Knc5uFayAspGft8XTaMIOozqD4KkGzE6xa7jU+tfWtcXMqtg==" crossorigin="anonymous"></script> -->
 		<!-- Including Dark Theme -->
-		<script type="text/javascript" id="dark-ui-js" src="<?php echo $f3->get('MR_PATH_WEB') . 'adm/js/dark-fomantic-ui.js'; ?>"></script>
+		<script type="text/javascript" id="dark-ui-js" src="<?php echo $f3->get('MR_PATH_WEB') . 'resources/backend/js/dark-fomantic-ui.js'; ?>"></script>
 		<!-- Including UI code -->
-		<script type="text/javascript" id="ui-wrappers-js" src="<?php echo $f3->get('MR_PATH_WEB') . 'adm/js/ui-wrappers.js'; ?>"></script>
-		<script type="text/javascript" id="ui-js" src="<?php echo $f3->get('MR_PATH_WEB') . 'adm/js/ui.js'; ?>"></script>
+		<script type="text/javascript" id="ui-wrappers-js" src="<?php echo $f3->get('MR_PATH_WEB') . 'resources/backend/js/ui-wrappers.js'; ?>"></script>
+		<script type="text/javascript" id="ui-js" src="<?php echo $f3->get('MR_PATH_WEB') . 'resources/backend/js/ui.js'; ?>"></script>
 		<!-- Including App code -->
-		<script type="text/javascript" id="app-js" src="<?php echo $f3->get('MR_PATH_WEB') . 'adm/js/app.js'; ?>"></script>
+		<script type="text/javascript" id="app-js" src="<?php echo $f3->get('MR_PATH_WEB') . 'resources/backend/js/app.js'; ?>"></script>
 		<!-- Including API code -->
-		<script type="text/javascript" id="api-js" src="<?php echo $f3->get('MR_PATH_WEB') . 'adm/js/api.js'; ?>"></script>
+		<script type="text/javascript" id="api-js" src="<?php echo $f3->get('MR_PATH_WEB') . 'resources/backend/js/api.js'; ?>"></script>
 		<!-- Including Holder.js -->
-		<script type="text/javascript" src="<?php echo $f3->get('MR_PATH_WEB') . 'resources/js/holder-v2.9.0/holder.min.js'; ?>"></script>
+		<script type="text/javascript" src="<?php echo $f3->get('MR_PATH_WEB') . 'resources/frontend/js/holder-v2.9.0/holder.min.js'; ?>"></script>
 
 		<?php require_once $f3->get('MR_PATH') . '/inc/debug.php'; ?>
 
