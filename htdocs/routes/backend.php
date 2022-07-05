@@ -47,7 +47,10 @@ $f3->route('GET /admin/cache',
             require_once $f3->get('MR_PATH') . '/maintenance.php';
         }
         else {
-            require_once $f3->get('MR_PATH') . '/adm/opcache.php';
+            // Load OPcache GUI
+            // See here for the configuration:
+            // https://github.com/amnuts/opcache-gui
+            require_once $f3->get('MR_PATH') . '/vendor/amnuts/opcache-gui/index.php';
         }
     }
     , $ttl->off
@@ -76,27 +79,6 @@ $f3->route('GET /admin/info',
     }
     , $ttl->off
 );
-
-/* still needed now that we are with composer?
-$f3->route('GET /admin/f3',
-    function($f3, $params) {
-        // Load framework module or maintenance page
-        if ($f3->get('MR_CONFIG')->maintenance === true) {
-            require_once $f3->get('MR_PATH') . '/maintenance.php';
-        }
-        else {
-            // Define include path
-            // $f3->set('MR_PATH', $f3->get('ROOT'));
-
-            // require_once $f3->get('MR_PATH') . '/libs/fatfree-3.7.2/index.php';
-            // require_once __DIR__ . '/../libs/fatfree-3.7.2/index.php';
-            $f3->reroute('/libs/fatfree-3.7.2');
-        }
-    }
-    , $ttl->off
-);
-*/
-
 $f3->route('POST /admin/parse',
     function($f3, $params) {
         $f3->get('authcheck')();
@@ -232,11 +214,7 @@ $f3->route(
     }
     , $ttl->off
 );
-
-$f3->route(
-    [
-        'GET /admin/help',
-    ],
+$f3->route('GET /admin/help',
     function($f3, $params) {
         $f3->get('authcheck')();
         // Load edit module or maintenance page
@@ -245,6 +223,19 @@ $f3->route(
         }
         else {
             require_once $f3->get('MR_PATH') . '/adm/help.php';
+        }
+    }
+    , $ttl->off
+);
+
+// Protecting backend resources
+// TODO: replace it with a proper '.htaccess' file
+$f3->route('GET /resources/backend/*',
+    function($f3, $params) {
+        $f3->get('authcheck')();
+        // Load info module or maintenance page
+        if ($f3->get('MR_CONFIG')->maintenance === true) {
+            require_once $f3->get('MR_PATH') . '/maintenance.php';
         }
     }
     , $ttl->off

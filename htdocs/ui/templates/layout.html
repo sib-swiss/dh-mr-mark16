@@ -54,20 +54,20 @@
     <title>{{ (isset($page_title) && !empty($page_title) ? $page_title : 'Page title not defined') }}</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="resources/img/mr-favicon.ico">
+    <link rel="shortcut icon" href="resources/frontend/img/mr-favicon.ico">
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" type="text/css" href="resources/css/bootstrap-4.3.1.min.css">
+    <link rel="stylesheet" type="text/css" href="resources/frontend/css/bootstrap-4.3.1.min.css">
 
     <!-- Rendering fonts -->
-    <link rel="stylesheet" type="text/css" href="resources/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="resources/frontend/css/fonts.css">
 
     <!-- Custom style -->
-    <!-- <link rel="stylesheet" type="text/css" href="resources/css/style.css"> -->
-    <link rel="stylesheet" type="text/css" href="resources/css/style.patched.css">
+    <!-- <link rel="stylesheet" type="text/css" href="resources/frontend/css/style.css"> -->
+    <link rel="stylesheet" type="text/css" href="resources/frontend/css/style.patched.css">
 
     <!-- Font-Awesome Icons -->
-    <link rel="stylesheet" type="text/css" href="resources/fonts/fontawesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="resources/frontend/fonts/fontawesome/css/all.css">
 
     <!-- Google Font -->
     <!-- <link href="https://fonts.googleapis.com/css?family=Cardo|Merriweather|Open+Sans|Droid+Serif&display=swap" rel="stylesheet"> -->
@@ -75,9 +75,9 @@
     <check if="{{ isset(@page_options) && @page_options->mirador === true }}">
 
     <!-- Mirador IIIF Viewer -->
-    <!-- <link rel="stylesheet" type="text/css" href="resources/js/mirador-v{{ $MR_CONFIG->mirador->version }}/css/mirador-combined.css"> -->
-    <!-- <link rel="stylesheet" type="text/css" href="resources/css/mirador-stripped.css"> -->
-    <link rel="stylesheet" type="text/css" href="resources/css/mirador-combined.patched.css">
+    <!-- <link rel="stylesheet" type="text/css" href="resources/frontend/js/mirador-v{{ $MR_CONFIG->mirador->version }}/css/mirador-combined.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="resources/frontend/css/mirador-stripped.css"> -->
+    <link rel="stylesheet" type="text/css" href="resources/frontend/css/mirador-combined.patched.css">
 
     </check>
 
@@ -96,7 +96,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-light" role="navigation">
             <a class="navbar-brand" href="{{ $MR_PATH_WEB }}">
-                <img src="resources/img/logo-manuscript-blue.png" style="width: 200px">
+                <img src="resources/frontend/img/logo-manuscript-blue.png" style="width: 200px">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -155,30 +155,30 @@
             <div class="row text-center">
                 <div class="col-sm-3">
                     <a href="https://ntvmr.uni-muenster.de/home" class="navlink" target="_blank">
-                        <img src="resources/img/INTF_Logo_cmyk.jpg" alt="INTF" height="40px">
+                        <img src="resources/frontend/img/INTF_Logo_cmyk.jpg" alt="INTF" height="40px">
                     </a>
                 </div>
                 <div class="col-sm-3">
                     <a href="http://www.snf.ch/" class="navlink" target="_blank">
-                        <img src="resources/img/logo-SNF.png" alt="SNF" height="40px">
+                        <img src="resources/frontend/img/logo-SNF.png" alt="SNF" height="40px">
                     </a>
                 </div>
                 <div class="col-sm-3">
                     <a href="https://github.com/sib-swiss/dh-mr-mark16" class="navlink" target="_blank">
-                        <img src="resources/img/logo-GitHub-Mark-64px.png" alt="github" height="40px">
+                        <img src="resources/frontend/img/logo-GitHub-Mark-64px.png" alt="github" height="40px">
                     </a>
                 </div>
                 <div class="col-sm-3">
                     <a href="https://sib.swiss" class="navlink" target="_blank">
-                        <img src="resources/img/sib_logo_trans_background.png" alt="SIB" height="40px">
+                        <img src="resources/frontend/img/sib_logo_trans_background.png" alt="SIB" height="40px">
                     </a>
                 </div>
             </div>
             <div class="row text-center" style="margin-top: 1em;">
                 <div class="col-sm-12">
                     <a href="https://www.php.net/" class="navlink" target="_blank">
-                        <img src="resources/img/php-power-micro2.png" alt="Powered by PHP">
-                        <!-- <img src="resources/img/php-power-white.png" alt="Powered by PHP"> -->
+                        <img src="resources/frontend/img/php-power-micro2.png" alt="Powered by PHP">
+                        <!-- <img src="resources/frontend/img/php-power-white.png" alt="Powered by PHP"> -->
                     </a>
                      - 
                     <a href="{{ $MR_PATH_WEB }}terms" class="text-light"><small>Terms of use</small></a>
@@ -207,30 +207,30 @@
     <!-- Javascript -->
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script type="text/javascript" src="resources/js/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="resources/js/popper.min.js"></script>
-    <script type="text/javascript" src="resources/js/bootstrap-4.3.1.min.js"></script>
+    <script type="text/javascript" src="resources/frontend/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="resources/frontend/js/popper.min.js"></script>
+    <script type="text/javascript" src="resources/frontend/js/bootstrap-4.3.1.min.js"></script>
 
 
     <!-- Holder.js -->
-    <script type="text/javascript" src="resources/js/holder-v2.9.0/holder.min.js"></script>
+    <script type="text/javascript" src="resources/frontend/js/holder-v2.9.0/holder.min.js"></script>
 
     <!-- EventEmitter -->
-    <script type="text/javascript" src="resources/js/event-emitter.js"></script>
+    <script type="text/javascript" src="resources/frontend/js/event-emitter.js"></script>
 
     <!-- UI -->
-    <script type="text/javascript" src="resources/js/ui.js"></script>
+    <script type="text/javascript" src="resources/frontend/js/ui.js"></script>
 
     <check if="{{ $MR_CONFIG->debug === true }}">
 
     <!-- UI::Debug -->
-    <script type="text/javascript" src="resources/js/debug.js"></script>
+    <script type="text/javascript" src="resources/frontend/js/debug.js"></script>
 
     </check>
 
 
-    <script type="text/javascript" src="resources/js/js.cookie.min.js"></script>
-    <script type="text/javascript" src="resources/js/gdpr.js"></script>
+    <script type="text/javascript" src="resources/frontend/js/js.cookie.min.js"></script>
+    <script type="text/javascript" src="resources/frontend/js/gdpr.js"></script>
 
     <check if="{{ isset($page_options) && $page_options->mirador === true }}">
 
@@ -240,10 +240,10 @@
         var apiUrlVersion = '2-1';
     </script>
     -->
-    <script type="text/javascript" src="resources/js/mirador-v{{ $MR_CONFIG->mirador->version }}/mirador.js?{{ time() }}"></script>
-    <script type="text/javascript" src="resources/js/app.js?{{ time() }}"></script>
-    <script type="text/javascript" src="resources/js/text-viewer.js?{{ time() }}"></script>
-    <script type="text/javascript" src="resources/js/image-viewer.js?{{ time() }}"></script>
+    <script type="text/javascript" src="resources/frontend/js/mirador-v{{ $MR_CONFIG->mirador->version }}/mirador.js?{{ time() }}"></script>
+    <script type="text/javascript" src="resources/frontend/js/app.js?{{ time() }}"></script>
+    <script type="text/javascript" src="resources/frontend/js/text-viewer.js?{{ time() }}"></script>
+    <script type="text/javascript" src="resources/frontend/js/image-viewer.js?{{ time() }}"></script>
 
     </check>
 

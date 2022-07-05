@@ -155,7 +155,7 @@ class ManuscriptContentImage extends ManuscriptContent
         if ($text) {
             $black = imagecolorallocate($img, 0, 0, 0);
             $white = imagecolorallocatealpha($img, 255, 255, 255, 50);
-            $font = $this->f3->get('MR_PATH') . '/resources/fonts/MR/Gentium_Basic/GentiumBasic-Regular.ttf';
+            $font = $this->f3->get('MR_PATH') . 'public/resources/frontend/fonts/MR/Gentium_Basic/GentiumBasic-Regular.ttf';
 
             $fontSize = $this->getCopyrightFontSize();
             //$logger->write($this->name . ' w: ' . $width . ' fontSize: ' . $fontSize);

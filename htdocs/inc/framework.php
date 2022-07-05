@@ -25,7 +25,7 @@ $f3->set(
     'MR_DATA_DIR',
     (
         empty($f3->get('BASE'))
-        ? realpath($f3->get('ROOT') . '/../data')
+        ? realpath($f3->get('ROOT') . '/../../data')
         : realpath($f3->get('ROOT') . '/data')
     )
 );
@@ -38,7 +38,7 @@ $f3->set(
     'MR_PATH',
     (
         empty($f3->get('BASE'))
-        ? $f3->get('ROOT')
+        ? $f3->get('ROOT')."/../"
         // : $f3->get('ROOT') . '/' . $f3->get('BASE')
         : $f3->get('ROOT') . $f3->get('BASE')
     )
@@ -91,4 +91,4 @@ if (!is_dir(realpath($f3->get('LOGS')))) {
 }
 
 // Define UI path
-$f3->set('UI', '.'.(!empty($f3->get('BASE')) ? $f3->get('BASE') . '/' : '/'));
+$f3->set('UI', '.'.(!empty($f3->get('BASE')) ? $f3->get('BASE') . '/../' : '/../'));

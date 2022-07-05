@@ -36,7 +36,7 @@
 					</div>
 					<div class="content">
 						<div class="ui vertical inverted menu">
-							<a class="item" href="<?php echo $f3->get('MR_PATH_WEB') . 'admin/f3'; ?>" target="_blank">
+							<a class="item" href="https://fatfreeframework.com/3.8/home" target="_blank">
 								<i class="plug icon" style="float: left; margin: 0 0.35714286em 0 0;"></i>
 								Framework
 							</a>
