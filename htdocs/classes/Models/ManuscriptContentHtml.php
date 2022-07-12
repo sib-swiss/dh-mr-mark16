@@ -52,7 +52,7 @@ class ManuscriptContentHtml extends ManuscriptContent
 
         // no need of this line, all css are handled in each manuscript itself
         $dom->getElementsByTagName('body')[0]
-            ->setAttribute('style', 'width: max-content;');
+            ->setAttribute('style', 'width: max-content; background-color: ' . $this->f3->get('MR_CONFIG')->iframe->background . ';');
 
 
         // fix mstrans class overriding/adding linine css styles
