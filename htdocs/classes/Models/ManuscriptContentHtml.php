@@ -63,6 +63,8 @@ class ManuscriptContentHtml extends ManuscriptContent
             array_push(
                 $styles,
                 'width: max-content',
+                'min-width: 800px', // avoid text overlapping in GA 099
+                'position: relative', // avoid text overlapping, GA 2937 folio 94r
                 'font-size: 100% !important',
                 'text-size-adjust: 100% !important',
                 'background-color: ' . $this->f3->get('MR_CONFIG')->iframe->background
