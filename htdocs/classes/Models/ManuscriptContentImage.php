@@ -191,6 +191,10 @@ class ManuscriptContentImage extends ManuscriptContent
      */
     public function getCopyrightText()
     {
+        if(!$this->content){
+            return '';
+        }
+        
         $contentDecoded = json_decode($this->content);
         if (isset($contentDecoded->copyright)) {
             return $contentDecoded->copyright;
