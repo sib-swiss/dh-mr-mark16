@@ -73,14 +73,11 @@ class ManuscriptContentImage extends ManuscriptContent
      */
     public function imageContent(bool $original = false)
     {
-        if ($original) {
-            $pathOriginal = $this->getImagePath($original);
-            if (is_file($pathOriginal)) {
-                return base64_encode(file_get_contents($pathOriginal));
-            }
-            return;
+        $path = $this->getImagePath($original);
+        if (is_file($path)) {
+            return base64_encode(file_get_contents($path));
         }
-        return base64_encode(file_get_contents($this->getImagePath()));
+        return;
     }
 
     /**
