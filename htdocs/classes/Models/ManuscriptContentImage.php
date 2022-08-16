@@ -194,7 +194,7 @@ class ManuscriptContentImage extends ManuscriptContent
         if(!$this->content){
             return '';
         }
-        
+
         $contentDecoded = json_decode($this->content);
         if (isset($contentDecoded->copyright)) {
             return $contentDecoded->copyright;
@@ -210,6 +210,10 @@ class ManuscriptContentImage extends ManuscriptContent
      */
     public function getCopyrightFontSize()
     {
+        if(!$this->content){
+            return '';
+        }
+        
         $contentDecoded = json_decode($this->content);
         if (isset($contentDecoded->fontsize)) {
             return $contentDecoded->fontsize;
