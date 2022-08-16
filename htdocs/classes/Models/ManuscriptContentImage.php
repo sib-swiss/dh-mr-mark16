@@ -63,7 +63,9 @@ class ManuscriptContentImage extends ManuscriptContent
      */
     public function imageType()
     {
-        return mime_content_type($this->getImagePath());
+        if(is_file($this->getImagePath())) {
+            return mime_content_type($this->getImagePath());
+        }
     }
 
     /**
