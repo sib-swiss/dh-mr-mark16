@@ -157,6 +157,12 @@ else {
 												$folio_id            = $manuscript_folio->id;
 												$folio_name          = $manuscript_folio->getFolioName();
 												$folio_image         = $manuscript_folio->getFolioImage();
+												
+												$folio_image_content = '';
+												$folio_image_type = '';
+												$folio_image_text = '';
+												$folio_image_text_font_size = '';
+												
 												if ($folio_image) {
 													$folio_image_content = $folio_image->imageContent();
 													$folio_image_type = $folio_image->imageType();
