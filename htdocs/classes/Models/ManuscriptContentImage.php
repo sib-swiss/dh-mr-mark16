@@ -63,7 +63,9 @@ class ManuscriptContentImage extends ManuscriptContent
      */
     public function imageType()
     {
-        return mime_content_type($this->getImagePath());
+        if(is_file($this->getImagePath())) {
+            return mime_content_type($this->getImagePath());
+        }
     }
 
     /**
@@ -73,14 +75,11 @@ class ManuscriptContentImage extends ManuscriptContent
      */
     public function imageContent(bool $original = false)
     {
-        if ($original) {
-            $pathOriginal = $this->getImagePath($original);
-            if (is_file($pathOriginal)) {
-                return base64_encode(file_get_contents($pathOriginal));
-            }
-            return;
+        $path = $this->getImagePath($original);
+        if (is_file($path)) {
+            return base64_encode(file_get_contents($path));
         }
-        return base64_encode(file_get_contents($this->getImagePath()));
+        return;
     }
 
     /**
@@ -192,6 +191,10 @@ class ManuscriptContentImage extends ManuscriptContent
      */
     public function getCopyrightText()
     {
+        if(!$this->content){
+            return '';
+        }
+
         $contentDecoded = json_decode($this->content);
         if (isset($contentDecoded->copyright)) {
             return $contentDecoded->copyright;
@@ -207,6 +210,10 @@ class ManuscriptContentImage extends ManuscriptContent
      */
     public function getCopyrightFontSize()
     {
+        if(!$this->content){
+            return '';
+        }
+        
         $contentDecoded = json_decode($this->content);
         if (isset($contentDecoded->fontsize)) {
             return $contentDecoded->fontsize;
