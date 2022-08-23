@@ -2,6 +2,7 @@
 
 namespace pages;
 
+use classes\Models\Manuscript;
 use classes\Models\ManuscriptContentHtml;
 
 class ViewResource
@@ -19,7 +20,18 @@ class ViewResource
             echo \Template::instance()->render($this->f3->get('template_layout'));
             return;
         }
-        $manuscriptContent = ManuscriptContentHtml::findWhere('name', 'like', '%' . base64_decode($this->f3->get('GET.folio')) . '%');
+
+        $manuscript = Manuscript::findBy('name', base64_decode($this->f3->get('GET.id')));
+        $manuscriptContent = (new ManuscriptContentHtml())->find(
+            [
+                'manuscript_id=? 
+                                AND name =? ',
+                $manuscript->id,
+                base64_decode($this->f3->get('GET.folio'))
+            ]
+        )[0];
+
+
         if ($manuscriptContent === false) {
             dd([
                 $this->f3->get('GET.folio'),
@@ -29,8 +41,7 @@ class ViewResource
         }
         if (filter_var($this->f3->get('GET.alter'), FILTER_VALIDATE_BOOLEAN) === true && (bool)$this->f3->get('GET.alter') === true) {
             echo $manuscriptContent->getAlteredHtml();
-        }
-        else {
+        } else {
             echo $manuscriptContent->getHtml();
         }
         return;
