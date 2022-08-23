@@ -50,8 +50,9 @@ class ManuscriptContentHtml extends ManuscriptContent
 
         $dom->loadHTML(mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8'));
 
+        // no need of this line, all css are handled in each manuscript itself
         $dom->getElementsByTagName('body')[0]
-            ->setAttribute('style', 'margin: 0 !important; line-height: 1.5 !important; color: ' . $this->f3->get('MR_CONFIG')->iframe->color . '; background-color: ' . $this->f3->get('MR_CONFIG')->iframe->background . ';');
+            ->setAttribute('style', 'width: max-content; background-color: ' . $this->f3->get('MR_CONFIG')->iframe->background . ';');
 
 
         // fix mstrans class overriding/adding linine css styles
@@ -62,6 +63,8 @@ class ManuscriptContentHtml extends ManuscriptContent
             array_push(
                 $styles,
                 'width: max-content',
+                'min-width: 800px', // avoid text overlapping in GA 099
+                'position: relative', // avoid text overlapping, GA 2937 folio 94r
                 'font-size: 100% !important',
                 'text-size-adjust: 100% !important',
                 'background-color: ' . $this->f3->get('MR_CONFIG')->iframe->background
