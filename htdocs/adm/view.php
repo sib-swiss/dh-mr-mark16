@@ -8,7 +8,7 @@ $page_options->title = 'View';
 // Prepare manuscript selector
 if (isset($params['id'])) {
 	// Lookup for existing manuscript
-	if ($manuscript = Manuscript::findBy('name', base64_decode($params['id']))) {
+	if ($manuscript = Manuscript::findByEncodedId($params['id'])) {
 		$manuscript_display_name = $manuscript->getDisplayname();
 	}
 	else {

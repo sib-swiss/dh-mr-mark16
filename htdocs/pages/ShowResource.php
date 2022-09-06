@@ -10,7 +10,7 @@ class ShowResource extends BaseResource
 {
     public function get()
     {
-        $manuscript = Manuscript::findBy('name', base64_decode($this->f3->get('GET.id')));
+        $manuscript = Manuscript::findByEncodedId($this->f3->get('GET.id'));
         if (!$manuscript) {
             return $this->returnResponse('Manuscript Not found');
         }

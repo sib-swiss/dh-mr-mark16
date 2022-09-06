@@ -21,7 +21,7 @@ class ViewResource
             return;
         }
 
-        $manuscript = Manuscript::findBy('name', base64_decode($this->f3->get('GET.id')));
+        $manuscript = Manuscript::findByEncodedId($this->f3->get('GET.id'));
         $manuscriptContent = (new ManuscriptContentHtml())->find(
             [
                 'manuscript_id=? 

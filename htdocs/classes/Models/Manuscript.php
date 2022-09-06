@@ -37,6 +37,11 @@ class Manuscript extends Mapper
         //$this->page = $manuscripPage;
     }
 
+
+    public static function findByEncodedId(string $encodedID)
+    {
+        return Manuscript::findBy('name', strtoupper(base64_decode($encodedID)));
+    }
     /**
      * return array of manuscript's contents
      *
