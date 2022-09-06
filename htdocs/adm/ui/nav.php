@@ -85,7 +85,7 @@
 								// Last part
 								elseif ($i === ($parsed_path_parts-1)) {
 									if (isset($params['id'])) {
-										if ($m = Manuscript::findBy('name', base64_decode($parsed_path[$i]))) {
+										if ($m = Manuscript::findByEncodedId($parsed_path[$i])) {
 											// echo '<!--' . PHP_EOL;
 											// echo base64_decode($parsed_path[$i]);
 											// print_r($m);

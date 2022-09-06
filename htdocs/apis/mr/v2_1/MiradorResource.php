@@ -42,7 +42,7 @@ class MiradorResource
         // Required parameters given, load MR API
         $api_response = new stdClass();
 
-        $manuscript = Manuscript::findBy('name', strtoupper(base64_decode($this->f3->get('GET.id'))));
+        $manuscript = Manuscript::findByEncodedId($this->f3->get('GET.id'));
         $api_response->files = [];
         $api_response->folios = [];
         foreach ($manuscript->contents() as $content) {

@@ -57,7 +57,7 @@ class ManuscriptContentResource extends BaseResource
     private function manuscriptUpdate()
     {
         $response = new stdClass();
-        $manuscript = Manuscript::findBy('name', base64_decode($this->f3->get('POST.manuscript_id')));
+        $manuscript = Manuscript::findByEncodedId($this->f3->get('POST.manuscript_id'));
         if (!$manuscript) {
             $response->success = false;
             $response->message = 'Manuscript not found for id ' . $this->f3->get('POST.manuscript_id');
@@ -197,7 +197,7 @@ class ManuscriptContentResource extends BaseResource
         $response = new stdClass();
 
         // retrieve manuscript
-        $manuscript = Manuscript::findBy('name', base64_decode($this->f3->get('POST.manuscript_id')));
+        $manuscript = Manuscript::findByEncodedId($this->f3->get('POST.manuscript_id'));
         $response->debug['actions'][] = 'add-partner: TO ' . $manuscript->name;
 
         // add PArtner

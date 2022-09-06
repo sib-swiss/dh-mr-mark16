@@ -89,7 +89,7 @@ class ManuscriptContent extends Mapper
     public function updateContent($content)
     {
         if (is_array($content)) {
-            $contentDecoded = json_decode($this->content);
+            $contentDecoded = $this->content ? json_decode($this->content) : [];
             if (!$contentDecoded) {
                 $contentDecoded = new stdClass();
             }
