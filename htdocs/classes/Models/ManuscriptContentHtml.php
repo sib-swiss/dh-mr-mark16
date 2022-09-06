@@ -48,7 +48,7 @@ class ManuscriptContentHtml extends ManuscriptContent
         $html = $this->getAlteredHtmlOld();
 
 
-        $dom->loadHTML(mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8'));
+        $dom->loadHTML('<?xml encoding="utf-8" ?>' . $html);
 
         // no need of this line, all css are handled in each manuscript itself
         $dom->getElementsByTagName('body')[0]
