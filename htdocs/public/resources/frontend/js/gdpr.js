@@ -16,16 +16,16 @@
     window.jQ = window.jQ || (typeof $.noConflict !== 'undefined' ? $.noConflict(true) : $);
 
     /* Init when DOM is ready */
-    jQ(function () {
-        console.log('cookie.gdpr', Cookies.get('gdpr'));
-        if (1 != Cookies.get('gdpr')) {
-            jQ("#gdpr_banner").show();
-        }
+    // jQ(function () {
+    //     console.log('cookie.gdpr', Cookies.get('gdpr'));
+    //     if (1 != Cookies.get('gdpr')) {
+    //         jQ("#gdpr_banner").show();
+    //     }
 
-        jQ("#gdpr_btn").click(function () {
-            Cookies.set('gdpr', 1)
-            jQ("#gdpr_banner").hide();
-        })
+    //     jQ("#gdpr_btn").click(function () {
+    //         Cookies.set('gdpr', 1)
+    //         jQ("#gdpr_banner").hide();
+    //     })
 
-    });
+    // });
 })();
