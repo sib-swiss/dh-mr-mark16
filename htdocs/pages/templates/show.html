@@ -2,7 +2,15 @@
     <div class="page-header">
         <!-- Dynamic model -->
         <h1 class="show">
-            <a href="javascript:location.reload()">{{ $manuscript->getDisplayname() }}</a> <small>Images ©</small>
+            <a href="javascript:location.reload()">{{ $manuscript->getDisplayname() }}</a> 
+                <small>
+                    <check if="{{ 'CSRPC' === $manuscript->name }}">
+                        <true>Printed edition ©</true>
+                        <false>Images ©</false>
+                    </check>                    
+                </small>
+            </a>
+
             <repeat group="{{@manuscript_partners_image}}" value="{{ @manuscript_partner_image}}">
                 <a href="{{ $manuscript_partner_image->url ? $manuscript_partner_image->url : '#' }}"
                     style="text-decoration: none;" target="_blank">
@@ -177,7 +185,12 @@
                         data-toggle="modal" data-target="#large-manuscript" title="Click to better view the manuscript text">Enlarge</li>
 
                     <li class="tab {{ (!is_null($manuscript_folio_id) && count(explode('_', $manuscript_folio_id)) > 2 ? ' ' : ' active ') }} diplomatic"
-                        onclick="mr.getFolio('{{ $manuscript->getEncodedId() }}');">Diplomatic</li>
+                        onclick="mr.getFolio('{{ $manuscript->getEncodedId() }}');">                        
+                        <check if="{{ 'CSRPC' === $manuscript->name }}">
+                            <true>Transliteration</true>
+                            <false>Diplomatic</false>
+                        </check>
+                    </li>
 
                     <repeat group="{{@contentsTranslations}}" value="{{ @contentTranslations}}">
                         <li class="tab {{ strtolower($contentTranslations['lang_ext']) }}
