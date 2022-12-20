@@ -36,6 +36,14 @@ mr.api = {
     /* Fix '$' not defined when mirador jquery-migrate is loaded */
     window.jQ = window.jQ || (typeof $.noConflict !== 'undefined' ? $.noConflict(true) : $);
 
+
+    // real manuscriptID is from get('id')
+    // tring to get manuscripIT from folio title (title tag in cavnas)    
+    // not always corresponding to manuscript ID
+    // for example CSR Pc Manuscript
+    var parsedURL = new URL(window.location.href);
+    var realManuscriptID = atob(parsedURL.searchParams.get('id'));
+
     /* App methods */
     mr.setCollection = function(data) {
         if (data) {
@@ -172,7 +180,7 @@ mr.api = {
                             console.info(' - Folio name: ', folio);
 
                             // Build folio URL
-                            var folioURL = mr.getViewUrl() + '?id=' + manuscriptID + '&folio=' + btoa(folio) + '&alter=true';
+                            var folioURL = mr.getViewUrl() + '?id=' +  btoa(realManuscriptID) + '&folio=' + btoa(folio) + '&alter=true';
                             
                             console.log('Encoded folio ID:', btoa(folio));
                             console.log('Folio URL:', folioURL);
@@ -416,11 +424,11 @@ mr.api = {
 
                                     if (typeof folioID !== 'undefined') {
                                         console.info('Loading folio [' + manuscriptID + ' / ' + newFolio + ']...', btoa(manuscriptID), btoa(newFolio));
-                                        mr.getFolio(btoa(manuscriptID), btoa(newFolio));
+                                        mr.getFolio(btoa(realManuscriptID), btoa(newFolio));
                                     }
                                     else {
                                         console.info('Loading default folio for [' + manuscriptID + ']...', btoa(manuscriptID), undefined, currentTabLang);
-                                        mr.getFolio(btoa(manuscriptID), undefined, currentTabLang);
+                                        mr.getFolio(btoa(realManuscriptID), undefined, currentTabLang);
                                     }
                                 }
                                 else if (jQ('.tabs .tab.active').hasClass('french')) {
@@ -431,11 +439,11 @@ mr.api = {
 
                                     if (typeof folioID !== 'undefined') {
                                         console.info('Loading folio [' + manuscriptID + ' / ' + newFolio + ']...', btoa(manuscriptID), btoa(newFolio));
-                                        mr.getFolio(btoa(manuscriptID), btoa(newFolio));
+                                        mr.getFolio(btoa(realManuscriptID), btoa(newFolio));
                                     }
                                     else {
                                         console.info('Loading default folio for [' + manuscriptID + ']...', btoa(manuscriptID), undefined, currentTabLang);
-                                        mr.getFolio(btoa(manuscriptID), undefined, currentTabLang);
+                                        mr.getFolio(btoa(realManuscriptID), undefined, currentTabLang);
                                     }
                                 }
                                 else {
@@ -446,11 +454,11 @@ mr.api = {
 
                                     if (typeof folioID !== 'undefined') {
                                         console.info('Loading folio [' + manuscriptID + ']...', btoa(manuscriptID), btoa(newFolio));
-                                        mr.getFolio(btoa(manuscriptID), btoa(newFolio));
+                                        mr.getFolio(btoa(realManuscriptID), btoa(newFolio));
                                     }
                                     else {
                                         console.info('Loading folio [' + manuscriptID + ']...', btoa(manuscriptID), undefined);
-                                        mr.getFolio(btoa(manuscriptID), undefined);
+                                        mr.getFolio(btoa(realManuscriptID), undefined);
                                     }
                                 }
 
@@ -461,40 +469,40 @@ mr.api = {
                                         // Reset tab action
                                         var newEncodedFolioID = btoa(manuscriptID + '_' + folioID + '_ENG.html');
                                         if (typeof folioID !== 'undefined') {
-                                            jQ('.tabs .tab.english').attr('onclick', "mr.getFolio('" + btoa(manuscriptID) + "', '" + newEncodedFolioID + "');");
+                                            jQ('.tabs .tab.english').attr('onclick', "mr.getFolio('" + btoa(realManuscriptID) + "', '" + newEncodedFolioID + "');");
                                         }
                                         else {
-                                            jQ('.tabs .tab.english').attr('onclick', "mr.getFolio('" + btoa(manuscriptID) + "', undefined, 'ENG');");
+                                            jQ('.tabs .tab.english').attr('onclick', "mr.getFolio('" + btoa(realManuscriptID) + "', undefined, 'ENG');");
                                         }
                                     }
                                     else if (jQ(tab).hasClass('french')) {
                                         // Reset tab action
                                         var newEncodedFolioID = btoa(manuscriptID + '_' + folioID + '_FRA.html');
                                         if (typeof folioID !== 'undefined') {
-                                            jQ('.tabs .tab.french').attr('onclick', "mr.getFolio('" + btoa(manuscriptID) + "', '" + newEncodedFolioID + "');");
+                                            jQ('.tabs .tab.french').attr('onclick', "mr.getFolio('" + btoa(realManuscriptID) + "', '" + newEncodedFolioID + "');");
                                         }
                                         else {
-                                            jQ('.tabs .tab.french').attr('onclick', "mr.getFolio('" + btoa(manuscriptID) + "', undefined, 'FRA');");
+                                            jQ('.tabs .tab.french').attr('onclick', "mr.getFolio('" + btoa(realManuscriptID) + "', undefined, 'FRA');");
                                         }
                                     }
                                     else if (jQ(tab).hasClass('german')) {
                                         // Reset tab action
                                         var newEncodedFolioID = btoa(manuscriptID + '_' + folioID + '_GER.html');
                                         if (typeof folioID !== 'undefined') {
-                                            jQ('.tabs .tab.german').attr('onclick', "mr.getFolio('" + btoa(manuscriptID) + "', '" + newEncodedFolioID + "');");
+                                            jQ('.tabs .tab.german').attr('onclick', "mr.getFolio('" + btoa(realManuscriptID) + "', '" + newEncodedFolioID + "');");
                                         }
                                         else {
-                                            jQ('.tabs .tab.german').attr('onclick', "mr.getFolio('" + btoa(manuscriptID) + "', undefined, 'GER');");
+                                            jQ('.tabs .tab.german').attr('onclick', "mr.getFolio('" + btoa(realManuscriptID) + "', undefined, 'GER');");
                                         }
                                     }
                                     else {
                                         // Reset tab action
                                         var newEncodedFolioID = btoa(manuscriptID + '_' + folioID + '.html');
                                         if (typeof folioID !== 'undefined') {
-                                            jQ('.tabs .tab.diplomatic').attr('onclick', "mr.getFolio('" + btoa(manuscriptID) + "', '" + newEncodedFolioID + "');");
+                                            jQ('.tabs .tab.diplomatic').attr('onclick', "mr.getFolio('" + btoa(realManuscriptID) + "', '" + newEncodedFolioID + "');");
                                         }
                                         else {
-                                            jQ('.tabs .tab.diplomatic').attr('onclick', "mr.getFolio('" + btoa(manuscriptID) + "');");
+                                            jQ('.tabs .tab.diplomatic').attr('onclick', "mr.getFolio('" + btoa(realManuscriptID) + "');");
                                         }
                                     }
                                 });
