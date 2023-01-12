@@ -68,7 +68,12 @@
             </check>
 
             <p>
-                <span class="show-metadata">Transcription: </span>
+                <span class="show-metadata">
+                    <check if="{{ 'CSRPC' === $manuscript->name }}">
+                        <true>Transliteration: </true>
+                        <false>Transcription: </false>
+                    </check>                
+                </span>
                 
                 <repeat group="{{$manuscript->getMetas('dcterm-creator')}}" value="{{ @creator}}" counter="{{ @i }}">
                     <dcterms:creator>{{ $creator }}</dcterms:creator><check if="{{ $i<count($manuscript->getMetas('dcterm-creator')) }}">, </check>
