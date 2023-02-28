@@ -671,7 +671,7 @@ class Manuscript extends Mapper
             if (!in_array($contentImages->getFolioName(), $folioNames)) {
                 $return['contentImages'][] = $contentImages->getImagePath();
                 $contentImages->remove();
-            // it is in folio but duplicated row
+                // it is in folio but duplicated row
             } elseif (in_array($contentImages->getFolioName(), $contentImagesAssociatedWithFolio)) {
                 $return['contentImages'][] = $contentImages->getImagePath() .  " [keeping files as duplicated record]";
                 $contentImages->remove(false);
@@ -708,5 +708,39 @@ class Manuscript extends Mapper
         }
 
         return $return;
+    }
+
+    /**
+     * remove record from db
+     * and its related files (ex. delete imagefolios and partners)
+     *
+     * @return void
+     */
+    public function remove()
+    {
+        foreach ($this->contentsFolios() as $contentsFolios) {
+            $contentsFolios->remove();
+        }
+
+        foreach ($this->contentsMeta() as $contentsMeta) {
+            $contentsMeta->remove();
+        }
+        foreach ($this->contentPartners() as $contentPartners) {
+            $contentPartners->remove();
+        }
+
+        foreach ($this->contentsHtml() as $contentsHtml) {
+            $contentsHtml->erase();
+        }
+
+        foreach ($this->contentsImage() as $contentsImage) {
+            $contentsImage->remove();
+        }
+
+
+        if (is_dir($this->getFullPath())) {
+            rmdir($this->getFullPath());
+        }
+        $this->erase();
     }
 }
