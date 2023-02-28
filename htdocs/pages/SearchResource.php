@@ -55,6 +55,10 @@ class SearchResource
             }
             $available_languages[] = ['code' => strtolower($key), 'name' => $value->name];
         }
+        usort($available_languages, function($a, $b){
+            return $a['name'] <=> $b['name'];
+        });
+
         $this->f3->set('search_languages', $available_languages);
         /* $this->f3->set('search_languages', [
             ['code' => 'GRE', 'name' => 'Ancient Greek'],
