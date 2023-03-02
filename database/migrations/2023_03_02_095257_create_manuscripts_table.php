@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('url');
             $table->text('content');
             $table->integer('temporal');
-
         });
     }
 
