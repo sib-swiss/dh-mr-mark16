@@ -11,7 +11,7 @@ class Manuscript extends Model
 
     protected $guarded = [];
 
-    public function getMeta(string $key)
+    public function getMeta(string $key): string
     {
         return 'ToDo:'.$key;
     }
