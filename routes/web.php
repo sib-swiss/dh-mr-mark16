@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ManuscriptController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,4 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'welcome')->name('home');
+Route::get('/', [ManuscriptController::class, 'index'])->name('home');
+Route::get('/manuscript/{manuscript}', [ManuscriptController::class, 'show'])->name('manuscript.show');

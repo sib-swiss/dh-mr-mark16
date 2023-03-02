@@ -10,4 +10,9 @@ class Manuscript extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    public function getMeta(string $key)
+    {
+        return 'ToDo:'.$key;
+    }
 }
