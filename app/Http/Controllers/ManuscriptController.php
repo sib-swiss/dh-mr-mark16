@@ -14,8 +14,10 @@ class ManuscriptController extends Controller
         return view('home', ['manuscripts' => $manuscripts]);
     }
 
-    public function show(Manuscript $manuscript): View
+    public function show(string $manuscriptName): View
     {
+        $manuscript = Manuscript::firstWhere('name', $manuscriptName);
+
         return view('manuscript', ['manuscript' => $manuscript]);
     }
 }

@@ -12,6 +12,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        config(['database.connections.from' => [
+            'driver' => 'sqlite',
+            'database' => storage_path('/app/from/database.sqlite'),
+            'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
+        ]]);
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([
@@ -21,6 +26,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             ManuscriptSeeder::class,
+            ManuscriptContentSeeder::class,
         ]);
     }
 }

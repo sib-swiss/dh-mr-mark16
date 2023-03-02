@@ -15,4 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [ManuscriptController::class, 'index'])->name('home');
-Route::get('/manuscript/{manuscript}', [ManuscriptController::class, 'show'])->name('manuscript.show');
+Route::get('/manuscript/{manuscriptName}', [ManuscriptController::class, 'show'])->name('manuscript.show');
