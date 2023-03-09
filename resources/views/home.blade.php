@@ -31,7 +31,7 @@
                             IMAGE</td>
                         <td
                             class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                            <a href="{{ route('manuscript.show', $manuscript) }}">{{ $manuscript->name }}</a>
+                            <a href="{{ route('manuscript.show', $manuscript->name) }}">{{ $manuscript->name }}</a>
 
                             {{-- 
                             <a href="{{ $request_uri . 'show?id=' . $manuscript->getEncodedId() }}" style="font-family: 'Gentium Plus'; font-weight: bold;">

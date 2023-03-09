@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\ManuscriptContent;
+use App\Models\ManuscriptContentImage;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
@@ -19,43 +20,15 @@ class ManuscriptContentSeeder extends Seeder
         ManuscriptContent::truncate();
         Storage::deleteDirectory('public');
         foreach ($manuscriptContents as $manuscriptContentData) {
-            $manuscriptContent = ManuscriptContent::create((array) $manuscriptContentData);
+            $pathinfo = pathinfo($manuscriptContentData->name);
 
-            $pathToFile = '';
+            $manuscriptContent = in_array($pathinfo['extension'], ['jpg', 'jpeg', 'png'])
+                ? ManuscriptContentImage::create((array) $manuscriptContentData)
+                : ManuscriptContent::create((array) $manuscriptContentData);
+
             $manuscriptPath = storage_path("/app/from/manuscripts/{$manuscriptContent->manuscript->name}");
-            $filename = pathinfo($manuscriptContent->name, PATHINFO_FILENAME);
-            if (str_contains($filename, '_ENG')
-            || str_contains($filename, '_FRA')
-            || str_contains($filename, '_GER')) {
-                continue;
-            }
 
-            if (str_starts_with($filename, 'partner-')) {
-                $filePartner = $manuscriptPath.'/'.$filename.'.png';
-                if (File::exists($filePartner)) {
-                    $pathToFile = $filePartner;
-                } else {
-                    $filePartner = $manuscriptPath.'/'.$filename.'.jpg';
-                    if (File::exists($filePartner)) {
-                        $pathToFile = $filePartner;
-                    }
-                }
-            } else {
-                $pathToFile = $this->searchImage($manuscriptPath, $filename);
-
-                if (! $pathToFile) {
-                    $pathToFile = $this->searchImage($manuscriptPath.'/'.$filename, $filename);
-                }
-            }
-
-            if (! $pathToFile) {
-                dd([
-                    $manuscriptContent->manuscript->name,
-                    $manuscriptContent->name,
-                    $pathToFile,
-                ]);
-            }
-
+            $pathToFile = $this->searchImage($manuscriptPath, $manuscriptContent->name);
             if ($pathToFile) {
                 $addMedia = $manuscriptContent->addMedia($pathToFile)
                     ->preservingOriginal()
@@ -66,17 +39,52 @@ class ManuscriptContentSeeder extends Seeder
 
     private function searchImage(string $folder, $filename): string
     {
-        $fileOriginal = $folder.'/'.$filename.'_original.jpg';
+        if (
+            str_contains($filename, '_ENG')
+            || str_contains($filename, '_FRA')
+            || str_contains($filename, '_GER')
+        ) {
+            return '';
+        }
+
+        if (str_starts_with($filename, 'partner-')) {
+            $filePartner = $folder.'/'.$filename;
+            if (File::exists($filePartner)) {
+                $pathToFile = $filePartner;
+            } else {
+                $filePartner = $folder.'/'.$filename;
+                if (File::exists($filePartner)) {
+                    $pathToFile = $filePartner;
+                }
+            }
+
+            if (! $pathToFile) {
+                dd([
+                    $folder,
+                    $filename,
+                ]);
+            }
+
+            return $pathToFile;
+        }
+
+        $pathinfo = pathinfo($filename);
+        // dd($pathinfo);
+        $fileOriginal = $folder.'/'.$pathinfo['filename'].'_original.'.$pathinfo['extension'];
         if (File::exists($fileOriginal)) {
             return  $fileOriginal;
         }
-        $fileOriginal = $folder.'/'.$filename.'_original.jpeg';
-        if (File::exists($fileOriginal)) {
-            return  $fileOriginal;
+        $file = $folder.'/'.$filename;
+        if (File::exists($file)) {
+            return  $file;
         }
-        $fileNotOriginal = $folder.'/'.$filename.'.jpg';
-        if (File::exists($fileNotOriginal)) {
-            return $fileNotOriginal;
+
+        if (in_array($pathinfo['extension'], ['jpg', 'jpeg', 'png'])) {
+            dd([
+                $folder,
+                $filename,
+                'not found',
+            ]);
         }
 
         return '';

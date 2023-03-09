@@ -21,4 +21,5 @@ Route::get('/manuscript/{manuscriptName}', [ManuscriptController::class, 'show']
 
 Route::get('iiif/{identifier}/{region}/{size}/{rotation}/{quality}.{format}', [IIIFImageController::class, 'requests'])->name('iiif.image.requests');
 Route::get('iiif/{identifier}/info.json', [IIIFImageController::class, 'info'])->name('iiif.image.info');
-Route::get('/iif/{manuscriptName}/manifest', [IIIFPresentationController::class, 'manifest'])->name('iiif.presentation.manifest');
+Route::get('/iiif/collection', [IIIFPresentationController::class, 'collection'])->name('iiif.presentation.collection');
+Route::get('/iiif/{manuscriptName}/manifest', [IIIFPresentationController::class, 'manifest'])->name('iiif.presentation.manifest');
