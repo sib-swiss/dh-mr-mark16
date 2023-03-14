@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('name')->unique();
             $table->boolean('published')->default(false);
             $table->string('url');
-            $table->text('content');
+            $table->longText('content');
             $table->integer('temporal');
         });
     }

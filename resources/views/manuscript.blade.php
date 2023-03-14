@@ -109,10 +109,13 @@
             </div>
         </div>
 
-        <div x-data="manuscriptShow">
+        <div x-data="manuscriptShow({
+            manuscriptName: '{{ $manuscript->name }}',
+            manifest: '{{ route('iiif.presentation.manifest', $manuscript->name) }}'
+        })">
             <div class="flex">
                 <div class="w-1/2">
-                    TEXT
+                    <iframe class="w-full h-[600px]" :src="currentPageUrl"></iframe>
                 </div>
                 <div class="relative w-1/2 h-[600px]">
                     <div id="mirador"></div>
@@ -120,20 +123,6 @@
             </div>
         </div>
 
-
-        {{-- 
-            style="height:500px; width:300px; position:relative;min-width:324px;"
-
-            @foreach ($manuscript->folios as $folio)
-            <div>{{ $folio->name }}</div>
-            <div>
-                @if ($folio->getFirstMedia())
-                    <img src="{{ $folio->getFirstMediaUrl() }}">
-                @else
-                    NO IMG
-                @endif
-            </div>
-        @endforeach --}}
 
     </div>
 @endsection

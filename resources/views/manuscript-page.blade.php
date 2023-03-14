@@ -1,0 +1,3 @@
+<div>
+    {!! $manuscriptFolio->getAlteredHtml() !!}
+</div>

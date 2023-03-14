@@ -7,10 +7,12 @@ window.Alpine = Alpine;
 
 Alpine.data("manuscriptShow", (data = []) => ({
     miradorInstance: null,
-
+    currentPageUrl: null,
     // See here for more details:
     // https://github.com/ProjectMirador/mirador/blob/master/src/config/settings.js
     init() {
+        console.log("manuscriptShow.data", data);
+
         let collectionContent = {
             collection: null,
             manifest: null,
@@ -83,12 +85,12 @@ Alpine.data("manuscriptShow", (data = []) => ({
                     search: true,
                     layers: true,
                 },
-                views: [
-                    { key: "single", behaviors: ["individuals"] },
-                    { key: "book", behaviors: ["paged"] },
-                    { key: "scroll", behaviors: ["continuous"] },
-                    { key: "gallery" },
-                ],
+                // views: [
+                //     { key: "single", behaviors: ["individuals"] },
+                //     { key: "book", behaviors: ["paged"] },
+                //     { key: "scroll", behaviors: ["continuous"] },
+                //     { key: "gallery" },
+                // ],
                 // elastic: {
                 //     height: 400,
                 //     width: 480,
@@ -99,24 +101,35 @@ Alpine.data("manuscriptShow", (data = []) => ({
             },
             thumbnailNavigation: {
                 defaultPosition: "far-bottom", // Which position for the thumbnail navigation to be be displayed. Other possible values are "far-bottom" or "far-right"
-                displaySettings: true, // Display the settings for this in WindowTopMenu
-                height: 130, // height of entire ThumbnailNavigation area when position is "far-bottom"
-                width: 100, // width of one canvas (doubled for book view) in ThumbnailNavigation area when position is "far-right"
+                // displaySettings: true, // Display the settings for this in WindowTopMenu
+                height: 100, // height of entire ThumbnailNavigation area when position is "far-bottom"
+                // width: 100, // width of one canvas (doubled for book view) in ThumbnailNavigation area when position is "far-right"
             },
             windows: [
                 {
-                    loadedManifest:
-                    "http://localhost/iiif/GA019/manifest",
-                    // "https://purl.stanford.edu/fg165hz3589/iiif/manifest",
+                    loadedManifest: data.manifest,
                 },
             ],
-            // osdConfig: {
-            //     maxZoomPixelRatio: 5,
-            // },
             workspace: {
                 showZoomControls: true,
                 type: "mosaic", // Which workspace type to load by default. Other possible values are "elastic"
             },
+        });
+
+        this.miradorInstance.store.subscribe(() => {
+            let state = this.miradorInstance.store.getState();
+            if (state.windows) {
+                let canvasId = Object.values(state.windows)[0].canvasId;
+                if (canvasId) {
+                    let pageNumber = canvasId.split("/").at(-1).substring(1);
+                    console.log("subscribe.canvasId", canvasId, pageNumber);
+                    this.currentPageUrl =
+                        "http://localhost/manuscript/" +
+                        data.manuscriptName +
+                        "/page/" +
+                        pageNumber;
+                }
+            }
         });
     },
 }));

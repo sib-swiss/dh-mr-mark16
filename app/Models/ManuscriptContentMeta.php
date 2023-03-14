@@ -11,12 +11,16 @@ class ManuscriptContentMeta extends ManuscriptContent
         return $this->hasOne(ManuscriptContentImage::class, 'manuscript_id', 'manuscript_id')
             ->whereIn('extension', ['jpg', 'jpeg'])
             ->whereRaw("REPLACE(name,'.jpg','') =?", [str_replace('.xml', '', $this->name)]);
+    }
 
-        // foreach ($this->manuscript->images as $image) {
-        //     if (strpos(str_replace('_', '', $image->name), str_replace('_', '', $this->getFolioName())) !== false) {
-        //         return $image;
-        //     }
-        // }
+    public function contentHtml()
+    {
+        return $this->hasOne(ManuscriptContentHtml::class, 'manuscript_id', 'manuscript_id')
+            ->whereIn('extension', ['html', 'htm'])
+            ->whereRaw(
+                "REPLACE(REPLACE(name,'.html',''),'.htm','')=?",
+                [str_replace('.xml', '', $this->name)]
+            );
     }
 
     /**
@@ -38,13 +42,13 @@ class ManuscriptContentMeta extends ManuscriptContent
                     'format' => $media->mime_type,
                     'height' => $getimagesize[1],
                     'width' => $getimagesize[0],
-                    'service' => [  // https://iiif.io/api/registry/services/
-                        [
-                            'id' => 'https://iiif.io/api/image/3.0/example/reference/59d09e6773341f28ea166e9f3c1e674f-gallica_ark_12148_bpt6k1526005v_f18',
-                            'type' => 'ImageService3',
-                            'profile' => 'level1',
-                        ],
-                    ],
+                    // 'service' => [  // https://iiif.io/api/registry/services/
+                    //     [
+                    //         'id' => 'https://iiif.io/api/image/3.0/example/reference/59d09e6773341f28ea166e9f3c1e674f-gallica_ark_12148_bpt6k1526005v_f18',
+                    //         'type' => 'ImageService3',
+                    //         'profile' => 'level1',
+                    //     ],
+                    // ],
                 ],
                 'target' => 'https://iiif.io/api/cookbook/recipe/0009-book-1/canvas/p1',
             ];
@@ -52,14 +56,16 @@ class ManuscriptContentMeta extends ManuscriptContent
         $canvas = [
             'id' => url("/iiif/{$this->manuscript->name}/canvas/p{$this->pageNumber}"),
             'type' => 'Canvas',
-            'DEBUG_NAME' => $this->name,
-            'label' => ['none' => ['p. 1']],
+            // 'DEBUG_NAME' => $this->name,
+            // 'label' => ['none' => ['p. 1']],
             'height' => 1000,
             'width' => 750,
             'items' => [
-                'id' => url("/iiif/{$this->manuscript->name}/canvas/p{$this->pageNumber}/1"), //"https://iiif.io/api/cookbook/recipe/0009-book-1/page/p1/1",
-                'type' => 'AnnotationPage',
-                'items' => $items,
+                [
+                    'id' => url("/iiif/{$this->manuscript->name}/canvas/p{$this->pageNumber}/1"), //"https://iiif.io/api/cookbook/recipe/0009-book-1/page/p1/1",
+                    'type' => 'AnnotationPage',
+                    'items' => $items,
+                ],
             ],
         ];
         // dd($canvas);

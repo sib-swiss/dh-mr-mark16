@@ -36,7 +36,6 @@ class IIIFImageController extends Controller
     public function info(Request $request)
     {
         $file = storage_path('app/public/'.str_replace('__', '/', $request->identifier));
-
         $factory = new \Conlect\ImageIIIF\ImageFactory;
 
         $info = $factory()->load($file)

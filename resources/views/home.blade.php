@@ -22,13 +22,19 @@
             </thead>
             <tbody class="bg-white dark:bg-slate-800">
                 @foreach ($manuscripts as $manuscript)
-                    <tr>
+                    <tr class="align-top">
                         <td
                             class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                            {{ $manuscript->getMeta('dcterm-temporal') }}</td>
+                            {{ $manuscript->getMeta('temporal') }}</td>
                         <td
                             class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                            IMAGE</td>
+
+                            @if ($manuscript->folios->first()->contentImage)
+                                <img class=""
+                                    src="{{ route('iiif.image.requests', [$manuscript->folios->first()->contentImage->identifier, 'full', '100,', '0', 'default', 'jpg']) }}"
+                                    style="max-width: 100px;" loading="lazy">
+                            @endif
+                        </td>
                         <td
                             class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
                             <a href="{{ route('manuscript.show', $manuscript->name) }}">{{ $manuscript->name }}</a>
@@ -38,15 +44,15 @@
                                 <dcterms:bibliographiccitation>{{ $manuscript->getDisplayname() }}</dcterms:bibliographiccitation>
                             </a>
                             <p>
-                                <span><dcterms:isformatof>{{ $manuscript->getMeta('dcterm-isFormatOf') }}</dcterms:isformatof></span><br>
+                                <span><dcterms:isformatof>{{ $manuscript->getMeta('isFormatOf') }}</dcterms:isformatof></span><br>
                                 <span><dcterms:language xml:lang="en">{{ $manuscript->getLangExtended() }}</dcterms:language></span><br>
-                                <span><dcterms:date xml:lang="en">{{ $manuscript->getMeta('dcterm-date') }}</dcterms:date></span><br>
+                                <span><dcterms:date xml:lang="en">{{ $manuscript->getMeta('date') }}</dcterms:date></span><br>
                             </p>
                          --}}
                         </td>
                         <td
                             class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                            {{ $manuscript->getMeta('dcterm-abstract') }}</td>
+                            {{ $manuscript->getMeta('abstract') }}</td>
                     </tr>
                 @endforeach
             </tbody>

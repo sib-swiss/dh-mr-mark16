@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 
@@ -18,4 +19,11 @@ class ManuscriptContentImage extends ManuscriptContent implements HasMedia
     // }
 
     protected $table = 'manuscript_contents';
+
+    public function identifier(): Attribute
+    {
+        return Attribute::make(
+            get: fn () => (string) $this->getFirstMedia()->id.'__'.$this->getFirstMedia()->file_name,
+        );
+    }
 }

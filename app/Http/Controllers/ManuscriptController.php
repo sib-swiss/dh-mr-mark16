@@ -9,7 +9,12 @@ class ManuscriptController extends Controller
 {
     public function index(): View
     {
-        $manuscripts = Manuscript::where('published', 1)->get();
+        $manuscripts = Manuscript::where('published', 1)
+            ->get()
+            ->sortBy(function (Manuscript $manuscript, int $key) {
+                return $manuscript->getMeta('temporal');
+            })
+            ->values();
 
         return view('home', ['manuscripts' => $manuscripts]);
     }
@@ -19,5 +24,12 @@ class ManuscriptController extends Controller
         $manuscript = Manuscript::firstWhere('name', $manuscriptName);
 
         return view('manuscript', ['manuscript' => $manuscript]);
+    }
+
+    public function showPage(string $manuscriptName, int $pageNumber): View
+    {
+        $manuscript = Manuscript::firstWhere('name', $manuscriptName);
+
+        return view('manuscript-page', ['manuscriptFolio' => $manuscript->folios[$pageNumber - 1]->contentHtml]);
     }
 }

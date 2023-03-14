@@ -39,6 +39,18 @@ class Manuscript extends Model
     }
 
     /**
+     * return array of manuscript's html contents
+     *
+     * @return HasMany<ManuscriptContentHtml>
+     */
+    public function contentsHtml()
+    {
+        return $this->hasMany(ManuscriptContentHtml::class)
+            ->whereIn('extension', ['html', 'htm'])
+            ->orderBy('name');
+    }
+
+    /**
      * The model's time entries.
      *
      * @return HasMany<ManuscriptContentImage>
@@ -63,7 +75,7 @@ class Manuscript extends Model
 
     public function getDisplayname(): string
     {
-        return $this->getMeta('dcterm-bibliographicCitation');
+        return $this->getMeta('bibliographicCitation');
     }
 
     public function getMeta(string $key): string|null
@@ -86,13 +98,41 @@ class Manuscript extends Model
         return 'todo';
     }
 
+    /**
+     * Return Manuscript language code
+     * ex. grc for Ancient Greek
+     *
+     * @return string
+     */
+    public function getLangCode()
+    {
+        $metaLanguage = $this->getMeta('language');
+
+        return $metaLanguage;
+
+        if (isset($this->f3->get('MR_CONFIG')->languages->{$metaLanguage})) {
+            return $metaLanguage;
+        }
+
+        foreach ($this->f3->get('MR_CONFIG')->languages as $langCode => $langObj) {
+            if ($langObj->name == $metaLanguage) {
+                return $langCode;
+            }
+        }
+
+        // not found in congig.json languages
+        return null;
+    }
+
     public function getMetas(string $key): Collection
     {
-        if (! isset($this->content['metas'])) {
+        $content = is_array($this->content) ? $this->content : json_decode((string) $this->content, true);
+
+        if (! isset($content['metas'])) {
             return collect();
         }
 
-        return collect($this->content['metas'])
+        return collect($content['metas'])
             ->filter(function ($meta) use ($key) {
                 return str_ends_with($meta['propertyUri'], '#'.$key)
                     || str_ends_with($meta['propertyUri'], '/'.$key);
@@ -108,8 +148,8 @@ class Manuscript extends Model
     {
         $manifest = [];
         $manifest['@context'] = 'http://iiif.io/api/presentation/3/context.json';
-        $manifest['@type'] = 'Manifest';
-        $manifest['@id'] = url("/iiif/{$this->name}/manifest");
+        $manifest['type'] = 'Manifest';
+        $manifest['id'] = url("/iiif/{$this->name}/manifest.json");
         $manifest['metadata'] = [];
         $creator = $this->getMeta('creator');
         if ($creator) {
@@ -128,18 +168,18 @@ class Manuscript extends Model
                 ],
             ];
         }
+
         $manifest['label'] = (object) [
             'en' => [
                 $this->getMeta('bibliographicCitation'),
             ],
         ];
         $manifest['behavior'] = [
-            'paged',
+            'individuals',
         ];
 
         $items = [];
         foreach ($this->folios as $folio) {
-            // dd($folio->canvas);
             $manifest['items'][] = $folio->canvas();
         }
 
