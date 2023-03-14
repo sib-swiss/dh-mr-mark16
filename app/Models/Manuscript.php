@@ -2,11 +2,13 @@
 
 namespace App\Models;
 
+use App\Nakala;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Http;
 
 class Manuscript extends Model
 {
@@ -17,6 +19,47 @@ class Manuscript extends Model
     protected $casts = [
         'content' => 'array',
     ];
+
+    public static function syncFromNakalaUrl(string $url = null): Manuscript|null
+    {
+        if (! $url) {
+            return $url;
+        }
+
+        $jsonContent = Http::get($url)->json();
+        // dd($jsonContent);
+        $manuscriptName = strtoupper(str_replace(' ', '', Nakala::getMeta($jsonContent, 'bibliographicCitation')));
+        $manuscript = self::firstWhere('name', $manuscriptName);
+        if ($manuscript) {
+            $manuscript->update([
+                'url' => $url,
+                'content' => $jsonContent,
+                'temporal' => Nakala::getMeta($jsonContent, 'temporal'),
+            ]);
+        } else {
+            $manuscript = self::create([
+                'name' => $manuscriptName,
+                'url' => $url,
+                'content' => $jsonContent,
+                'temporal' => Nakala::getMeta($jsonContent, 'temporal'),
+            ]);
+        }
+
+        foreach ($jsonContent['files'] as $nakalaFileData) {
+            $nakala_parsed_url = parse_url($manuscript->url); // ex. 'https://api.nakala.fr/datas/10.34847/nkl.6f83096n'
+            $nakala_download_url = $nakala_parsed_url['scheme'].'://'.$nakala_parsed_url['host'].str_replace('datas', 'data', $nakala_parsed_url['path']);
+            $url = $nakala_download_url.'/'.$nakalaFileData['sha1'];
+            $manuscriptContent = ManuscriptContent::create([
+                'manuscript_id' => $manuscript->id,
+                'name' => $nakalaFileData['name'],
+                'extension' => strtolower($nakalaFileData['extension']),
+                'url' => $url,
+                'content' => file_get_contents($url),
+            ]);
+        }
+
+        return $manuscript;
+    }
 
     /**
      * The model's time entries.
@@ -80,17 +123,9 @@ class Manuscript extends Model
 
     public function getMeta(string $key): string|null
     {
-        $firstMeta = $this->getMetas($key)->first();
+        $content = is_array($this->content) ? $this->content : json_decode((string) $this->content, true);
 
-        if (isset($firstMeta['value']) && is_string($firstMeta['value'])) {
-            return $firstMeta['value'];
-        }
-
-        if (isset($firstMeta['value']['givenname']) && isset($firstMeta['value']['surname'])) {
-            return $firstMeta['value']['givenname'].' '.$firstMeta['value']['surname'];
-        }
-
-        return 'NOT FOUND: '.$key;
+        return Nakala::getMeta($content, $key);
     }
 
     public function getLangExtended(): string
@@ -128,15 +163,7 @@ class Manuscript extends Model
     {
         $content = is_array($this->content) ? $this->content : json_decode((string) $this->content, true);
 
-        if (! isset($content['metas'])) {
-            return collect();
-        }
-
-        return collect($content['metas'])
-            ->filter(function ($meta) use ($key) {
-                return str_ends_with($meta['propertyUri'], '#'.$key)
-                    || str_ends_with($meta['propertyUri'], '/'.$key);
-            });
+        return Nakala::getMetas($content, $key);
     }
 
     // * https://iiif.io/api/presentation/3.0/#52-manifest

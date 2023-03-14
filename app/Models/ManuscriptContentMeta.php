@@ -28,6 +28,9 @@ class ManuscriptContentMeta extends ManuscriptContent
      */
     public function canvas(): object
     {
+        if (! $this->contentImage) {
+            return (object) [];
+        }
         $items = [];
         foreach ($this->contentImage->media as $media) {
             $getimagesize = getimagesize($media->getPath());

@@ -10,12 +10,9 @@ class ManuscriptController extends Controller
     public function index(): View
     {
         $manuscripts = Manuscript::where('published', 1)
-            ->get()
-            ->sortBy(function (Manuscript $manuscript, int $key) {
-                return $manuscript->getMeta('temporal');
-            })
-            ->values();
-
+            ->orderBy('temporal')
+            ->get();
+        // dd($manuscripts);
         return view('home', ['manuscripts' => $manuscripts]);
     }
 
@@ -29,7 +26,8 @@ class ManuscriptController extends Controller
     public function showPage(string $manuscriptName, int $pageNumber): View
     {
         $manuscript = Manuscript::firstWhere('name', $manuscriptName);
-
-        return view('manuscript-page', ['manuscriptFolio' => $manuscript->folios[$pageNumber - 1]->contentHtml]);
+        $manuscriptContentHtml = $manuscript->folios[$pageNumber - 1]->contentHtml;
+        // dd($manuscriptContentHtml);
+        return view('manuscript-page', ['manuscriptContentHtml' => $manuscriptContentHtml]);
     }
 }

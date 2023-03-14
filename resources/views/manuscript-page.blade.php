@@ -1,3 +1,3 @@
 <div>
-    {!! $manuscriptFolio->getAlteredHtml() !!}
+    {!! $manuscriptContentHtml->getAlteredHtml() !!}
 </div>
