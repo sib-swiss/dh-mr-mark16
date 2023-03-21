@@ -19,8 +19,7 @@
                 @foreach ($manuscript->partners as $partner)
                     <a href="{{ $partner->url ? $partner->url : '#' }}" style="text-decoration: none;" target="_blank">
                         @if ($partner->getFirstMedia())
-                            <img src="{{ $partner->getFirstMediaUrl() }}"
-                                alt="{{ $manuscript->getMeta('provenance') }}"
+                            <img src="{{ $partner->getFirstMediaUrl() }}" alt="{{ $manuscript->getMeta('provenance') }}"
                                 style="max-width: 150px; max-height: 150px;">
                         @else
                             <img data-src="holder.js/150x160?random=yes&text=Partner">
@@ -115,13 +114,7 @@
         })">
             <div class="flex">
                 <div class="w-1/2">
-                    {{-- <div class="flex">
-                        <button>Diplomatic</button>
-                        <button>English</button>
-                        <button>German</button>
-                        <button>Enlarge</button>
-                    </div>
-                     --}}
+
 
 
                     <div class="w-full">
@@ -144,13 +137,6 @@
                                         <span class="ml-1">English</span>
                                     </a>
                                 </li> --}}
-
-                                <li class="z-30 flex-auto text-center">
-                                    <a class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
-                                        data-tab-target="" role="tab" aria-selected="false">
-                                        <span class="ml-1">Enlarge</span>
-                                    </a>
-                                </li>
                             </ul>
                         </div>
                     </div>
