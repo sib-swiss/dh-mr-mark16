@@ -7,17 +7,17 @@ before_script:
   - mkdir -p ~/.ssh
   - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
 
-deploy_dev:
-  stage: deploy
-  environment:
-    name: dev
-    url: $DEV_HOSTNAME
-  script:
-    - ssh-add <(echo "$SSH_PRIVATE_KEY")
-    - ssh $DEV_USERNAME@$DEV_HOSTNAME "cd $DEV_PATH && git checkout dev && git pull origin dev && cd htdocs && composer install && exit"
-    - curl $DEV_URL/admin/cache/clear -H "${ADMIN_AUTH}"
-  only:
-    - dev
+# deploy_dev:
+#   stage: deploy
+#   environment:
+#     name: dev
+#     url: $DEV_HOSTNAME
+#   script:
+#     - ssh-add <(echo "$SSH_PRIVATE_KEY")
+#     - ssh $DEV_USERNAME@$DEV_HOSTNAME "cd $DEV_PATH && git checkout dev && git pull origin dev && cd htdocs && composer install && exit"
+#     - curl $DEV_URL/admin/cache/clear -H "${ADMIN_AUTH}"
+#   only:
+#     - dev
 
 deploy_prod:
   stage: deploy
