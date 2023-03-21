@@ -36,7 +36,7 @@ phpunit:
     - composer
   script:
     - php artisan storage:link
-    - php artisan test
+    - php artisan test --parallel
   artifacts:
     paths:
       - ./storage/app
@@ -47,7 +47,7 @@ phpunit:
 codestyle:
   stage: testing
   script:
-    - ./vendor/bin/pint --test --parallel
+    - ./vendor/bin/pint --test
   dependencies:
     - composer
 
