@@ -125,17 +125,12 @@ Alpine.data("manuscriptShow", (data = []) => ({
                     let pageNumber = canvasId.split("/").at(-1).substring(1);
                     console.log("subscribe.canvasId", canvasId, pageNumber);
                     let newCurrentPageUrl =
-                        "http://localhost/manuscript/" +
+                        "/manuscript/" +
                         data.manuscriptName +
                         "/page/" +
                         pageNumber;
                     if (newCurrentPageUrl !== this.currentPageUrl) {
-                        this.currentPageUrl = newCurrentPageUrl;
-                        fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
-                            .then((response) => response.json())
-                            .then((json) => {
-                                console.log("fetch", json);
-                            });
+                        this.currentPageUrl = newCurrentPageUrl;                        
                     }
                 }
             }
