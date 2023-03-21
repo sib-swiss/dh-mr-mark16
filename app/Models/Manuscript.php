@@ -22,7 +22,7 @@ class Manuscript extends Model
 
     public static function syncFromNakalaUrl(string $url = null): Manuscript|null
     {
-        if (!$url) {
+        if (! $url) {
             return $url;
         }
 
@@ -47,8 +47,8 @@ class Manuscript extends Model
 
         foreach ($jsonContent['files'] as $nakalaFileData) {
             $nakala_parsed_url = parse_url($manuscript->url); // ex. 'https://api.nakala.fr/datas/10.34847/nkl.6f83096n'
-            $nakala_download_url = $nakala_parsed_url['scheme'] . '://' . $nakala_parsed_url['host'] . str_replace('datas', 'data', $nakala_parsed_url['path']);
-            $url = $nakala_download_url . '/' . $nakalaFileData['sha1'];
+            $nakala_download_url = $nakala_parsed_url['scheme'].'://'.$nakala_parsed_url['host'].str_replace('datas', 'data', $nakala_parsed_url['path']);
+            $url = $nakala_download_url.'/'.$nakalaFileData['sha1'];
             $manuscriptContent = ManuscriptContent::create([
                 'manuscript_id' => $manuscript->id,
                 'name' => $nakalaFileData['name'],
