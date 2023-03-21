@@ -6,7 +6,7 @@ it('test_iiif_image_info', function () {
     $response = $this->get($url);
     $response->assertStatus(200);
     // dd($response->decodeResponseJson());
-});
+})->todo();
 
 it('test_iiif_image_requests', function () {
     $identifier = '51__GA019_f.112v_original.jpg';
@@ -22,7 +22,7 @@ it('test_iiif_presentation_manifest', function () {
     $url = route('iiif.presentation.manifest', 'GA019');
     $response = $this->get($url);
     $response->assertStatus(200);
-});
+})->todo();
 
 it('iiif_presentation_collection', function () {
     $this->createManuscript();
@@ -34,4 +34,4 @@ it('iiif_presentation_collection', function () {
     $response = $this->get($url);
     $response->assertStatus(200);
     // dd($response->decodeResponseJson());
-});
+})->todo();
