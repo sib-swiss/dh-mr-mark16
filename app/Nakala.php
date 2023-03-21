@@ -18,7 +18,7 @@ class Nakala
             return $firstMeta['value']['givenname'].' '.$firstMeta['value']['surname'];
         }
 
-        return 'NOT FOUND: '.$key;
+        return '';
     }
 
     public static function getMetas(array $content, string $key): Collection
