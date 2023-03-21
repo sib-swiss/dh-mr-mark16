@@ -2,6 +2,7 @@ import "./bootstrap";
 import Alpine from "alpinejs";
 
 import * as Mirador from "mirador/dist/mirador.min.js";
+import "@material-tailwind/html/scripts/tabs.js";
 
 window.Alpine = Alpine;
 
@@ -78,12 +79,12 @@ Alpine.data("manuscriptShow", (data = []) => ({
                 switchCanvasOnSearch: true, // Configure if Mirador should automatically switch to the canvas of the first search result
                 panels: {
                     // Configure which panels are visible in WindowSideBarButtons
-                    info: true,
-                    attribution: true,
-                    canvas: true,
-                    annotations: true,
-                    search: true,
-                    layers: true,
+                    info: false,
+                    attribution: false,
+                    canvas: false,
+                    annotations: false,
+                    search: false,
+                    layers: false,
                 },
                 // views: [
                 //     { key: "single", behaviors: ["individuals"] },
@@ -123,11 +124,19 @@ Alpine.data("manuscriptShow", (data = []) => ({
                 if (canvasId) {
                     let pageNumber = canvasId.split("/").at(-1).substring(1);
                     console.log("subscribe.canvasId", canvasId, pageNumber);
-                    this.currentPageUrl =
+                    let newCurrentPageUrl =
                         "http://localhost/manuscript/" +
                         data.manuscriptName +
                         "/page/" +
                         pageNumber;
+                    if (newCurrentPageUrl !== this.currentPageUrl) {
+                        this.currentPageUrl = newCurrentPageUrl;
+                        fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
+                            .then((response) => response.json())
+                            .then((json) => {
+                                console.log("fetch", json);
+                            });
+                    }
                 }
             }
         });
