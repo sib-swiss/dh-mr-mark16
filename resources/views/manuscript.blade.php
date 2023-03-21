@@ -20,7 +20,7 @@
                     <a href="{{ $partner->url ? $partner->url : '#' }}" style="text-decoration: none;" target="_blank">
                         @if ($partner->getFirstMedia())
                             <img src="{{ $partner->getFirstMediaUrl() }}"
-                                alt="{{ $manuscript->getMeta('dcterm-provenance') }}"
+                                alt="{{ $manuscript->getMeta('provenance') }}"
                                 style="max-width: 150px; max-height: 150px;">
                         @else
                             <img data-src="holder.js/150x160?random=yes&text=Partner">
@@ -29,7 +29,7 @@
                 @endforeach
 
                 <a class="btn btn-sm m-1 px-1 py-0" role="button" target="_blank"
-                    href="{{ $manuscript->getMeta('dcterm-isVersionOf') }}">
+                    href="{{ $manuscript->getMeta('isVersionOf') }}">
                     <div
                         style="font-size: 12px !important; font-weight: 400 !important; color: rgb(74, 116, 172); background-color: rgba(0, 0, 0, 0);">
                         <i class="fas fa-camera fa-2x"></i>
@@ -41,13 +41,13 @@
             <div class="flex">
                 <div>
                     <p>
-                        <dcterms:alternative>{{ $manuscript->getMeta('dcterm-alternative') }}</dcterms:alternative>
+                        <dcterms:alternative>{{ $manuscript->getMeta('alternative') }}</dcterms:alternative>
                     </p>
                     <p><span class="show-metadata">Shelfmark: </span>
-                        <dcterms:isFormatOf>{{ $manuscript->getMeta('dcterm-isFormatOf') }}</dcterms:isFormatOf>
+                        <dcterms:isFormatOf>{{ $manuscript->getMeta('isFormatOf') }}</dcterms:isFormatOf>
                     </p>
                     <p><span class="show-metadata">Date: </span>
-                        <dcterms:date xml:lang="en">{{ $manuscript->getMeta('dcterm-date') }}</dcterms:date>
+                        <dcterms:date xml:lang="en">{{ $manuscript->getMeta('date') }}</dcterms:date>
                     </p>
                     <p><span class="show-metadata">Language: </span>
                         <dcterms:language xml:lang="en">{{ $manuscript->getLangExtended() }}</dcterms:language>
@@ -56,9 +56,9 @@
 
 
                 <div>
-                    @if ($manuscript->getMeta('dcterm-coverage'))
+                    @if ($manuscript->getMeta('coverage'))
                         <p>
-                            <dcterms:coverage>{{ $manuscript->getMeta('dcterm-coverage') }}</dcterms:coverage>
+                            <dcterms:coverage>{{ $manuscript->getMeta('coverage') }}</dcterms:coverage>
                         </p>
                     @endif
 
@@ -79,11 +79,11 @@
                         @endforeach
                     </p>
 
-                    @if ($manuscript->getMeta('dcterm-contributor'))
+                    @if ($manuscript->getMeta('contributor'))
                         <p>
                             <span class="show-metadata">Encoding: </span>
 
-                            <dcterms:creator>{{ $manuscript->getMeta('dcterm-contributor') }}</dcterms:creator>
+                            <dcterms:creator>{{ $manuscript->getMeta('contributor') }}</dcterms:creator>
                         </p>
                     @endif
 
