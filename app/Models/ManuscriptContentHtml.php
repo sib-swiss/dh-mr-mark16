@@ -173,7 +173,7 @@ class ManuscriptContentHtml extends ManuscriptContent
         // );
 
         // Change relative paths
-        $html = url(str_replace('/community/fonts', '/resources/frontend/fonts/NTVMR', $html));
+        // $html = url(str_replace('/community/fonts', '/resources/frontend/fonts/NTVMR', $html));
 
         // some manuscript has already https://ntvmr.uni-muenster.de/community/images... in place, replace only if not the case
         if (strpos($html, 'https://ntvmr.uni-muenster.de/community/images') === false) {

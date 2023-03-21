@@ -115,7 +115,90 @@
         })">
             <div class="flex">
                 <div class="w-1/2">
+                    {{-- <div class="flex">
+                        <button>Diplomatic</button>
+                        <button>English</button>
+                        <button>German</button>
+                        <button>Enlarge</button>
+                    </div>
+                     --}}
+
+
+                    <div class="w-full">
+                        <div class="relative right-0">
+                            <ul class="relative flex list-none flex-wrap bg-blue-gray-50/60 p-1" data-tabs="tabs"
+                                role="list">
+                                <li class="z-30 flex-auto text-center">
+                                    <a class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
+                                        data-tab-target="" active role="tab" aria-selected="true">
+                                        <span class="ml-1">Diplomatic</span>
+                                    </a>
+                                </li>
+                                {{-- 
+                                    
+                                    ALPINE LOOP for folioTranslations
+
+                                    <li class="z-30 flex-auto text-center">
+                                    <a class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
+                                        data-tab-target="" role="tab" aria-selected="false">
+                                        <span class="ml-1">English</span>
+                                    </a>
+                                </li> --}}
+
+                                <li class="z-30 flex-auto text-center">
+                                    <a class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
+                                        data-tab-target="" role="tab" aria-selected="false">
+                                        <span class="ml-1">Enlarge</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
                     <iframe class="w-full h-[600px]" :src="currentPageUrl"></iframe>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 </div>
                 <div class="relative w-1/2 h-[600px]">
                     <div id="mirador"></div>

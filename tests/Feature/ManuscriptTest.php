@@ -53,4 +53,17 @@ class ManuscriptTest extends TestCase
         $this->assertContains('Institut für neutestamentliche Textforschung (Münster)', $metaCreators);
         $this->assertSame('Bibliothèque nationale de France', $manuscript->getMeta('provenance'));
     }
+
+    public function test_todo()
+    {
+        dd([
+            'frontend missing features' => [
+                'main menu pages',
+                'manuscript show',
+            ],
+            'dev2/prod2 servers',
+            'pipeline',
+            'admin filament',
+        ]);
+    }
 }
