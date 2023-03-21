@@ -23,7 +23,6 @@ class ManuscriptContentMeta extends ManuscriptContent
             );
     }
 
-
     /**
      * return array of manuscript's folio additional languages
      *
@@ -59,9 +58,9 @@ class ManuscriptContentMeta extends ManuscriptContent
             // })
 
             ->where(function ($query) {
-                $query->where('name', 'LIKE', "%_ENG.%")
-                    ->orWhere('name', 'LIKE', "%_FRA.%")
-                    ->orWhere('name', 'LIKE', "%_GER.%");
+                $query->where('name', 'LIKE', '%_ENG.%')
+                    ->orWhere('name', 'LIKE', '%_FRA.%')
+                    ->orWhere('name', 'LIKE', '%_GER.%');
             });
     }
 
@@ -70,7 +69,7 @@ class ManuscriptContentMeta extends ManuscriptContent
      */
     public function canvas(): object
     {
-        if (!$this->contentImage) {
+        if (! $this->contentImage) {
             return (object) [];
         }
         $items = [];
@@ -82,7 +81,7 @@ class ManuscriptContentMeta extends ManuscriptContent
                 'motivation' => 'painting',
                 'body' => [
                     //{identifier}/{region}/{size}/{rotation}/{quality}.{format}
-                    'id' => route('iiif.image.requests', [$media->id . '__' . $media->file_name, 'full', 'max', '0', 'default', 'jpg']), //"https://iiif.io/api/image/3.0/example/reference/59d09e6773341f28ea166e9f3c1e674f-gallica_ark_12148_bpt6k1526005v_f18/full/max/0/default.jpg",
+                    'id' => route('iiif.image.requests', [$media->id.'__'.$media->file_name, 'full', 'max', '0', 'default', 'jpg']), //"https://iiif.io/api/image/3.0/example/reference/59d09e6773341f28ea166e9f3c1e674f-gallica_ark_12148_bpt6k1526005v_f18/full/max/0/default.jpg",
                     'type' => 'Image',
                     'format' => $media->mime_type,
                     'height' => $getimagesize[1],
