@@ -40,26 +40,31 @@ class ManuscriptController extends Controller
     public function results(Request $request): View
     {
         $manuscripts = Manuscript::where('published', 1)
-                ->orderBy('temporal')
-                ->get()
-                ->filter(function (Manuscript $manuscript) use ($request) {
-                    if (
-                        ($request->keywords && stripos($manuscript->getMeta('abstract'), $request->keywords) !== false)
-                        ||
-                        ($request->title && stripos($manuscript->name, $request->title) !== false)
-                        ||
-                        ($request->shelfmark && stripos($manuscript->getMeta('isFormatOf'), $request->shelfmark) !== false)
-                        ||
-                        ($request->docId && stripos($manuscript->getMeta('temporal'), $request->docId) !== false)
-                        ||
-                        ($request->language && stripos($manuscript->getLangExtended(), $request->language) !== false)
+            ->when($request->subject, function ($query) use ($request) {
+                return $query->where('name', 'like', '%'.str_replace(' ', '', $request->subject).'%');
+            })
+            ->orderBy('temporal')
+            ->get()
+            ->filter(function (Manuscript $manuscript) use ($request) {
+                if ($request->subject) {
+                    return true;
+                } elseif (
+                    ($request->keywords && stripos($manuscript->getMeta('abstract'), $request->keywords) !== false)
+                    ||
+                    ($request->title && stripos($manuscript->name, $request->title) !== false)
+                    ||
+                    ($request->shelfmark && stripos($manuscript->getMeta('isFormatOf'), $request->shelfmark) !== false)
+                    ||
+                    ($request->docId && stripos($manuscript->getMeta('temporal'), $request->docId) !== false)
+                    ||
+                    ($request->language && stripos($manuscript->getLangExtended(), $request->language) !== false)
 
-                    ) {
-                        return true;
-                    }
+                ) {
+                    return true;
+                }
 
-                    return false;
-                })->all();
+                return false;
+            })->all();
 
         return view('results', ['manuscripts' => $manuscripts]);
     }

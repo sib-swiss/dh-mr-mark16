@@ -47,7 +47,7 @@ class ManuscriptContentMeta extends ManuscriptContent
 
         // return $parts2[0] . '_' . $parts4[0];
 
-        return  $this->hasMany(ManuscriptContentHtml::class, 'manuscript_id', 'manuscript_id')
+        return $this->hasMany(ManuscriptContentHtml::class, 'manuscript_id', 'manuscript_id')
             ->whereIn('extension', ['html', 'htm'])
 
             // this will not work in eager load (using with method)

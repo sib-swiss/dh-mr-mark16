@@ -46,7 +46,7 @@ class ManuscriptContent extends Model
         if (count($parts1) == 1) {
             $parts2 = explode('.', $parts1[0]);
 
-            return  substr($name, 0, -strlen(end($parts2)) - 1);
+            return substr($name, 0, -strlen(end($parts2)) - 1);
         }
 
         //  GA304_240r/GA304_240r_ENG.html

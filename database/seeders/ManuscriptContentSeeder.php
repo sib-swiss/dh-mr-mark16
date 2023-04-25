@@ -72,11 +72,11 @@ class ManuscriptContentSeeder extends Seeder
         // dd($pathinfo);
         $fileOriginal = $folder.'/'.$pathinfo['filename'].'_original.'.$pathinfo['extension'];
         if (File::exists($fileOriginal)) {
-            return  $fileOriginal;
+            return $fileOriginal;
         }
         $file = $folder.'/'.$filename;
         if (File::exists($file)) {
-            return  $file;
+            return $file;
         }
 
         if (in_array($pathinfo['extension'], ['jpg', 'jpeg', 'png'])) {

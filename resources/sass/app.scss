@@ -66,6 +66,10 @@ h2 {
     @apply text-4xl my-8 text-gray-700;
 }
 
+button[type="submit"] {
+    @apply bg-pink-800 hover:bg-pink-700 text-white py-2 px-4 rounded;
+}
+
 .abstract {
     @apply text-gray-600 font-gentiumPlus text-base;
 }
@@ -103,8 +107,5 @@ table.results tbody tr:hover {
         & > select {
             @apply lg:w-1/2 block rounded border-none rounded w-full;
         }
-    }
-    & button {
-        @apply bg-pink-800 hover:bg-pink-700 text-white py-2 px-4 rounded;
     }
 }

@@ -3,9 +3,33 @@
     "file": "assets/Bokareis-Normal-9d5c8a28.ttf",
     "src": "resources/fonts/Bokareis/Bokareis-Normal.ttf"
   },
+  "resources/fonts/Gentium_Basic/GentiumBasic-Bold.ttf": {
+    "file": "assets/GentiumBasic-Bold-8974994f.ttf",
+    "src": "resources/fonts/Gentium_Basic/GentiumBasic-Bold.ttf"
+  },
+  "resources/fonts/Gentium_Basic/GentiumBasic-BoldItalic.ttf": {
+    "file": "assets/GentiumBasic-BoldItalic-148703ac.ttf",
+    "src": "resources/fonts/Gentium_Basic/GentiumBasic-BoldItalic.ttf"
+  },
+  "resources/fonts/Gentium_Basic/GentiumBasic-Italic.ttf": {
+    "file": "assets/GentiumBasic-Italic-471dd945.ttf",
+    "src": "resources/fonts/Gentium_Basic/GentiumBasic-Italic.ttf"
+  },
   "resources/fonts/Gentium_Basic/GentiumBasic-Regular.ttf": {
     "file": "assets/GentiumBasic-Regular-d10a0848.ttf",
     "src": "resources/fonts/Gentium_Basic/GentiumBasic-Regular.ttf"
+  },
+  "resources/fonts/Gentium_Book_Basic/GentiumBookBasic-Bold.ttf": {
+    "file": "assets/GentiumBookBasic-Bold-1e100310.ttf",
+    "src": "resources/fonts/Gentium_Book_Basic/GentiumBookBasic-Bold.ttf"
+  },
+  "resources/fonts/Gentium_Book_Basic/GentiumBookBasic-BoldItalic.ttf": {
+    "file": "assets/GentiumBookBasic-BoldItalic-5d66f184.ttf",
+    "src": "resources/fonts/Gentium_Book_Basic/GentiumBookBasic-BoldItalic.ttf"
+  },
+  "resources/fonts/Gentium_Book_Basic/GentiumBookBasic-Italic.ttf": {
+    "file": "assets/GentiumBookBasic-Italic-be9df195.ttf",
+    "src": "resources/fonts/Gentium_Book_Basic/GentiumBookBasic-Italic.ttf"
   },
   "resources/fonts/Gentium_Book_Basic/GentiumBookBasic-Regular.ttf": {
     "file": "assets/GentiumBookBasic-Regular-15894a8f.ttf",
@@ -15,17 +39,53 @@
     "file": "assets/GentiumPlus-R-fa09788a.ttf",
     "src": "resources/fonts/Gentium_Plus/GentiumPlus-R.ttf"
   },
+  "resources/fonts/Merriweather/Merriweather-Black.ttf": {
+    "file": "assets/Merriweather-Black-0bdcff7e.ttf",
+    "src": "resources/fonts/Merriweather/Merriweather-Black.ttf"
+  },
+  "resources/fonts/Merriweather/Merriweather-BlackItalic.ttf": {
+    "file": "assets/Merriweather-BlackItalic-ff4041c7.ttf",
+    "src": "resources/fonts/Merriweather/Merriweather-BlackItalic.ttf"
+  },
+  "resources/fonts/Merriweather/Merriweather-Bold.ttf": {
+    "file": "assets/Merriweather-Bold-f5e0cca6.ttf",
+    "src": "resources/fonts/Merriweather/Merriweather-Bold.ttf"
+  },
+  "resources/fonts/Merriweather/Merriweather-BoldItalic.ttf": {
+    "file": "assets/Merriweather-BoldItalic-4784bdcb.ttf",
+    "src": "resources/fonts/Merriweather/Merriweather-BoldItalic.ttf"
+  },
+  "resources/fonts/Merriweather/Merriweather-Italic.ttf": {
+    "file": "assets/Merriweather-Italic-fc70541c.ttf",
+    "src": "resources/fonts/Merriweather/Merriweather-Italic.ttf"
+  },
+  "resources/fonts/Merriweather/Merriweather-Light.ttf": {
+    "file": "assets/Merriweather-Light-1a707ae5.ttf",
+    "src": "resources/fonts/Merriweather/Merriweather-Light.ttf"
+  },
+  "resources/fonts/Merriweather/Merriweather-LightItalic.ttf": {
+    "file": "assets/Merriweather-LightItalic-e61c0429.ttf",
+    "src": "resources/fonts/Merriweather/Merriweather-LightItalic.ttf"
+  },
   "resources/fonts/Merriweather/Merriweather-Regular.ttf": {
     "file": "assets/Merriweather-Regular-7a703adc.ttf",
     "src": "resources/fonts/Merriweather/Merriweather-Regular.ttf"
   },
+  "resources/fonts/Merriweather/OFL.txt": {
+    "file": "assets/OFL-792157d2.txt",
+    "src": "resources/fonts/Merriweather/OFL.txt"
+  },
+  "resources/images/logo-manuscript.png": {
+    "file": "assets/logo-manuscript-b0882db9.png",
+    "src": "resources/images/logo-manuscript.png"
+  },
   "resources/js/app.js": {
-    "file": "assets/app-8d77f3c6.js",
+    "file": "assets/app-a3264d0c.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   },
   "resources/sass/app.scss": {
-    "file": "assets/app-6be43d62.css",
+    "file": "assets/app-3c6b6175.css",
     "isEntry": true,
     "src": "resources/sass/app.scss"
   }

@@ -1,4 +1,7 @@
 import "./bootstrap";
+
+import.meta.glob(["../images/**", "../fonts/**"]);
+
 import Alpine from "alpinejs";
 
 import * as Mirador from "mirador/dist/mirador.min.js";
@@ -130,7 +133,7 @@ Alpine.data("manuscriptShow", (data = []) => ({
                         "/page/" +
                         pageNumber;
                     if (newCurrentPageUrl !== this.currentPageUrl) {
-                        this.currentPageUrl = newCurrentPageUrl;                        
+                        this.currentPageUrl = newCurrentPageUrl;
                     }
                 }
             }
