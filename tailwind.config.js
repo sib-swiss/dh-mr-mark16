@@ -8,6 +8,9 @@ module.exports = withMT({
             fontFamily: {
                 sans: ["Inter var", ...defaultTheme.fontFamily.sans],
                 Merriweather: ["Merriweather", "serif"],
+                Gentium: ["Gentium", "serif"],
+                gentiumPlus: ["Gentium Plus", "serif"],
+                Bokareis: ["Bokareis", "serif"],
             },
         },
     },

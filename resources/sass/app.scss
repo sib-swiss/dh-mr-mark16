@@ -61,6 +61,31 @@ select:invalid {
 body {
     @apply font-Merriweather text-gray-800;
 }
+h1,
+h2 {
+    @apply text-4xl my-8 text-gray-700;
+}
+
+.abstract {
+    @apply text-gray-600 font-gentiumPlus text-base;
+}
+
+table.results {
+    @apply border-collapse table-auto w-full text-sm;
+    & > thead > tr > th {
+        @apply border-t font-medium py-4 pl-8 text-left text-base text-black font-bold;
+    }
+    & > tbody > tr {
+        @apply align-top;
+
+        & > td {
+            @apply p-4 pl-8 text-base;
+        }
+    }
+}
+table.results tbody tr:hover {
+    @apply bg-gray-100;
+}
 
 #form-search {
     & > div {

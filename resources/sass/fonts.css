@@ -5,13 +5,14 @@
     font-weight: normal;
     font-style: normal;
 }
-/* @font-face {
+@font-face {
     font-family: "Gentium";
     src: url("../fonts/Gentium_Basic/GentiumBasic-Regular.ttf")
         format("truetype");
     font-weight: normal;
     font-style: normal;
 }
+
 @font-face {
     font-family: "Gentium Book";
     src: url("../fonts/Gentium_Book_Basic/GentiumBookBasic-Regular.ttf")
@@ -25,10 +26,9 @@
     font-weight: normal;
     font-style: normal;
 }
-
 @font-face {
     font-family: "Bokareis";
     src: url("../fonts/Bokareis/Bokareis-Normal.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
-} */
+}

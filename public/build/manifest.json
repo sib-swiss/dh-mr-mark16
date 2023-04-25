@@ -1,4 +1,20 @@
 {
+  "resources/fonts/Bokareis/Bokareis-Normal.ttf": {
+    "file": "assets/Bokareis-Normal-9d5c8a28.ttf",
+    "src": "resources/fonts/Bokareis/Bokareis-Normal.ttf"
+  },
+  "resources/fonts/Gentium_Basic/GentiumBasic-Regular.ttf": {
+    "file": "assets/GentiumBasic-Regular-d10a0848.ttf",
+    "src": "resources/fonts/Gentium_Basic/GentiumBasic-Regular.ttf"
+  },
+  "resources/fonts/Gentium_Book_Basic/GentiumBookBasic-Regular.ttf": {
+    "file": "assets/GentiumBookBasic-Regular-15894a8f.ttf",
+    "src": "resources/fonts/Gentium_Book_Basic/GentiumBookBasic-Regular.ttf"
+  },
+  "resources/fonts/Gentium_Plus/GentiumPlus-R.ttf": {
+    "file": "assets/GentiumPlus-R-fa09788a.ttf",
+    "src": "resources/fonts/Gentium_Plus/GentiumPlus-R.ttf"
+  },
   "resources/fonts/Merriweather/Merriweather-Regular.ttf": {
     "file": "assets/Merriweather-Regular-7a703adc.ttf",
     "src": "resources/fonts/Merriweather/Merriweather-Regular.ttf"
@@ -9,7 +25,7 @@
     "src": "resources/js/app.js"
   },
   "resources/sass/app.scss": {
-    "file": "assets/app-77b41a98.css",
+    "file": "assets/app-6be43d62.css",
     "isEntry": true,
     "src": "resources/sass/app.scss"
   }
