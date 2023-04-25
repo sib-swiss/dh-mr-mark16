@@ -57,6 +57,7 @@ class ManuscriptController extends Controller
                     ) {
                         return true;
                     }
+
                     return false;
                 })->all();
 
