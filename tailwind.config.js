@@ -7,6 +7,7 @@ module.exports = withMT({
         extend: {
             fontFamily: {
                 sans: ["Inter var", ...defaultTheme.fontFamily.sans],
+                Merriweather: ["Merriweather", "serif"],
             },
         },
     },

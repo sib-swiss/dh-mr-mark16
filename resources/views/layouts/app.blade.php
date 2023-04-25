@@ -7,7 +7,7 @@
                 <div><a class="block p-10" href="{{ route('home') }}">HOME</a></div>
                 <div><a class="block p-10" href="{{ route('home') }}">About</a></div>
                 <div><a class="block p-10" href="{{ route('home') }}">Content</a></div>
-                <div><a class="block p-10" href="{{ route('home') }}">Advanced Search</a></div>
+                <div><a class="block p-10" href="{{ route('search') }}">Advanced Search</a></div>
             </nav>
         </div>
     </div>

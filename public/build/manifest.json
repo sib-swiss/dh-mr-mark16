@@ -1,11 +1,15 @@
 {
+  "resources/fonts/Merriweather/Merriweather-Regular.ttf": {
+    "file": "assets/Merriweather-Regular-7a703adc.ttf",
+    "src": "resources/fonts/Merriweather/Merriweather-Regular.ttf"
+  },
   "resources/js/app.js": {
     "file": "assets/app-8d77f3c6.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   },
   "resources/sass/app.scss": {
-    "file": "assets/app-41228a86.css",
+    "file": "assets/app-77b41a98.css",
     "isEntry": true,
     "src": "resources/sass/app.scss"
   }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Manuscript;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\Request;
 
 class ManuscriptController extends Controller
 {
@@ -29,5 +30,17 @@ class ManuscriptController extends Controller
         $manuscriptContentHtml = $manuscript->folios[$pageNumber - 1]->contentHtml;
         // dd($manuscriptContentHtml);
         return view('manuscript-page', ['manuscriptContentHtml' => $manuscriptContentHtml]);
+    }
+
+    public function search(): View
+    {
+        return view('search');
+    }
+
+    public function results(Request $request): View
+    {
+        $data = [];
+
+        return view('results', $data);
     }
 }

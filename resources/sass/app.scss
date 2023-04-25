@@ -14,7 +14,9 @@
  *
  * See: https://github.com/laravel-frontend-presets/tall/issues/7
  */
- input:invalid, textarea:invalid, select:invalid {
+input:invalid,
+textarea:invalid,
+select:invalid {
     box-shadow: none;
 }
 
@@ -40,6 +42,8 @@
  */
 @tailwind utilities;
 
+@import "fonts.css";
+
 /**
  * Here you would add any custom utilities you need that don't come out of the
  * box with Tailwind.
@@ -52,4 +56,30 @@
 
 [x-cloak] {
     display: none;
+}
+
+body {
+    @apply font-Merriweather text-gray-800;
+}
+
+#form-search {
+    & > div {
+        @apply bg-gray-200 rounded mb-8 border border-gray-500;
+    }
+
+    & .row {
+        @apply lg:flex items-center p-3;
+        & > label {
+            @apply lg:w-1/2 block font-bold text-gray-900;
+        }
+        & > input {
+            @apply lg:w-1/2 block rounded border-none rounded w-full;
+        }
+        & > select {
+            @apply lg:w-1/2 block rounded border-none rounded w-full;
+        }
+    }
+    & button {
+        @apply bg-pink-800 hover:bg-pink-700 text-white py-2 px-4 rounded;
+    }
 }
