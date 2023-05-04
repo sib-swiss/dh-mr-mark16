@@ -6,6 +6,7 @@ import Alpine from "alpinejs";
 
 import * as Mirador from "mirador/dist/mirador.min.js";
 import "@material-tailwind/html/scripts/tabs.js";
+import "@material-tailwind/html/scripts/collapse.js";
 
 window.Alpine = Alpine;
 

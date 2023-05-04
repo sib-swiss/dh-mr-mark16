@@ -80,12 +80,12 @@
     "src": "resources/images/logo-manuscript.png"
   },
   "resources/js/app.js": {
-    "file": "assets/app-a3264d0c.js",
+    "file": "assets/app-b3842ec0.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   },
   "resources/sass/app.scss": {
-    "file": "assets/app-3c6b6175.css",
+    "file": "assets/app-72d73d8c.css",
     "isEntry": true,
     "src": "resources/sass/app.scss"
   }
