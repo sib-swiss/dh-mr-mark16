@@ -38,6 +38,16 @@ it('manuscript get meta', function () {
     $this->assertSame('Bibliothèque nationale de France', $manuscript->getMeta('provenance'));
 });
 
+it('manuscript get translations', function () {
+    // config(['database.connections.sqlite.database' => database_path('database.sqlite')]);
+    // dd(config('database.connections.sqlite'));
+    // DB::purge('sqlite');
+    $url = 'https://api.nakala.fr/datas/11280/9506e5dc';
+    $manuscript = Manuscript::syncFromNakalaUrl($url);
+    $this->assertSame('GA 1230', $manuscript->getMeta('bibliographicCitation'));
+    assert($manuscript->folios->first()->contentsTranslations->first()->lang === ['code' => 'en', 'name' => 'English']);
+});
+
 it('missing features', function () {
     [
         'frontend missing features' => [
