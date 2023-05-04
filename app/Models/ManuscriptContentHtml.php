@@ -4,6 +4,7 @@ namespace App\Models;
 
 use DOMDocument;
 use DOMXPath;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class ManuscriptContentHtml extends ManuscriptContent
 {
@@ -205,6 +206,22 @@ class ManuscriptContentHtml extends ManuscriptContent
         );
 
         return $html;
+    }
+
+    public function lang(): Attribute
+    {
+        $return_value = [];
+        if (str_contains($this->name, '_ENG')) {
+            $return_value = ['code' => 'ENG', 'name' => 'English'];
+        } elseif (str_contains($this->name, '_FRA')) {
+            $return_value = ['code' => 'FRA', 'name' => 'French'];
+        } elseif (str_contains($this->name, '_GER')) {
+            $return_value = ['code' => 'GER', 'name' => 'German'];
+        }
+
+        return Attribute::make(
+            get: fn () => $return_value,
+        );
     }
 
     public function getLangCode()

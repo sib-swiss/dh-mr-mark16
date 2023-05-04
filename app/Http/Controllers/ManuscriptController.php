@@ -27,9 +27,19 @@ class ManuscriptController extends Controller
     public function showPage(string $manuscriptName, int $pageNumber): View
     {
         $manuscript = Manuscript::firstWhere('name', $manuscriptName);
-        $manuscriptContentHtml = $manuscript->folios[$pageNumber - 1]->contentHtml;
-        // dd($manuscriptContentHtml);
-        return view('manuscript-page', ['manuscriptContentHtml' => $manuscriptContentHtml]);
+        $manuscriptFolio = $manuscript->folios[$pageNumber - 1];
+
+        $lang = request()->lang;
+        if ($lang === 'ENG') {
+            $manuscriptFolioTranslation = $manuscriptFolio->contentsTranslations()
+                ->where('name', 'LIKE', '%_'.$lang.'.%')
+                ->first();
+            if ($manuscriptFolioTranslation) {
+                return view('manuscript-page', ['manuscriptContentHtml' => $manuscriptFolioTranslation]);
+            }
+        }
+
+        return view('manuscript-page', ['manuscriptContentHtml' => $manuscriptFolio->contentHtml]);
     }
 
     public function search(): View

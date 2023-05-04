@@ -13,6 +13,7 @@ window.Alpine = Alpine;
 Alpine.data("manuscriptShow", (data = []) => ({
     miradorInstance: null,
     currentPageUrl: null,
+    lang: "",
     // See here for more details:
     // https://github.com/ProjectMirador/mirador/blob/master/src/config/settings.js
     init() {
@@ -127,7 +128,9 @@ Alpine.data("manuscriptShow", (data = []) => ({
                 let canvasId = Object.values(state.windows)[0].canvasId;
                 if (canvasId) {
                     let pageNumber = canvasId.split("/").at(-1).substring(1);
-                    console.log("subscribe.canvasId", canvasId, pageNumber);
+                    this.currentPageUrl = "";
+                    document.getElementById("diplomaticBtn").click();
+                    // console.log("subscribe.canvasId", canvasId, pageNumber);
                     let newCurrentPageUrl =
                         "/manuscript/" +
                         data.manuscriptName +
