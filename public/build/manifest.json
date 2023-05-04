@@ -1,40 +1,4 @@
 {
-  "resources/fonts/Bokareis/Bokareis-Normal.ttf": {
-    "file": "assets/Bokareis-Normal-9d5c8a28.ttf",
-    "src": "resources/fonts/Bokareis/Bokareis-Normal.ttf"
-  },
-  "resources/fonts/Gentium_Basic/GentiumBasic-Bold.ttf": {
-    "file": "assets/GentiumBasic-Bold-8974994f.ttf",
-    "src": "resources/fonts/Gentium_Basic/GentiumBasic-Bold.ttf"
-  },
-  "resources/fonts/Gentium_Basic/GentiumBasic-BoldItalic.ttf": {
-    "file": "assets/GentiumBasic-BoldItalic-148703ac.ttf",
-    "src": "resources/fonts/Gentium_Basic/GentiumBasic-BoldItalic.ttf"
-  },
-  "resources/fonts/Gentium_Basic/GentiumBasic-Italic.ttf": {
-    "file": "assets/GentiumBasic-Italic-471dd945.ttf",
-    "src": "resources/fonts/Gentium_Basic/GentiumBasic-Italic.ttf"
-  },
-  "resources/fonts/Gentium_Basic/GentiumBasic-Regular.ttf": {
-    "file": "assets/GentiumBasic-Regular-d10a0848.ttf",
-    "src": "resources/fonts/Gentium_Basic/GentiumBasic-Regular.ttf"
-  },
-  "resources/fonts/Gentium_Book_Basic/GentiumBookBasic-Bold.ttf": {
-    "file": "assets/GentiumBookBasic-Bold-1e100310.ttf",
-    "src": "resources/fonts/Gentium_Book_Basic/GentiumBookBasic-Bold.ttf"
-  },
-  "resources/fonts/Gentium_Book_Basic/GentiumBookBasic-BoldItalic.ttf": {
-    "file": "assets/GentiumBookBasic-BoldItalic-5d66f184.ttf",
-    "src": "resources/fonts/Gentium_Book_Basic/GentiumBookBasic-BoldItalic.ttf"
-  },
-  "resources/fonts/Gentium_Book_Basic/GentiumBookBasic-Italic.ttf": {
-    "file": "assets/GentiumBookBasic-Italic-be9df195.ttf",
-    "src": "resources/fonts/Gentium_Book_Basic/GentiumBookBasic-Italic.ttf"
-  },
-  "resources/fonts/Gentium_Book_Basic/GentiumBookBasic-Regular.ttf": {
-    "file": "assets/GentiumBookBasic-Regular-15894a8f.ttf",
-    "src": "resources/fonts/Gentium_Book_Basic/GentiumBookBasic-Regular.ttf"
-  },
   "resources/fonts/Gentium_Plus/GentiumPlus-R.ttf": {
     "file": "assets/GentiumPlus-R-fa09788a.ttf",
     "src": "resources/fonts/Gentium_Plus/GentiumPlus-R.ttf"
@@ -85,7 +49,7 @@
     "src": "resources/js/app.js"
   },
   "resources/sass/app.scss": {
-    "file": "assets/app-a4fef046.css",
+    "file": "assets/app-707fa2a2.css",
     "isEntry": true,
     "src": "resources/sass/app.scss"
   }
