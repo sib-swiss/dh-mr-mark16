@@ -1,3 +1,6 @@
+@if (!is_array($manuscripts))
+    {{ $manuscripts->links() }}
+@endif
 <table class="results">
     <thead>
         <tr>
@@ -48,3 +51,6 @@
         @endif
     </tbody>
 </table>
+@if (!is_array($manuscripts))
+    {{ $manuscripts->links() }}
+@endif

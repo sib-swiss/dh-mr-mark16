@@ -29,6 +29,7 @@ module.exports = withMT({
         "./resources/**/*.php",
         "./resources/**/*.vue",
         "./resources/**/*.twig",
+        "./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
     ],
     plugins: [
         require("@tailwindcss/forms"),

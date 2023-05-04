@@ -12,8 +12,8 @@ class ManuscriptController extends Controller
     {
         $manuscripts = Manuscript::where('published', 1)
             ->orderBy('temporal')
-            ->get();
-        // dd($manuscripts);
+            ->paginate(10);
+
         return view('home', ['manuscripts' => $manuscripts]);
     }
 
