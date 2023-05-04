@@ -24,8 +24,8 @@
                 <div class="row">
                     <label for="language">Language</label>
                     <select name="language">
-                        <option value="">e.g. Greek</option>
-                        @foreach (collect(config('manuscript.languages'))->sortBy('name') as $langCode => $language)
+                        <option value="">e.g. {{ $languages->first()['name'] }}</option>
+                        @foreach ($languages as $langCode => $language)
                             <option value="{{ $language['name'] }}">{{ $language['name'] }}</option>
                         @endforeach
                     </select>

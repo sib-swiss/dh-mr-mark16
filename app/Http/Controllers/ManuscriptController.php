@@ -34,7 +34,11 @@ class ManuscriptController extends Controller
 
     public function search(): View
     {
-        return view('search');
+        $data = [
+            'languages' => collect(config('manuscript.languages'))->sortBy('name'),
+        ];
+
+        return view('search', $data);
     }
 
     public function results(Request $request): View
@@ -46,12 +50,14 @@ class ManuscriptController extends Controller
             ->orderBy('temporal')
             ->get()
             ->filter(function (Manuscript $manuscript) use ($request) {
+
                 if ($request->subject) {
                     return true;
                 } elseif (
+
                     ($request->keywords && stripos($manuscript->getMeta('abstract'), $request->keywords) !== false)
                     ||
-                    ($request->title && stripos($manuscript->name, $request->title) !== false)
+                    ($request->title && stripos(str_replace(' ', '', $manuscript->name), str_replace(' ', '', $request->title)) !== false)
                     ||
                     ($request->shelfmark && stripos($manuscript->getMeta('isFormatOf'), $request->shelfmark) !== false)
                     ||
