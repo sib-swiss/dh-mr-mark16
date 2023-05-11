@@ -10,6 +10,11 @@ class ManuscriptContentHtml extends ManuscriptContent
 {
     protected $table = 'manuscript_contents';
 
+    public function url(bool $alter = false)
+    {
+        return url('/');
+    }
+
     /**
      * return altered HTML using DOMDocument
      */

@@ -6,6 +6,25 @@ class ManuscriptContentMeta extends ManuscriptContent
 {
     protected $table = 'manuscript_contents';
 
+/**
+     * getTeiUrl
+     *
+     * @return void
+     */
+    public function getTeiUrl()
+    {
+        if ($this->url) {
+            return $this->url;
+        }
+
+        if(!isset($this->content['data']['foaf'])){
+            return null;
+        }
+        return json_decode(json_encode($this->content['data']['foaf']['Document'][0]))->{'@attributes'}->about;
+    }
+
+  
+
     public function contentImage()
     {
         return $this->hasOne(ManuscriptContentImage::class, 'manuscript_id', 'manuscript_id')

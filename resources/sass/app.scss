@@ -42,6 +42,8 @@ select:invalid {
  */
 @tailwind utilities;
 
+@import "@fortawesome/fontawesome-free/css/all.css";
+
 @import "fonts.css";
 
 /**
@@ -108,4 +110,12 @@ table.results tbody tr:hover {
             @apply lg:w-1/2 block rounded border-none rounded w-full;
         }
     }
+}
+
+.show-metadata {
+    @apply font-bold;
+}
+
+.btn_blue {
+    @apply m-1 px-2 py-1 text-white bg-light-blue-300 rounded text-xs hover:bg-light-blue-600;
 }

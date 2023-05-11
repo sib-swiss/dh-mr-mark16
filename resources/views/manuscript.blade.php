@@ -3,9 +3,10 @@
 @section('content')
     <div class="mx-2">
 
-        <div class="flex justify-between">
-            <h1>
-                <a href="javascript:location.reload()">{{ $manuscript->getDisplayname() }}</a>
+        <div class="p-5">
+            <h1 class="my-0 mb-3 pb-3 flex align-middle gap-2 border-b-2 border-gray-800 text-3xl">
+                <a href="javascript:location.reload()"
+                    class="text-blue-800 hover:underline">{{ $manuscript->getDisplayname() }}</a>
                 <small>
                     @if ('CSRPC' === $manuscript->name)
                         Printed edition ©
@@ -37,7 +38,7 @@
 
             </h1>
 
-            <div class="flex">
+            <div class="flex justify-between pb-3  border-b border-black">
                 <div>
                     <p>
                         <dcterms:alternative>{{ $manuscript->getMeta('alternative') }}</dcterms:alternative>
@@ -70,8 +71,8 @@
                             @endif
                         </span>
 
-                        @foreach ($manuscript->getMetas('dcterm-creator') as $creator)
-                            <dcterms:creator>{{ $creator }}</dcterms:creator>
+                        @foreach ($manuscript->getMetas('creator') as $creator)
+                            <dcterms:creator>{{ $creator['value']['fullName'] }}</dcterms:creator>
                             @if (!$loop->last)
                                 ,
                             @endif
@@ -88,8 +89,8 @@
 
                     <p>
                         <span class="show-metadata">Nakala: </span>
-                        <a id="ddb-hybrid" class="btn btn-info btn-sm m-1 px-1 py-0 text-white" role="button"
-                            target="_blank" href="{{ str_replace(['api.', 'datas/'], '', $manuscript->url) }}">
+                        <a id="ddb-hybrid" class="btn_blue" role="button" target="_blank"
+                            href="{{ str_replace(['api.', 'datas/'], '', $manuscript->url) }}">
                             metadata
                         </a>
                     </p>
@@ -97,13 +98,53 @@
                 </div>
 
 
-                <div>TODO EXTERNAL LINKS</div>
+                <div>
+                    <div class="flex">
+                        <a class="btn_blue" role="button" target="_blank"
+                            href="{{ $manuscript->getMeta('isReferencedBy') }}">Bibliography</a>
 
-            </div>
+                        <div>
+                            @foreach ($manuscript->folios as $folio)
+                                <a class="dropdown-item" href="{{ $folio->getTeiUrl() }}"
+                                    target="_blank">{{ $folio->name }}</a>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <a class="btn_blue" role="button" target="_blank"
+                            href="{{ $manuscript->getMeta('isReferencedBy') }}">Abstract</a>
 
+                        {{-- <div>
+                            @foreach ($manuscript->contentsHtml as $contentsHtml)
+                                <a class="dropdown-item"                                
+                                    href="{{ $contentsHtml->url(true) }}"
+                                    target="_blank">{{ $contentsHtml->name }}</a>
+                            @endforeach
+                        </div> --}}
+                        <div>
+                            <div class="opacity-0">
+                                test
+                            </div>
 
-            <div>
-                <h2>{{ $manuscript->name }}: Folios</h2>
+                            <button data-ripple-light="true" data-popover-target="menu" class="btn_blue">
+                                HTML
+                            </button>
+                            <ul role="menu" data-popover="menu" data-popover-placement="bottom"
+                                class="absolute z-10 min-w-[180px] overflow-auto rounded-md border border-blue-gray-50 bg-white p-3 font-sans text-sm font-normal text-blue-gray-500 shadow-lg shadow-blue-gray-500/10 focus:outline-none">
+                                @foreach ($manuscript->contentsHtml as $contentsHtml)
+                                    <li role="menuitem"
+                                        class="block w-full cursor-pointer select-none rounded-md px-3 pt-[9px] pb-2 text-start leading-tight transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900">
+
+                                        <a class="dropdown-item" href="{{ $contentsHtml->url(true) }}"
+                                            target="_blank">{{ $contentsHtml->name }}</a>
+                                    </li>
+                                @endforeach
+                            </ul>
+
+                        </div>
+                    </div>
+
+                </div>
 
             </div>
         </div>
@@ -124,9 +165,7 @@
                                 <li class="z-30 flex-auto text-center">
                                     <a class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
                                         data-tab-target="" x-bind:active="!lang" role="tab" aria-selected="true"
-                                        active 
-                                        id="diplomaticBtn"
-                                        @click="lang=''">
+                                        active id="diplomaticBtn" @click="lang=''">
                                         <span class="ml-1">{{ 'CSRPC' === $manuscript->name ? '' : 'Diplomatic' }}</span>
                                     </a>
                                 </li>

@@ -2,7 +2,7 @@
 
 @section('body')
     <nav
-        class="mx-auto block w-full border border-white/80 bg-[#4a74ac] py-2 px-4 text-white shadow-md backdrop-blur-2xl backdrop-saturate-200 lg:px-8 lg:py-4">
+        class="mx-auto block w-full border border-white/80 bg-[#4a74ac] py-2 px-4 text-white shadow-md backdrop-blur-2xl backdrop-saturate-200 lg:px-8 lg:py-2">
         <div>
             <div class="flex items-center justify-between text-white">
 
