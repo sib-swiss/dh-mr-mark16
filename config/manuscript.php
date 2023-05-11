@@ -44,11 +44,11 @@ return [
         ],
         'syr' => [
             'name' => 'Syriac',
-            'font' => 'Gentium Plus',
+            'font' => 'Noto Sans Syriac',
         ],
         'syc' => [
             'name' => 'Classical Syriac',
-            'font' => 'Gentium Plus',
+            'font' => 'Noto Sans Syriac',
         ],
         'oge' => [
             'name' => 'Georgian',

@@ -31,6 +31,7 @@ class ManuscriptContentHtml extends ManuscriptContent
         $classname = 'msstrans';
         foreach ($finder->query("//*[contains(concat(' ', normalize-space(@class), ' '), ' $classname ')]") as $node) {
             $styles = explode(';', $node->getAttribute('style'));
+            $fontFamily = config('manuscript.languages.'.$this->getLangCode().'.font') ?: '';
             array_push(
                 $styles,
                 'width: max-content',
@@ -38,7 +39,9 @@ class ManuscriptContentHtml extends ManuscriptContent
                 'position: relative', // avoid text overlapping, GA 2937 folio 94r
                 'font-size: 100% !important',
                 'text-size-adjust: 100% !important',
-                'background-color: #FAE6C3'
+                'background-color: #FAE6C3',
+                ($fontFamily ? 'font-family: "'.$fontFamily.'"' : '')
+
             );
             $updatesStyle = implode('; ', array_filter($styles));
             $node->setAttribute('style', $updatesStyle);
@@ -134,6 +137,16 @@ class ManuscriptContentHtml extends ManuscriptContent
                 $fonts_to_import = '';
                 break;
 
+            case 'syc':
+                case 'syr':
+                    $fonts_to_import = PHP_EOL;
+                    $fonts_to_import .= '@font-face {'.PHP_EOL;
+                    $fonts_to_import .= "\t".'font-family: \'Noto Sans Syriac\';'.PHP_EOL;
+                    $fonts_to_import .= "\t".'src: url(\'/community/fonts/NotoSansSyriac-Regular.ttf\') format(\'truetype\');'.PHP_EOL;
+                    $fonts_to_import .= "\t".'font-weight: normal;'.PHP_EOL;
+                    $fonts_to_import .= "\t".'font-style: normal;'.PHP_EOL;
+                    $fonts_to_import .= '}'.PHP_EOL;
+                    break;
             default:
                 $fonts_to_import = '';
                 break;
