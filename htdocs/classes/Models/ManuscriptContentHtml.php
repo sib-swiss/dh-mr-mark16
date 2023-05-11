@@ -60,6 +60,9 @@ class ManuscriptContentHtml extends ManuscriptContent
         $classname = "msstrans";
         foreach ($finder->query("//*[contains(concat(' ', normalize-space(@class), ' '), ' $classname ')]") as $node) {
             $styles = explode(";", $node->getAttribute('style'));
+            $fontFamily=isset($this->f3->get('MR_CONFIG')->languages->{$this->getLangCode()}->font) 
+                ? $this->f3->get('MR_CONFIG')->languages->{$this->getLangCode()}->font
+                : '';
             array_push(
                 $styles,
                 'width: max-content',
@@ -67,7 +70,8 @@ class ManuscriptContentHtml extends ManuscriptContent
                 'position: relative', // avoid text overlapping, GA 2937 folio 94r
                 'font-size: 100% !important',
                 'text-size-adjust: 100% !important',
-                'background-color: ' . $this->f3->get('MR_CONFIG')->iframe->background
+                'background-color: ' . $this->f3->get('MR_CONFIG')->iframe->background,
+                ($fontFamily ? 'font-family: "'. $this->f3->get('MR_CONFIG')->languages->{$this->getLangCode()}->font.'"' : '')
             );
             $updatesStyle = implode("; ", array_filter($styles));
             $node->setAttribute('style', $updatesStyle);
