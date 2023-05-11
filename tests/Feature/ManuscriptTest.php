@@ -4,6 +4,7 @@ use App\Models\Manuscript;
 use App\Models\ManuscriptContent;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\File;
+use function PHPUnit\Framework\assertSame;
 
 it('manuscript_seeder', function () {
     if (! File::exists(storage_path('/app/from/database.sqlite'))) {
@@ -45,7 +46,7 @@ it('manuscript get translations', function () {
     $url = 'https://api.nakala.fr/datas/11280/9506e5dc';
     $manuscript = Manuscript::syncFromNakalaUrl($url);
     $this->assertSame('GA 1230', $manuscript->getMeta('bibliographicCitation'));
-    assert($manuscript->folios->first()->contentsTranslations->first()->lang === ['code' => 'en', 'name' => 'English']);
+    assertSame($manuscript->folios->first()->contentsTranslations->first()->lang['code'], 'ENG');
 });
 
 it('missing features', function () {
