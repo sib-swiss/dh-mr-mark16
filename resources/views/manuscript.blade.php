@@ -38,7 +38,7 @@
 
             </h1>
 
-            <div class="flex justify-between pb-3  border-b border-black">
+            <div class="lg:flex justify-between pb-3  border-b border-black">
                 <div>
                     <p>
                         <dcterms:alternative>{{ $manuscript->getMeta('alternative') }}</dcterms:alternative>
@@ -99,38 +99,40 @@
 
 
                 <div>
-                    <div class="flex">
+                    <div class="flex items-start">
                         <a class="btn_blue" role="button" target="_blank"
-                            href="{{ $manuscript->getMeta('isReferencedBy') }}">Bibliography</a>
+                            href="{{ $manuscript->getMeta('isReferencedBy') }}">
+                            Bibliography
+                        </a>
+
+                        <a class="btn_blue" role="button" target="_blank"
+                            href="{{ $manuscript->getMeta('isReferencedBy') }}">
+                            Abstract
+                        </a>
 
                         <div>
-                            @foreach ($manuscript->folios as $folio)
-                                <a class="dropdown-item" href="{{ $folio->getTeiUrl() }}"
-                                    target="_blank">{{ $folio->name }}</a>
-                            @endforeach
+                            <button data-ripple-light="true" data-popover-target="menu_folios" class="btn_blue">
+                                FOLIOS
+                            </button>
+                            <ul role="menu" data-popover="menu_folios" data-popover-placement="bottom"
+                                class="absolute z-10 min-w-[180px] overflow-auto rounded-md border border-blue-gray-50 bg-white p-3 font-sans text-sm font-normal text-blue-gray-500 shadow-lg shadow-blue-gray-500/10 focus:outline-none">
+                                @foreach ($manuscript->folios as $folio)
+                                    <li role="menuitem"
+                                        class="block w-full cursor-pointer select-none rounded-md px-3 pt-[9px] pb-2 text-start leading-tight transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900">
+
+                                        <a class="dropdown-item" href="{{ $folio->getTeiUrl() }}"
+                                            target="_blank">{{ $folio->name }}</a>
+                                    </li>
+                                @endforeach
+                            </ul>
                         </div>
-                    </div>
-                    <div class="flex">
-                        <a class="btn_blue" role="button" target="_blank"
-                            href="{{ $manuscript->getMeta('isReferencedBy') }}">Abstract</a>
 
-                        {{-- <div>
-                            @foreach ($manuscript->contentsHtml as $contentsHtml)
-                                <a class="dropdown-item"                                
-                                    href="{{ $contentsHtml->url(true) }}"
-                                    target="_blank">{{ $contentsHtml->name }}</a>
-                            @endforeach
-                        </div> --}}
                         <div>
-                            <div class="opacity-0">
-                                test
-                            </div>
-
-                            <button data-ripple-light="true" data-popover-target="menu" class="btn_blue">
+                            <button data-ripple-light="true" data-popover-target="menu_html" class="btn_blue z-50">
                                 HTML
                             </button>
-                            <ul role="menu" data-popover="menu" data-popover-placement="bottom"
-                                class="absolute z-10 min-w-[180px] overflow-auto rounded-md border border-blue-gray-50 bg-white p-3 font-sans text-sm font-normal text-blue-gray-500 shadow-lg shadow-blue-gray-500/10 focus:outline-none">
+                            <ul role="menu" data-popover="menu_html" data-popover-placement="bottom"
+                                class="absolute z-50 min-w-[180px] overflow-auto rounded-md border border-blue-gray-50 bg-white p-3 font-sans text-sm font-normal text-blue-gray-500 shadow-lg shadow-blue-gray-500/10 focus:outline-none">
                                 @foreach ($manuscript->contentsHtml as $contentsHtml)
                                     <li role="menuitem"
                                         class="block w-full cursor-pointer select-none rounded-md px-3 pt-[9px] pb-2 text-start leading-tight transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900">
@@ -140,7 +142,6 @@
                                     </li>
                                 @endforeach
                             </ul>
-
                         </div>
                     </div>
 
@@ -153,8 +154,8 @@
             manuscriptName: '{{ $manuscript->name }}',
             manifest: '{{ route('iiif.presentation.manifest', $manuscript->name) }}'
         })">
-            <div class="flex">
-                <div class="w-1/2">
+            <div class="lg:flex">
+                <div class="lg:w-1/2">
 
 
 
@@ -229,7 +230,7 @@
 
 
                 </div>
-                <div class="relative w-1/2 h-[600px]">
+                <div class="relative lg:w-1/2 h-[600px]">
                     <div id="mirador"></div>
                 </div>
             </div>
