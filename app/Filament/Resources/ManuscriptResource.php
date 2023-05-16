@@ -27,7 +27,9 @@ class ManuscriptResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('temporal'),
+                Tables\Columns\TextColumn::make('name'),
+                Tables\Columns\IconColumn::make('published')->boolean(),
             ])
             ->filters([
                 //
