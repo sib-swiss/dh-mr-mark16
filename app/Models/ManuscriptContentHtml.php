@@ -139,7 +139,19 @@ class ManuscriptContentHtml extends ManuscriptContent
                 $fonts_to_import .= '}'.PHP_EOL;
                 break;
             case 'cop':
-                $fonts_to_import = '';
+                $fonts_to_import = PHP_EOL;
+                $fonts_to_import .= '@font-face {'.PHP_EOL;
+                $fonts_to_import .= "\t".'font-family: \'AntinoouWeb\';'.PHP_EOL;
+                $fonts_to_import .= "\t".'src: '
+                            .'url("/community/fonts/antinoou-webfont.eot") format("embedded-opentype"),'.PHP_EOL
+                            .'url("/community/fonts/antinoou-webfont.woff2") format("woff2"),'.PHP_EOL
+                            .'url("/community/fonts/antinoou-webfont.woff") format("woff"),'.PHP_EOL
+                            .'url("/community/fonts/antinoou-webfont.ttf") format("truetype"),'.PHP_EOL
+                            .PHP_EOL;
+                $fonts_to_import .= "\t".'font-weight: normal;'.PHP_EOL;
+                $fonts_to_import .= "\t".'font-style: normal;'.PHP_EOL;
+
+                $fonts_to_import .= '}'.PHP_EOL;
                 break;
 
             case 'syc':
