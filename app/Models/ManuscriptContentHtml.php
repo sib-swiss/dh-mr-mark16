@@ -155,15 +155,15 @@ class ManuscriptContentHtml extends ManuscriptContent
                 break;
 
             case 'syc':
-                case 'syr':
-                    $fonts_to_import = PHP_EOL;
-                    $fonts_to_import .= '@font-face {'.PHP_EOL;
-                    $fonts_to_import .= "\t".'font-family: \'Noto Sans Syriac\';'.PHP_EOL;
-                    $fonts_to_import .= "\t".'src: url(\'/community/fonts/NotoSansSyriac-Regular.ttf\') format(\'truetype\');'.PHP_EOL;
-                    $fonts_to_import .= "\t".'font-weight: normal;'.PHP_EOL;
-                    $fonts_to_import .= "\t".'font-style: normal;'.PHP_EOL;
-                    $fonts_to_import .= '}'.PHP_EOL;
-                    break;
+            case 'syr':
+                $fonts_to_import = PHP_EOL;
+                $fonts_to_import .= '@font-face {'.PHP_EOL;
+                $fonts_to_import .= "\t".'font-family: \'Noto Sans Syriac\';'.PHP_EOL;
+                $fonts_to_import .= "\t".'src: url(\'/community/fonts/NotoSansSyriac-Regular.ttf\') format(\'truetype\');'.PHP_EOL;
+                $fonts_to_import .= "\t".'font-weight: normal;'.PHP_EOL;
+                $fonts_to_import .= "\t".'font-style: normal;'.PHP_EOL;
+                $fonts_to_import .= '}'.PHP_EOL;
+                break;
             default:
                 $fonts_to_import = '';
                 break;

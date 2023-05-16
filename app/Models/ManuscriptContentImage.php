@@ -70,7 +70,7 @@ class ManuscriptContentImage extends ManuscriptContent implements HasMedia
             $draw->background('rgba(255, 255, 255, 0.5)');
         });
 
-         $image->text(
+        $image->text(
             $text,
             $image->width() - 10,
             $this->getCopyrightFontSize() + 10,
