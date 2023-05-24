@@ -24,7 +24,7 @@
                 </td>
                 <td>
                     <a class="text-blue-800"
-                        href="{{ route('manuscript.show', $manuscript->name) }}">{{ $manuscript->name }}</a>
+                        href="{{ route('manuscript.show', $manuscript->name) }}">{{ $manuscript->getDisplayname() }}</a>
                     <p class="text-gray-800 whitespace-nowrap">
                         <span>
                             <dcterms:isformatof>{{ $manuscript->getMeta('isFormatOf') }}</dcterms:isformatof>
