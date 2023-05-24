@@ -65,15 +65,24 @@ class ManuscriptContentImage extends ManuscriptContent implements HasMedia
             return $storage->path($filePath);
         }
 
+        $lines = explode(PHP_EOL, $text);
+
+        $heigth = 10 + $this->getCopyrightFontSize() * count($lines);
         $image = Image::make($media->getPath());
-        $image->rectangle(0, 0, $image->width(), 100, function ($draw) {
-            $draw->background('rgba(255, 255, 255, 0.5)');
-        });
+
+        $image->rectangle(0,
+            10,
+            $image->width(),
+            $heigth + 5,
+            function ($draw) {
+                $draw->background('rgba(255, 255, 255, 0.5)');
+            }
+        );
 
         $image->text(
             $text,
             $image->width() - 10,
-            $this->getCopyrightFontSize() + 10,
+            $heigth,
             function ($font) {
                 $font->file(resource_path('fonts/GentiumBasic-Regular.ttf'));
                 $font->size($this->getCopyrightFontSize());
