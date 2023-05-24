@@ -20,6 +20,12 @@ class ManuscriptContentSeeder extends Seeder
         ManuscriptContent::truncate();
         Storage::deleteDirectory('public');
         foreach ($manuscriptContents as $manuscriptContentData) {
+
+            // if $manuscriptContentData->content is a json then convert it to array
+            if ((bool) json_decode($manuscriptContentData->content)) {
+                $manuscriptContentData->content = json_decode($manuscriptContentData->content, true);
+            }
+
             $pathinfo = pathinfo($manuscriptContentData->name);
 
             $manuscriptContent = in_array($pathinfo['extension'], ['jpg', 'jpeg', 'png'])
