@@ -100,22 +100,17 @@
 
                 <div>
                     <div class="flex items-start">
-                        <a class="btn_blue" role="button" target="_blank"
-                            href="{{ $manuscript->getMeta('isReferencedBy') }}">
-                            Bibliography
-                        </a>
-
-                        <a class="btn_blue" role="button" target="_blank"
-                            href="{{ $manuscript->getMeta('isReferencedBy') }}">
-                            Abstract
-                        </a>
 
                         <div>
-                            <button data-ripple-light="true" data-popover-target="menu_folios" class="btn_blue">
+                            <button data-ripple-light="true" data-popover-target="menu_folios" class="btn_blue"
+                                {{-- close other menu if open --}}
+                                onClick="if(document.querySelector('[data-popover=\'menu_html\']').classList.contains('opacity-1')) {
+                                            document.querySelector('[data-popover-target=\'menu_html\']').click()
+                                        }">
                                 FOLIOS
                             </button>
                             <ul role="menu" data-popover="menu_folios" data-popover-placement="bottom"
-                                class="absolute z-10 min-w-[180px] overflow-auto rounded-md border border-blue-gray-50 bg-white p-3 font-sans text-sm font-normal text-blue-gray-500 shadow-lg shadow-blue-gray-500/10 focus:outline-none">
+                                class="absolute z-50 min-w-[180px] overflow-auto rounded-md border border-blue-gray-50 bg-white p-3 font-sans text-sm font-normal text-blue-gray-500 shadow-lg shadow-blue-gray-500/10 focus:outline-none">
                                 @foreach ($manuscript->folios as $folio)
                                     <li role="menuitem"
                                         class="block w-full cursor-pointer select-none rounded-md px-3 pt-[9px] pb-2 text-start leading-tight transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900">
@@ -127,8 +122,24 @@
                             </ul>
                         </div>
 
+                        <a class="btn_blue" role="button" target="_blank"
+                            href="{{ $manuscript->getMeta('isReferencedBy') }}">
+                            Bibliography
+                        </a>
+
+
+                        <a class="btn_blue" role="button" target="_blank"
+                            href="{{ $manuscript->getMeta('isReferencedBy') }}">
+                            Abstract
+                        </a>
+
+
                         <div>
-                            <button data-ripple-light="true" data-popover-target="menu_html" class="btn_blue z-50">
+                            <button data-ripple-light="true" data-popover-target="menu_html" class="btn_blue z-50"
+                                {{-- close other menu if open --}}
+                                onClick="if(document.querySelector('[data-popover=\'menu_folios\']').classList.contains('opacity-1')) {
+                                    document.querySelector('[data-popover-target=\'menu_folios\']').click()
+                                }">
                                 HTML
                             </button>
                             <ul role="menu" data-popover="menu_html" data-popover-placement="bottom"
