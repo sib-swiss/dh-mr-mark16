@@ -30,7 +30,7 @@ class ManuscriptController extends Controller
         $manuscriptFolio = $manuscript->folios[$pageNumber - 1];
 
         $lang = request()->lang;
-        if ($lang === 'ENG') {
+        if (in_array($lang, ['ENG', 'FRA', 'GER'])) {
             $manuscriptFolioTranslation = $manuscriptFolio->contentsTranslations()
                 ->where('name', 'LIKE', '%_'.$lang.'.%')
                 ->first();
