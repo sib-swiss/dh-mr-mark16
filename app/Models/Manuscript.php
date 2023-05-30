@@ -20,6 +20,17 @@ class Manuscript extends Model
         'content' => 'array',
     ];
 
+    public function syncFromNakala(): array
+    {
+        $manuscript = $this->syncFromNakalaUrl($this->url);
+        if (! $manuscript) {
+            dd($manuscript);
+        }
+
+        return ['version' => $manuscript->content['version']];
+
+    }
+
     public static function syncFromNakalaUrl(string $url = null): Manuscript|null
     {
         if (! $url) {

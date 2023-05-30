@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\ManuscriptResource\Pages;
 use App\Models\Manuscript;
+use Filament\Notifications\Notification;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
@@ -35,6 +36,28 @@ class ManuscriptResource extends Resource
                 //
             ])
             ->actions([
+                Tables\Actions\Action::make('Nakala')
+                    ->label('')
+                    ->tooltip('Sync from Nakala')
+                    ->action(function (Manuscript $record) {
+                        $syncFromNakala = $record->syncFromNakala();
+                        if (isset($syncFromNakala['version'])) {
+                            Notification::make()
+                                ->title('Updated manuscript '.$record->getDisplayname().' to revision '.$syncFromNakala['version'])
+                                ->success()
+                                ->send();
+                        } else {
+                            Notification::make()
+                                ->title('ERROR while try to syunc manuscript '.$record->getDisplayname())
+                                ->danger()
+                                ->send();
+                        }
+
+                    })
+                    // ->requiresConfirmation()
+                    ->icon('heroicon-o-refresh')
+                    ->color('success'),
+
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
