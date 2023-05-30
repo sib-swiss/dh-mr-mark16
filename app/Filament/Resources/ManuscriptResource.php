@@ -28,9 +28,28 @@ class ManuscriptResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('temporal'),
-                Tables\Columns\TextColumn::make('name'),
-                Tables\Columns\IconColumn::make('published')->boolean(),
+                Tables\Columns\TextColumn::make('temporal')
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('name')
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('folios_count')
+                    ->counts('folios')
+                    ->sortable(),
+
+                Tables\Columns\TextColumn::make('images')
+                    ->html()
+                    ->getStateUsing(function (Manuscript $record): string {
+                        $html = '<div class="flex gap-2">';
+                        foreach ($record->images as $image) {
+                            $imageUrl = "/iiif/{$image->identifier}/full/65,/0/default.jpg";
+                            $html .= '<img src="'.url($imageUrl).'" alt="'.$image->name.'" width="100" height="100">';
+                        }
+                        $html .= '</div>';
+
+                        return $html;
+                    }),
+                Tables\Columns\IconColumn::make('published')->boolean()
+                    ->sortable(),
             ])
             ->filters([
                 //
