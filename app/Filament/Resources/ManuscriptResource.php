@@ -3,7 +3,10 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ManuscriptResource\Pages;
+use App\Filament\Resources\ManuscriptResource\RelationManagers\ManuscriptFolioRelationManager;
+use App\Filament\Resources\ManuscriptResource\RelationManagers\ManuscriptPartnersRelationManager;
 use App\Models\Manuscript;
+use Filament\Forms;
 use Filament\Notifications\Notification;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -18,10 +21,8 @@ class ManuscriptResource extends Resource
 
     public static function form(Form $form): Form
     {
-        return $form
-            ->schema([
-                //
-            ]);
+
+        return $form->schema(Forms\Components\Toggle::make('published'));
     }
 
     public static function table(Table $table): Table
@@ -31,7 +32,8 @@ class ManuscriptResource extends Resource
                 Tables\Columns\TextColumn::make('temporal')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('name')
-                    ->sortable(),
+                    ->sortable()
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('folios_count')
                     ->counts('folios')
                     ->sortable(),
@@ -87,7 +89,8 @@ class ManuscriptResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            ManuscriptFolioRelationManager::class,
+            ManuscriptPartnersRelationManager::class,
         ];
     }
 
