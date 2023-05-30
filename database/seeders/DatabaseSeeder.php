@@ -17,14 +17,9 @@ class DatabaseSeeder extends Seeder
             'database' => storage_path('/app/from/database.sqlite'),
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ]]);
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
 
         $this->call([
+            UserSeeder::class,
             ManuscriptSeeder::class,
             ManuscriptContentSeeder::class,
         ]);
