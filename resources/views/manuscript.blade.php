@@ -94,6 +94,15 @@
                             metadata
                         </a>
                     </p>
+                    @if ($manuscript->getMeta('hasFormat'))
+                    <p>
+                        <span class="show-metadata">DaSCH: </span>
+                        <a id="ddb-hybrid" target="_blank"
+                            href="{!! $manuscript->getMeta('hasFormat') !!}">
+                            metadata
+                        </a>
+                    </p>
+                    @endif
 
                 </div>
 
