@@ -22,6 +22,8 @@ class ManuscriptResource extends Resource
     public static function form(Form $form): Form
     {
         return $form->schema([
+            Forms\Components\TextInput::make('url')
+                ->unique('manuscripts', 'url', ignoreRecord: true),
             Forms\Components\Toggle::make('published'),
             SpatieMediaLibraryFileUpload::make('partners')
                 ->multiple()
