@@ -2,9 +2,20 @@
 
 namespace App\Models;
 
-class ManuscriptContentMeta extends ManuscriptContent
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
+
+class ManuscriptContentMeta extends ManuscriptContent implements HasMedia
 {
+    use InteractsWithMedia;
+
     protected $table = 'manuscript_contents';
+
+    protected $casts = [
+        'content' => 'array',
+    ];
 
     /**
      * getTeiUrl
@@ -24,11 +35,80 @@ class ManuscriptContentMeta extends ManuscriptContent
         return json_decode(json_encode($this->content['data']['foaf']['Document'][0]))->{'@attributes'}->about;
     }
 
-    public function contentImage()
+    public function getCopyrightFontSize()
     {
-        return $this->hasOne(ManuscriptContentImage::class, 'manuscript_id', 'manuscript_id')
-            ->whereIn('extension', ['jpg', 'jpeg'])
-            ->whereRaw("REPLACE(name,'.jpg','') =?", [str_replace('.xml', '', $this->name)]);
+        $media = $this->getFirstMedia();
+        if (! $this->content) {
+            return '';
+        }
+
+        if ($media->getCustomProperty('fontsize')) {
+            return $media->getCustomProperty('fontsize');
+        }
+
+        [$width, $height] = getimagesize($media->getPath());
+
+        $fontSize = 12;
+        if ($width > 1500) {
+            $fontSize = 24;
+        } elseif ($width > 1000) {
+            $fontSize = 18;
+        }
+
+        return $fontSize;
+    }
+
+    public function imageWithCopyright()
+    {
+
+        $media = $this->getFirstMedia();
+
+        $text = $media->getCustomProperty('copyright') ? trim($media->getCustomProperty('copyright')) : '';
+        if (! $text) {
+            return $media->getPath();
+        }
+
+        $filePath = 'images/'.$media->id.'_'.$media->file_name;
+
+        $storage = Storage::disk('public');
+        if ($storage->exists($filePath)) {
+            return $storage->path($filePath);
+        }
+
+        $lines = explode(PHP_EOL, $text);
+
+        $heigth = 10 + $this->getCopyrightFontSize() * count($lines);
+        $image = Image::make($media->getPath());
+
+        $image->rectangle(0,
+            10,
+            $image->width(),
+            $heigth + 5,
+            function ($draw) {
+                $draw->background('rgba(255, 255, 255, 0.5)');
+            }
+        );
+
+        $image->text(
+            $text,
+            $image->width() - 10,
+            $heigth,
+            function ($font) {
+                $font->file(resource_path('fonts/GentiumBasic-Regular.ttf'));
+                $font->size($this->getCopyrightFontSize());
+                $font->color('#000');
+                $font->align('right');
+            }
+        );
+
+        Storage::disk('public')
+            ->put(
+                $filePath,
+                $image->encode()
+            );
+        Storage::setVisibility($filePath, 'public');
+
+        return $storage->path($filePath);
     }
 
     public function contentHtml()
@@ -87,11 +167,9 @@ class ManuscriptContentMeta extends ManuscriptContent
      */
     public function canvas(): object
     {
-        if (! $this->contentImage) {
-            return (object) [];
-        }
+
         $items = [];
-        foreach ($this->contentImage->media as $media) {
+        foreach ($this->media as $media) {
             $getimagesize = getimagesize($media->getPath());
             $items[] = [
                 'id' => url("/iiif/{$this->manuscript->name}/annotation/p000{$this->pageNumber}-image"), //"https://iiif.io/api/cookbook/recipe/0009-book-1/annotation/p0001-image",
@@ -99,7 +177,7 @@ class ManuscriptContentMeta extends ManuscriptContent
                 'motivation' => 'painting',
                 'body' => [
                     //{identifier}/{region}/{size}/{rotation}/{quality}.{format}
-                    'id' => route('iiif.image.requests', [$media->id.'__'.$media->file_name, 'full', 'max', '0', 'default', 'jpg']), //"https://iiif.io/api/image/3.0/example/reference/59d09e6773341f28ea166e9f3c1e674f-gallica_ark_12148_bpt6k1526005v_f18/full/max/0/default.jpg",
+                    'id' => route('iiif.image.requests', [$media->id, 'full', 'max', '0', 'default', 'jpg']), //"https://iiif.io/api/image/3.0/example/reference/59d09e6773341f28ea166e9f3c1e674f-gallica_ark_12148_bpt6k1526005v_f18/full/max/0/default.jpg",
                     'type' => 'Image',
                     'format' => $media->mime_type,
                     'height' => $getimagesize[1],

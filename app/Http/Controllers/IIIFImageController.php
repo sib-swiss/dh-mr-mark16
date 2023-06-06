@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Manuscript;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
@@ -14,12 +15,11 @@ class IIIFImageController extends Controller
     public function requests(Request $request)
     {
         $parameters = $request->route()->parameters();
+        $media = Media::findOrFail($parameters['identifier']);
 
-        $explodedIdentifier = explode('__', $parameters['identifier']);
-
-        $contentImage = Media::findOrFail($explodedIdentifier[0])->model;
-
-        $file = $contentImage->imageWithCopyright();
+        $file = ($media->model instanceof Manuscript)
+            ? $media->getPath()
+            : $media->model->imageWithCopyright();
 
         $factory = new \Conlect\ImageIIIF\ImageFactory;
 

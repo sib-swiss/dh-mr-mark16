@@ -17,14 +17,10 @@
                 </a>
 
 
-                @foreach ($manuscript->partners as $partner)
-                    <a href="{{ $partner->url ? $partner->url : '#' }}" style="text-decoration: none;" target="_blank">
-                        @if ($partner->getFirstMedia())
-                            <img src="{{ $partner->getFirstMediaUrl() }}" alt="{{ $manuscript->getMeta('provenance') }}"
-                                style="max-width: 150px; max-height: 150px;">
-                        @else
-                            <img data-src="holder.js/150x160?random=yes&text=Partner">
-                        @endif
+                @foreach ($manuscript->getMedia('partners') as $partner)
+                    <a href="{{ $partner->getCustomProperty('url') ? $partner->getCustomProperty('url') : '#' }}" style="text-decoration: none;" target="_blank">
+                        <img src="{{ $partner->getUrl() }}" alt="{{ $manuscript->getMeta('provenance') }}"
+                            style="max-width: 150px; max-height: 150px;">
                     </a>
                 @endforeach
 
@@ -95,13 +91,12 @@
                         </a>
                     </p>
                     @if ($manuscript->getMeta('hasFormat'))
-                    <p>
-                        <span class="show-metadata">DaSCH: </span>
-                        <a id="ddb-hybrid" target="_blank"
-                            href="{!! $manuscript->getMeta('hasFormat') !!}">
-                            metadata
-                        </a>
-                    </p>
+                        <p>
+                            <span class="show-metadata">DaSCH: </span>
+                            <a id="ddb-hybrid" target="_blank" href="{!! $manuscript->getMeta('hasFormat') !!}">
+                                metadata
+                            </a>
+                        </p>
                     @endif
 
                 </div>
@@ -157,8 +152,7 @@
                                     <li role="menuitem"
                                         class="block w-full cursor-pointer select-none rounded-md px-3 pt-[9px] pb-2 text-start leading-tight transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900">
 
-                                        <a class="dropdown-item" href="{{ $contentsHtml->url }}"
-                                            target="_blank">                                            
+                                        <a class="dropdown-item" href="{{ $contentsHtml->url }}" target="_blank">
                                             {{ $contentsHtml->name }}</a>
                                     </li>
                                 @endforeach

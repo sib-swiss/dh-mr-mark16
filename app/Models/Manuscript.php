@@ -9,9 +9,12 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
-class Manuscript extends Model
+class Manuscript extends Model implements HasMedia
 {
+    use InteractsWithMedia;
     use HasFactory;
 
     protected $guarded = [];
@@ -110,28 +113,14 @@ class Manuscript extends Model
             ->orderBy('name');
     }
 
-    /**
-     * The model's time entries.
-     *
-     * @return HasMany<ManuscriptContentImage>
-     */
-    public function images()
-    {
-        return $this->hasMany(ManuscriptContentImage::class)
-            ->whereIn('extension', ['jpg', 'jpeg'])
-            ->where('name', 'NOT LIKE', '%partner%')
-            ->orderBy('name');
-    }
-
-    /**
-     * The model's time entries.
-     *
-     * @return HasMany<ManuscriptContentImage>
-     */
-    public function partners()
-    {
-        return $this->hasMany(ManuscriptContentImage::class)->where('name', 'like', '%partner%');
-    }
+    // /**
+    //  * The model's time entries.
+    //  *
+    //  */
+    // public function images()
+    // {
+    //     return $this->folios->each->getFirstMedia();
+    // }
 
     public function getDisplayname(): string
     {

@@ -17,8 +17,8 @@
                         class="bg-gray-600 text-white rounded px-2 py-1 font-bold">{{ $manuscript->getMeta('temporal') }}</span>
                 </td>
                 <td>
-                    @if ($manuscript->folios->first()->contentImage)
-                        <img src="{{ route('iiif.image.requests', [$manuscript->folios->first()->contentImage->identifier, 'full', '100,', '0', 'default', 'jpg']) }}"
+                    @if ($manuscript->folios->first()->getFirstMedia())
+                        <img src="{{ route('iiif.image.requests', [$manuscript->folios->first()->getFirstMedia()->id, 'full', '100,', '0', 'default', 'jpg']) }}"
                             class="max-w-md border border-gray-300 bg-white p-1 rounded" loading="lazy">
                     @endif
                 </td>

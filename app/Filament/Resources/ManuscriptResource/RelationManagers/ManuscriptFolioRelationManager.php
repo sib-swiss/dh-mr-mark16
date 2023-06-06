@@ -18,15 +18,14 @@ class ManuscriptFolioRelationManager extends RelationManager
 
     public static function form(Form $form): Form
     {
+
         return $form
             ->schema([
                 // image upload
 
                 SpatieMediaLibraryFileUpload::make('image'),
-
-                Forms\Components\TextInput::make('imageContent.content.copyright'),
-
-                Forms\Components\TextInput::make('imageContent.content.fontSize'),
+                Forms\Components\TextInput::make('custom_properties.copyright'),
+                Forms\Components\TextInput::make('custom_properties.fontSize'),
                 // copyright
                 // font size
             ]);
@@ -42,9 +41,9 @@ class ManuscriptFolioRelationManager extends RelationManager
                     ->html()
                     ->getStateUsing(function (ManuscriptContentMeta $record): string {
                         $html = '<div class="flex gap-2">';
-                        if ($record->contentImage) {
-                            $imageUrl = "/iiif/{$record->contentImage->identifier}/full/65,/0/default.jpg";
-                            $html .= '<img src="'.url($imageUrl).'" alt="'.$record->contentImage->name.'" width="100" height="100">';
+                        if ($record) {
+                            $imageUrl = "/iiif/{$record->getFirstMedia()->id}/full/65,/0/default.jpg";
+                            $html .= '<img src="'.url($imageUrl).'" alt="'.$record->name.'" width="100" height="100">';
                         }
                         $html .= '</div>';
 
@@ -54,14 +53,14 @@ class ManuscriptFolioRelationManager extends RelationManager
                 Tables\Columns\TextColumn::make('copyright Text')
                     ->html()
                     ->getStateUsing(function (ManuscriptContentMeta $record): string {
-                        return isset($record->contentImage->content['copyright']) ? $record->contentImage->content['copyright'] : '';
+                        return $record->getFirstMedia()->getCustomProperty('copyright') ?: '';
 
                     }),
 
                 Tables\Columns\TextColumn::make('copyright fontSize')
                     ->html()
                     ->getStateUsing(function (ManuscriptContentMeta $record): string {
-                        return isset($record->contentImage->content['fontsize']) ? $record->contentImage->content['fontsize'] : '';
+                        return $record->getFirstMedia()->getCustomProperty('fontsize') ?: '';
 
                     }),
             ])

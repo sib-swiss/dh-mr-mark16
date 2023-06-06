@@ -7,6 +7,7 @@ use App\Filament\Resources\ManuscriptResource\RelationManagers\ManuscriptFolioRe
 use App\Filament\Resources\ManuscriptResource\RelationManagers\ManuscriptPartnersRelationManager;
 use App\Models\Manuscript;
 use Filament\Forms;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Notifications\Notification;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -21,8 +22,13 @@ class ManuscriptResource extends Resource
 
     public static function form(Form $form): Form
     {
-
-        return $form->schema(Forms\Components\Toggle::make('published'));
+        return $form->schema([
+            Forms\Components\Toggle::make('published'),
+            SpatieMediaLibraryFileUpload::make('partners')
+                ->multiple()
+                ->collection('partners')
+                ->enableReordering(),
+        ]);
     }
 
     public static function table(Table $table): Table
@@ -42,9 +48,9 @@ class ManuscriptResource extends Resource
                     ->html()
                     ->getStateUsing(function (Manuscript $record): string {
                         $html = '<div class="flex gap-2">';
-                        foreach ($record->images as $image) {
-                            $imageUrl = "/iiif/{$image->identifier}/full/65,/0/default.jpg";
-                            $html .= '<img src="'.url($imageUrl).'" alt="'.$image->name.'" width="100" height="100">';
+                        foreach ($record->folios as $folio) {
+                            $imageUrl = "/iiif/{$folio->getFirstMedia()->id}/full/65,/0/default.jpg";
+                            $html .= '<img src="'.url($imageUrl).'" alt="'.$folio->name.'" width="100" height="100">';
                         }
                         $html .= '</div>';
 
@@ -54,8 +60,8 @@ class ManuscriptResource extends Resource
                     ->html()
                     ->getStateUsing(function (Manuscript $record): string {
                         $html = '<div class="flex gap-2">';
-                        foreach ($record->partners as $partner) {
-                            $imageUrl = "/iiif/{$partner->identifier}/full/,77/0/default.jpg";
+                        foreach ($record->getMedia('partners') as $partner) {
+                            $imageUrl = "/iiif/{$partner->id}/full/,77/0/default.jpg";
                             $html .= '<a href="'.$partner->url.'" target="_blank">
                                 <img src="'.url($imageUrl).'" alt="'.$partner->name.'" height="77">
                             </a>';
@@ -104,7 +110,7 @@ class ManuscriptResource extends Resource
     {
         return [
             ManuscriptFolioRelationManager::class,
-            ManuscriptPartnersRelationManager::class,
+            // ManuscriptPartnersRelationManager::class,
         ];
     }
 

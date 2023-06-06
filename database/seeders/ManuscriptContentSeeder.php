@@ -2,9 +2,12 @@
 
 namespace Database\Seeders;
 
+use App\Models\Manuscript;
 use App\Models\ManuscriptContent;
-use App\Models\ManuscriptContentImage;
+use App\Models\ManuscriptContentHtml;
+use App\Models\ManuscriptContentMeta;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
@@ -21,24 +24,61 @@ class ManuscriptContentSeeder extends Seeder
         Storage::deleteDirectory('public');
         foreach ($manuscriptContents as $manuscriptContentData) {
 
-            // if $manuscriptContentData->content is a json then convert it to array
-            if ((bool) json_decode($manuscriptContentData->content)) {
-                $manuscriptContentData->content = json_decode($manuscriptContentData->content, true);
-            }
-
             $pathinfo = pathinfo($manuscriptContentData->name);
+            $content = (bool) json_decode($manuscriptContentData->content)
+                    ? json_decode($manuscriptContentData->content, true)
+                    : $manuscriptContentData->content;
 
-            $manuscriptContent = in_array($pathinfo['extension'], ['jpg', 'jpeg', 'png'])
-                ? ManuscriptContentImage::create((array) $manuscriptContentData)
-                : ManuscriptContent::create((array) $manuscriptContentData);
+            if ($pathinfo['extension'] === 'xml') {
+                $manuscriptContentData->content = $content;
+                $manuscriptContentMeta = ManuscriptContentMeta::create((array) $manuscriptContentData);
 
-            $manuscriptPath = storage_path("/app/from/manuscripts/{$manuscriptContent->manuscript->name}");
+            } elseif (in_array($pathinfo['extension'], ['html', 'htm'])) {
+                $manuscriptContentData->content = $content;
+                $manuscriptContentMeta = ManuscriptContentHtml::create((array) $manuscriptContentData);
 
-            $pathToFile = $this->searchImage($manuscriptPath, $manuscriptContent->name);
-            if ($pathToFile) {
-                $addMedia = $manuscriptContent->addMedia($pathToFile)
-                    ->preservingOriginal()
-                    ->toMediaCollection();
+            } elseif (in_array($pathinfo['extension'], ['jpg', 'jpeg', 'png'])) {
+
+                if (str_starts_with($manuscriptContentData->name, 'partner-')) {
+                    $manuscript = Manuscript::find($manuscriptContentData->manuscript_id);
+                    $manuscriptPath = storage_path("/app/from/manuscripts/{$manuscript->name}");
+                    $pathToFile = $this->searchImage($manuscriptPath, $manuscriptContentData->name);
+                    if ($pathToFile) {
+                        $addMedia = $manuscript->addMedia($pathToFile)
+                            ->preservingOriginal()
+                            ->withCustomProperties(['url' => $manuscriptContentData->url])
+                            ->toMediaCollection('partners');
+                        // dd(
+                        //     $manuscript->id,
+                        //     $pathToFile,
+                        //     $addMedia,
+                        // );
+                    }
+                } else {
+                    $pathinfo = pathinfo($manuscriptContentData->name);
+                    $manuscriptContentMeta = ManuscriptContentMeta::where('manuscript_id', $manuscriptContentData->manuscript_id)
+                        ->whereRaw("REPLACE(name,'.xml','') =?", [str_replace(['.jpg', '.jpeg', '.png'], '', $pathinfo['basename'])])
+                        ->first();
+                    if (! $manuscriptContentMeta) {
+                        // dd($pathinfo);
+                        dd([
+                            $manuscriptContentData,
+                            $pathinfo,
+                            ManuscriptContentMeta::where('manuscript_id', $manuscriptContentData->manuscript_id)->pluck('name'),
+
+                        ]);
+                    }
+                    $manuscriptPath = storage_path("/app/from/manuscripts/{$manuscriptContentMeta->manuscript->name}");
+                    $pathToFile = $this->searchImage($manuscriptPath, $manuscriptContentData->name);
+                    if ($pathToFile) {
+                        $addMedia = $manuscriptContentMeta->addMedia($pathToFile)
+                            ->preservingOriginal()
+                            ->withCustomProperties($content ? Arr::only($content, ['copyright', 'fontsize']) : [])
+                            ->toMediaCollection();
+
+                    }
+                }
+
             }
         }
     }
