@@ -19,16 +19,11 @@ class ManuscriptFolioRelationManager extends RelationManager
     public static function form(Form $form): Form
     {
 
-        return $form
-            ->schema([
-                // image upload
-
-                SpatieMediaLibraryFileUpload::make('image'),
-                Forms\Components\TextInput::make('custom_properties.copyright'),
-                Forms\Components\TextInput::make('custom_properties.fontSize'),
-                // copyright
-                // font size
-            ]);
+        return $form->schema([
+            SpatieMediaLibraryFileUpload::make('image'),
+            Forms\Components\TextInput::make('copyright'),
+            Forms\Components\TextInput::make('fontsize'),
+        ]);
     }
 
     public static function table(Table $table): Table
@@ -40,12 +35,15 @@ class ManuscriptFolioRelationManager extends RelationManager
                 Tables\Columns\TextColumn::make('images')
                     ->html()
                     ->getStateUsing(function (ManuscriptContentMeta $record): string {
-                        $html = '<div class="flex gap-2">';
-                        if ($record) {
-                            $imageUrl = "/iiif/{$record->getFirstMedia()->id}/full/65,/0/default.jpg";
-                            $html .= '<img src="'.url($imageUrl).'" alt="'.$record->name.'" width="100" height="100">';
+                        $html = '';
+                        $mediaItem = $record->getFirstMedia();
+                        if ($mediaItem) {
+                            $imageUrl = "/iiif/{$mediaItem->id}/full/65,/0/default.jpg";
+                            $imageUrlFull = "/iiif/{$mediaItem->id}/full/full,/0/default.jpg";
+                            $html .= '<a href="'.url($imageUrlFull).'" target="_blank">
+                                <img src="'.url($imageUrl).'" alt="'.$record->name.'" width="100" height="100">
+                            </a>';
                         }
-                        $html .= '</div>';
 
                         return $html;
                     }),
@@ -65,7 +63,21 @@ class ManuscriptFolioRelationManager extends RelationManager
                     }),
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make()
+                    ->mutateRecordDataUsing(function (array $data): array {
+                        $media = ManuscriptContentMeta::find($data['id'])->getFirstMedia();
+                        $data['copyright'] = $media->getCustomProperty('copyright') ?: '';
+                        $data['fontsize'] = $media->getCustomProperty('fontsize') ?: '';
+
+                        return $data;
+                    })->using(function (ManuscriptContentMeta $record, array $data): ManuscriptContentMeta {
+                        $mediaItem = $record->getFirstMedia();
+                        $mediaItem->setCustomProperty('fontsize', $data['fontsize']);
+                        $mediaItem->setCustomProperty('copyright', $data['copyright']);
+                        $mediaItem->save();
+
+                        return $record;
+                    }),
             ])
             ->filters([
             ]);

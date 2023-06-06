@@ -4,7 +4,6 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\ManuscriptResource\Pages;
 use App\Filament\Resources\ManuscriptResource\RelationManagers\ManuscriptFolioRelationManager;
-use App\Filament\Resources\ManuscriptResource\RelationManagers\ManuscriptPartnersRelationManager;
 use App\Models\Manuscript;
 use Filament\Forms;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
@@ -41,16 +40,26 @@ class ManuscriptResource extends Resource
                     ->sortable()
                     ->searchable(),
                 Tables\Columns\TextColumn::make('folios_count')
+                    ->label('Folios')
                     ->counts('folios')
                     ->sortable(),
 
                 Tables\Columns\TextColumn::make('images')
                     ->html()
                     ->getStateUsing(function (Manuscript $record): string {
-                        $html = '<div class="flex gap-2">';
+                        $html = '<div class="flex justify-start gap-2">';
                         foreach ($record->folios as $folio) {
-                            $imageUrl = "/iiif/{$folio->getFirstMedia()->id}/full/65,/0/default.jpg";
-                            $html .= '<img src="'.url($imageUrl).'" alt="'.$folio->name.'" width="100" height="100">';
+                            $mediaItem = $folio->getFirstMedia();
+                            if ($mediaItem) {
+                                $imageUrl = "/iiif/{$mediaItem->id}/full/65,/0/default.jpg";
+                                $imageUrlFull = "/iiif/{$mediaItem->id}/full/max,/0/default.jpg";
+                                $html .= '<div>
+                                    <a href="'.url($imageUrlFull).'" target="_blank">
+                                        <img src="'.url($imageUrl).'" alt="'.$folio->name.'" class="max-w-none">
+                                    </a>
+                                </div>';
+                            }
+
                         }
                         $html .= '</div>';
 
@@ -61,9 +70,9 @@ class ManuscriptResource extends Resource
                     ->getStateUsing(function (Manuscript $record): string {
                         $html = '<div class="flex gap-2">';
                         foreach ($record->getMedia('partners') as $partner) {
-                            $imageUrl = "/iiif/{$partner->id}/full/,77/0/default.jpg";
+                            $imageUrl = "/iiif/{$partner->id}/full/,72/0/default.jpg";
                             $html .= '<a href="'.$partner->url.'" target="_blank">
-                                <img src="'.url($imageUrl).'" alt="'.$partner->name.'" height="77">
+                                <img src="'.url($imageUrl).'" alt="'.$partner->name.'" class="max-w-none">
                             </a>';
                         }
                         $html .= '</div>';
@@ -110,7 +119,6 @@ class ManuscriptResource extends Resource
     {
         return [
             ManuscriptFolioRelationManager::class,
-            // ManuscriptPartnersRelationManager::class,
         ];
     }
 
