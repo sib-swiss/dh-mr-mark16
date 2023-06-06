@@ -51,30 +51,42 @@ class ManuscriptFolioRelationManager extends RelationManager
                 Tables\Columns\TextColumn::make('copyright Text')
                     ->html()
                     ->getStateUsing(function (ManuscriptContentMeta $record): string {
-                        return $record->getFirstMedia()->getCustomProperty('copyright') ?: '';
+                        $mediaItem = $record->getFirstMedia();
+
+                        return $mediaItem && $mediaItem->getCustomProperty('copyright')
+                        ? $mediaItem->getCustomProperty('copyright')
+                        : '';
 
                     }),
 
                 Tables\Columns\TextColumn::make('copyright fontSize')
                     ->html()
                     ->getStateUsing(function (ManuscriptContentMeta $record): string {
-                        return $record->getFirstMedia()->getCustomProperty('fontsize') ?: '';
+                        $mediaItem = $record->getFirstMedia();
+
+                        return $mediaItem && $mediaItem->getCustomProperty('fontsize')
+                            ? $mediaItem->getCustomProperty('fontsize')
+                            : '';
 
                     }),
             ])
             ->actions([
                 Tables\Actions\EditAction::make()
                     ->mutateRecordDataUsing(function (array $data): array {
-                        $media = ManuscriptContentMeta::find($data['id'])->getFirstMedia();
-                        $data['copyright'] = $media->getCustomProperty('copyright') ?: '';
-                        $data['fontsize'] = $media->getCustomProperty('fontsize') ?: '';
+                        $mediaItem = ManuscriptContentMeta::find($data['id'])->getFirstMedia();
+                        if ($mediaItem) {
+                            $data['copyright'] = $mediaItem->getCustomProperty('copyright') ?: '';
+                            $data['fontsize'] = $mediaItem->getCustomProperty('fontsize') ?: '';
+                        }
 
                         return $data;
                     })->using(function (ManuscriptContentMeta $record, array $data): ManuscriptContentMeta {
                         $mediaItem = $record->getFirstMedia();
-                        $mediaItem->setCustomProperty('fontsize', $data['fontsize']);
-                        $mediaItem->setCustomProperty('copyright', $data['copyright']);
-                        $mediaItem->save();
+                        if ($mediaItem) {
+                            $mediaItem->setCustomProperty('fontsize', $data['fontsize']);
+                            $mediaItem->setCustomProperty('copyright', $data['copyright']);
+                            $mediaItem->save();
+                        }
 
                         return $record;
                     }),
