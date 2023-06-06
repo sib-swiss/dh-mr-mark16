@@ -50,6 +50,20 @@ class ManuscriptResource extends Resource
 
                         return $html;
                     }),
+                Tables\Columns\TextColumn::make('partners')
+                    ->html()
+                    ->getStateUsing(function (Manuscript $record): string {
+                        $html = '<div class="flex gap-2">';
+                        foreach ($record->partners as $partner) {
+                            $imageUrl = "/iiif/{$partner->identifier}/full/,77/0/default.jpg";
+                            $html .= '<a href="'.$partner->url.'" target="_blank">
+                                <img src="'.url($imageUrl).'" alt="'.$partner->name.'" height="77">
+                            </a>';
+                        }
+                        $html .= '</div>';
+
+                        return $html;
+                    }),
                 Tables\Columns\IconColumn::make('published')->boolean()
                     ->sortable(),
             ])
