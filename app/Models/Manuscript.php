@@ -56,18 +56,24 @@ class Manuscript extends Model
             ]);
         }
 
+        $contentNames = [];
         foreach ($jsonContent['files'] as $nakalaFileData) {
             $nakala_parsed_url = parse_url($manuscript->url); // ex. 'https://api.nakala.fr/datas/10.34847/nkl.6f83096n'
             $nakala_download_url = $nakala_parsed_url['scheme'].'://'.$nakala_parsed_url['host'].str_replace('datas', 'data', $nakala_parsed_url['path']);
             $url = $nakala_download_url.'/'.$nakalaFileData['sha1'];
-            $manuscriptContent = ManuscriptContent::create([
-                'manuscript_id' => $manuscript->id,
-                'name' => $nakalaFileData['name'],
-                'extension' => strtolower($nakalaFileData['extension']),
-                'url' => $url,
-                'content' => file_get_contents($url),
-            ]);
+            $contentNames[] = $nakalaFileData['name'];
+
+            $manuscriptContent = ManuscriptContent::updateOrCreate(
+                ['manuscript_id' => $manuscript->id, 'name' => $nakalaFileData['name']],
+                [
+                    'extension' => strtolower($nakalaFileData['extension']),
+                    'url' => $url,
+                    'content' => file_get_contents($url),
+                ]
+            );
         }
+
+        $manuscript->folios()->whereNotIn('name', $contentNames)->get()->each->delete();
 
         return $manuscript;
     }
