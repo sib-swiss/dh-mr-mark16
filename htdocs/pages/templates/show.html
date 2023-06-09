@@ -95,6 +95,18 @@
                     metadata
                 </a>
             </p>
+
+
+
+            <check if="{{ $manuscript->getMeta('dcterm-hasFormat') }}">
+            <p>
+                <span class="show-metadata">DaSCH: </span>
+                <a class="btn btn-info btn-sm m-1 px-1 py-0 text-white" role="button" target="_blank"
+                    href="{{ $manuscript->getMeta('dcterm-hasFormat') }}">
+                    metadata
+                </a>
+            </p>
+            </check>
         </div>
 
         <!-- external links -->
