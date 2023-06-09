@@ -18,7 +18,8 @@
 
 
                 @foreach ($manuscript->getMedia('partners') as $partner)
-                    <a href="{{ $partner->getCustomProperty('url') ? $partner->getCustomProperty('url') : '#' }}" style="text-decoration: none;" target="_blank">
+                    <a href="{{ $partner->getCustomProperty('url') ? $partner->getCustomProperty('url') : '#' }}"
+                        style="text-decoration: none;" target="_blank">
                         <img src="{{ $partner->getUrl() }}" alt="{{ $manuscript->getMeta('provenance') }}"
                             style="max-width: 150px; max-height: 150px;">
                     </a>
@@ -93,7 +94,7 @@
                     @if ($manuscript->getMeta('hasFormat'))
                         <p>
                             <span class="show-metadata">DaSCH: </span>
-                            <a id="ddb-hybrid" target="_blank" href="{!! $manuscript->getMeta('hasFormat') !!}">
+                            <a class="btn_blue" role="button" target="_blank" href="{!! $manuscript->getMeta('hasFormat') !!}">
                                 metadata
                             </a>
                         </p>
