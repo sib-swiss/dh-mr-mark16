@@ -34,6 +34,12 @@ class Manuscript extends Model implements HasMedia
 
     }
 
+    public function partners()
+    {
+        return $this->morphMany(config('media-library.media_model'), 'model')
+            ->where('collection_name', 'partners');
+    }
+
     public static function syncFromNakalaUrl(string $url = null): Manuscript|null
     {
         if (! $url) {
