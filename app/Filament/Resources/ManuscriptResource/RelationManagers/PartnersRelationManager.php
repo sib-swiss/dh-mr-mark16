@@ -3,13 +3,14 @@
 namespace App\Filament\Resources\ManuscriptResource\RelationManagers;
 
 use Filament\Forms;
+use Filament\Forms\Components\FileUpload;
 use Filament\Resources\Form;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Resources\Table;
 use Filament\Tables;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
-class ManuscriptPartnerRelationManager extends RelationManager
+class PartnersRelationManager extends RelationManager
 {
     protected static string $relationship = 'partners';
 
@@ -20,6 +21,8 @@ class ManuscriptPartnerRelationManager extends RelationManager
 
         return $form->schema([
             Forms\Components\TextInput::make('url'),
+            FileUpload::make('image')
+                ->image(),
         ]);
     }
 
@@ -52,6 +55,9 @@ class ManuscriptPartnerRelationManager extends RelationManager
 
                     }),
 
+            ])
+            ->headerActions([
+                Tables\Actions\CreateAction::make(),
             ])
             ->actions([
                 Tables\Actions\EditAction::make()

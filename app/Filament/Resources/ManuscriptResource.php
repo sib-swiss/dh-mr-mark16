@@ -3,8 +3,8 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ManuscriptResource\Pages;
-use App\Filament\Resources\ManuscriptResource\RelationManagers\ManuscriptFolioRelationManager;
-use App\Filament\Resources\ManuscriptResource\RelationManagers\ManuscriptPartnerRelationManager;
+use App\Filament\Resources\ManuscriptResource\RelationManagers\FoliosRelationManager;
+use App\Filament\Resources\ManuscriptResource\RelationManagers\PartnersRelationManager;
 use App\Models\Manuscript;
 use Filament\Forms;
 use Filament\Notifications\Notification;
@@ -114,8 +114,8 @@ class ManuscriptResource extends Resource
     public static function getRelations(): array
     {
         return [
-            ManuscriptFolioRelationManager::class,
-            ManuscriptPartnerRelationManager::class,
+            FoliosRelationManager::class,
+            PartnersRelationManager::class,
         ];
     }
 
