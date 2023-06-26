@@ -8,6 +8,8 @@ use Filament\Resources\Form;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Resources\Table;
 use Filament\Tables;
+use Filament\Tables\Contracts\HasRelationshipTable;
+use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class PartnersRelationManager extends RelationManager
@@ -22,7 +24,9 @@ class PartnersRelationManager extends RelationManager
         return $form->schema([
             Forms\Components\TextInput::make('url'),
             FileUpload::make('image')
-                ->image(),
+                ->image()
+                ->label('Replace parter image'),
+
         ]);
     }
 
@@ -30,7 +34,6 @@ class PartnersRelationManager extends RelationManager
     {
         return $table
             ->columns([
-                // Tables\Columns\TextColumn::make('name'),
 
                 Tables\Columns\TextColumn::make('images')
                     ->html()
@@ -57,21 +60,45 @@ class PartnersRelationManager extends RelationManager
 
             ])
             ->headerActions([
-                Tables\Actions\CreateAction::make(),
+                Tables\Actions\CreateAction::make()
+                    ->using(function (HasRelationshipTable $livewire, array $data): Model {
+                        $manuscript = $livewire->getOwnerRecord();
+
+                        $pathToFile = storage_path("/app/public/{$data['image']}");
+                        $newRecord = $manuscript->addMedia($pathToFile)
+                            ->withCustomProperties(['url' => $data['url']])
+                            ->toMediaCollection('partners');
+
+                        return $newRecord;
+                    }),
             ])
             ->actions([
                 Tables\Actions\EditAction::make()
                     ->mutateRecordDataUsing(function (array $data): array {
+                        // dd($data);
                         $mediaItem = Media::find($data['id']);
                         $data['url'] = $mediaItem->getCustomProperty('url') ?: '';
+                        $data['fullUrl'] = $mediaItem->getFullUrl();
 
                         return $data;
                     })->using(function (Media $record, array $data): Media {
+
+                        if ($data['image']) {
+                            $pathToFile = storage_path("/app/public/{$data['image']}");
+                            $newRecord = $record->model->addMedia($pathToFile)
+                                ->withCustomProperties(['url' => $data['url']])
+                                ->toMediaCollection('partners');
+
+                            $record->delete();
+
+                            return $newRecord;
+                        }
 
                         $record->setCustomProperty('url', $data['url']);
                         $record->save();
 
                         return $record;
+
                     }),
                 Tables\Actions\DeleteAction::make(),
             ])
