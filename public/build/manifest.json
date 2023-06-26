@@ -75,9 +75,25 @@
     "file": "assets/OFL-792157d2.txt",
     "src": "resources/fonts/Merriweather/OFL.txt"
   },
+  "resources/images/logo-INTF.jpg": {
+    "file": "assets/logo-INTF-2fff2a28.jpg",
+    "src": "resources/images/logo-INTF.jpg"
+  },
   "resources/images/logo-manuscript.png": {
     "file": "assets/logo-manuscript-b0882db9.png",
     "src": "resources/images/logo-manuscript.png"
+  },
+  "resources/images/logo-snsf.png": {
+    "file": "assets/logo-snsf-861faa90.png",
+    "src": "resources/images/logo-snsf.png"
+  },
+  "resources/images/logo_nakala.png": {
+    "file": "assets/logo_nakala-457a0f8d.png",
+    "src": "resources/images/logo_nakala.png"
+  },
+  "resources/images/sib_logo2023.svg": {
+    "file": "assets/sib_logo2023-7255d008.svg",
+    "src": "resources/images/sib_logo2023.svg"
   },
   "resources/js/app.js": {
     "file": "assets/app-1e610106.js",
@@ -85,7 +101,7 @@
     "src": "resources/js/app.js"
   },
   "resources/sass/app.scss": {
-    "file": "assets/app-3cdb2192.css",
+    "file": "assets/app-2e920b05.css",
     "isEntry": true,
     "src": "resources/sass/app.scss"
   }

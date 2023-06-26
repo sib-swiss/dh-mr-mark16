@@ -119,3 +119,7 @@ table.results tbody tr:hover {
 .btn_blue {
     @apply m-1 px-2 py-1 text-white bg-light-blue-300 rounded text-xs hover:bg-light-blue-600;
 }
+
+a {
+    @apply text-blue-600 hover:text-blue-800;
+}

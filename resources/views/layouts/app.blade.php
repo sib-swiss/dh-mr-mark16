@@ -13,7 +13,7 @@
                     </a>
                     <ul class="hidden items-center gap-6 lg:flex">
                         <li class="block p-1 text-sm font-normal leading-normal text-inherit antialiased">
-                            <a class="flex items-center" href="{{ route('home') }}">
+                            <a class="flex items-center" href="{{ route('about') }}">
                                 About
                             </a>
                         </li>
