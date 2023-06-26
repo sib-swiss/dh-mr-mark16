@@ -13,17 +13,17 @@
                     </a>
                     <ul class="hidden items-center gap-6 lg:flex">
                         <li class="block p-1 text-sm font-normal leading-normal text-inherit antialiased">
-                            <a class="flex items-center" href="{{ route('about') }}">
+                            <a class="flex items-center text-white hover:text-black" href="{{ route('about') }}">
                                 About
                             </a>
                         </li>
                         <li class="block p-1 text-sm font-normal leading-normal text-inherit antialiased">
-                            <a class="flex items-center" href="{{ route('home') }}">
+                            <a class="flex items-center text-white hover:text-black" href="{{ route('home') }}">
                                 Content
                             </a>
                         </li>
                         <li class="block p-1 text-sm font-normal leading-normal text-inherit antialiased">
-                            <a class="flex items-center" href="{{ route('search') }}">
+                            <a class="flex items-center text-white hover:text-black" href="{{ route('search') }}">
                                 Advanced Search
                             </a>
                         </li>
