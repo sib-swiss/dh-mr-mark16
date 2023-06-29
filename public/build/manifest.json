@@ -75,6 +75,10 @@
     "file": "assets/OFL-792157d2.txt",
     "src": "resources/fonts/Merriweather/OFL.txt"
   },
+  "resources/images/DaSCH.png": {
+    "file": "assets/DaSCH-9070a418.png",
+    "src": "resources/images/DaSCH.png"
+  },
   "resources/images/logo-INTF.jpg": {
     "file": "assets/logo-INTF-2fff2a28.jpg",
     "src": "resources/images/logo-INTF.jpg"

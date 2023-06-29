@@ -83,6 +83,11 @@
                 <img src="{{ Vite::asset('resources/images/logo_nakala.png') }}" class="inline" width="265"
                     alt="logo_nakala.png" title="Nakala">
             </a>
+            <br><br>
+            <a href="https://admin.dasch.swiss/project/n47nDVTHR2W9U8yjEIcj2Q" target="_blank">
+                <img src="{{ Vite::asset('resources/images/DaSCH.png') }}" class="inline" width="265" alt="DaSCH.png"
+                    title="DaSCH">
+            </a>
         </div>
 
 
