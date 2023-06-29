@@ -19,6 +19,7 @@
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^2.12",
         "ryangjchandler/filament-profile": "^0.3.0",
+        "sentry/sentry-laravel": "^3.4",
         "spatie/laravel-medialibrary": "^10.0.0"
     },
     "require-dev": {
