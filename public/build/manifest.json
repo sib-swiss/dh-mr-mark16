@@ -120,12 +120,12 @@
     "src": "resources/images/sib_logo_trans_background.png"
   },
   "resources/js/app.js": {
-    "file": "assets/app-1e610106.js",
+    "file": "assets/app-8b43ab20.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   },
   "resources/sass/app.scss": {
-    "file": "assets/app-7ea481e0.css",
+    "file": "assets/app-07f17282.css",
     "isEntry": true,
     "src": "resources/sass/app.scss"
   }

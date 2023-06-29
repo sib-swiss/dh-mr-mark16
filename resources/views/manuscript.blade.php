@@ -36,7 +36,7 @@
             </h1>
 
             <div class="lg:flex justify-between pb-3  border-b border-black">
-                <div>
+                <div class="w-1/3">
                     <p>
                         <dcterms:alternative>{{ $manuscript->getMeta('alternative') }}</dcterms:alternative>
                     </p>
@@ -52,7 +52,7 @@
                 </div>
 
 
-                <div>
+                <div class="w-1/3">
                     @if ($manuscript->getMeta('coverage'))
                         <p>
                             <dcterms:coverage>{{ $manuscript->getMeta('coverage') }}</dcterms:coverage>
@@ -103,8 +103,8 @@
                 </div>
 
 
-                <div>
-                    <div class="flex items-start">
+                <div class="w-1/3">
+                    <div class="flex justify-end">
 
                         <div>
                             <button data-ripple-light="true" data-popover-target="menu_folios" class="btn_blue"
@@ -114,7 +114,7 @@
                                         }">
                                 FOLIOS
                             </button>
-                            <ul role="menu" data-popover="menu_folios" data-popover-placement="bottom"
+                            <ul role="menu" data-popover="menu_folios" data-popover-placement="bottom-end"
                                 class="absolute z-50 min-w-[180px] overflow-auto rounded-md border border-blue-gray-50 bg-white p-3 font-sans text-sm font-normal text-blue-gray-500 shadow-lg shadow-blue-gray-500/10 focus:outline-none">
                                 @foreach ($manuscript->folios as $folio)
                                     <li role="menuitem"
@@ -127,17 +127,6 @@
                             </ul>
                         </div>
 
-                        <a class="btn_blue" role="button" target="_blank"
-                            href="{{ $manuscript->getMeta('isReferencedBy') }}">
-                            Bibliography
-                        </a>
-
-
-                        <a class="btn_blue" role="button" target="_blank"
-                            href="{{ $manuscript->getMeta('isReferencedBy') }}">
-                            Abstract
-                        </a>
-
 
                         <div>
                             <button data-ripple-light="true" data-popover-target="menu_html" class="btn_blue z-50"
@@ -147,7 +136,7 @@
                                 }">
                                 HTML
                             </button>
-                            <ul role="menu" data-popover="menu_html" data-popover-placement="bottom"
+                            <ul role="menu" data-popover="menu_html" data-popover-placement="bottom-start"
                                 class="absolute z-50 min-w-[180px] overflow-auto rounded-md border border-blue-gray-50 bg-white p-3 font-sans text-sm font-normal text-blue-gray-500 shadow-lg shadow-blue-gray-500/10 focus:outline-none">
                                 @foreach ($manuscript->contentsHtml as $contentsHtml)
                                     <li role="menuitem"
@@ -159,6 +148,21 @@
                                 @endforeach
                             </ul>
                         </div>
+
+
+                        <a class="btn_blue" role="button" target="_blank"
+                            href="{{ $manuscript->getMeta('isReferencedBy') }}">
+                            Bibliography
+                        </a>
+
+
+
+                        <button data-ripple-light="true" data-dialog-target="dialog" class="btn_blue">
+                            Abstract
+                        </button>
+
+
+
                         <div class="opacity-0"></div>
                     </div>
 
@@ -252,6 +256,30 @@
                 </div>
             </div>
         </div>
+
+
+
+
+        <div data-dialog-backdrop="dialog" data-dialog-backdrop-close="true"
+            class="pointer-events-none fixed inset-0 z-[9999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300">
+            <div data-dialog="dialog"
+                class="relative m-4 w-2/5 min-w-[40%] max-w-[40%] rounded-lg bg-white font-sans text-base  leading-relaxed  antialiased shadow-2xl">
+                <div
+                    class="flex shrink-0 items-center p-4 font-sans text-2xl font-semibold leading-snug text-blue-gray-900 antialiased">
+                    Abstract
+                </div>
+                <div
+                    class="relative border-t border-b border-t-blue-gray-100 border-b-blue-gray-100 p-4 font-sans text-base leading-relaxed  antialiased">
+                    {{ $manuscript->getMeta('abstract') }}
+                </div>
+                <div class="flex shrink-0 flex-wrap items-center justify-end p-4 ">
+                    <button data-ripple-dark="true" data-dialog-close="true" class="btn_blue">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+
 
 
     </div>
