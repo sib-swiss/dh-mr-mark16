@@ -38,9 +38,6 @@ class ManuscriptContentMeta extends ManuscriptContent implements HasMedia
     public function getCopyrightFontSize()
     {
         $media = $this->getFirstMedia();
-        if (! $this->content) {
-            return '';
-        }
 
         if ($media->getCustomProperty('fontsize')) {
             return $media->getCustomProperty('fontsize');
