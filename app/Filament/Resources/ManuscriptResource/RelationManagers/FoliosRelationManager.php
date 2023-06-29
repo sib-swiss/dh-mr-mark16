@@ -21,7 +21,7 @@ class FoliosRelationManager extends RelationManager
 
         return $form->schema([
             SpatieMediaLibraryFileUpload::make('image'),
-            Forms\Components\TextInput::make('copyright'),
+            Forms\Components\Textarea::make('copyright'),
             Forms\Components\TextInput::make('fontsize'),
         ]);
     }
@@ -50,6 +50,7 @@ class FoliosRelationManager extends RelationManager
 
                 Tables\Columns\TextColumn::make('copyright Text')
                     ->html()
+                    ->wrap()
                     ->getStateUsing(function (ManuscriptContentMeta $record): string {
                         $mediaItem = $record->getFirstMedia();
 
