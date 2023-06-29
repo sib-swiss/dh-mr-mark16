@@ -79,9 +79,21 @@
     "file": "assets/DaSCH-9070a418.png",
     "src": "resources/images/DaSCH.png"
   },
+  "resources/images/INTF_Logo_cmyk.jpg": {
+    "file": "assets/logo-INTF-2fff2a28.jpg",
+    "src": "resources/images/logo-INTF.jpg"
+  },
+  "resources/images/logo-GitHub-Mark-64px.png": {
+    "file": "assets/logo-GitHub-Mark-64px-22ed95ff.png",
+    "src": "resources/images/logo-GitHub-Mark-64px.png"
+  },
   "resources/images/logo-INTF.jpg": {
     "file": "assets/logo-INTF-2fff2a28.jpg",
     "src": "resources/images/logo-INTF.jpg"
+  },
+  "resources/images/logo-SNF.png": {
+    "file": "assets/logo-SNF-c0840a9d.png",
+    "src": "resources/images/logo-SNF.png"
   },
   "resources/images/logo-manuscript.png": {
     "file": "assets/logo-manuscript-b0882db9.png",
@@ -95,9 +107,17 @@
     "file": "assets/logo_nakala-457a0f8d.png",
     "src": "resources/images/logo_nakala.png"
   },
+  "resources/images/php-power-micro2.png": {
+    "file": "assets/php-power-micro2-94e4ba1c.png",
+    "src": "resources/images/php-power-micro2.png"
+  },
   "resources/images/sib_logo2023.svg": {
     "file": "assets/sib_logo2023-7255d008.svg",
     "src": "resources/images/sib_logo2023.svg"
+  },
+  "resources/images/sib_logo_trans_background.png": {
+    "file": "assets/sib_logo_trans_background-659a33ef.png",
+    "src": "resources/images/sib_logo_trans_background.png"
   },
   "resources/js/app.js": {
     "file": "assets/app-1e610106.js",
@@ -105,7 +125,7 @@
     "src": "resources/js/app.js"
   },
   "resources/sass/app.scss": {
-    "file": "assets/app-7f58d58c.css",
+    "file": "assets/app-7ea481e0.css",
     "isEntry": true,
     "src": "resources/sass/app.scss"
   }
