@@ -33,7 +33,7 @@
 @task('run_composer')
     echo "Running composer"
     cd {{ $app_dir }}
-    composer install --prefer-dist --no-scripts -q -o
+    composer install --prefer-dist -q -o
 @endtask
 
 
