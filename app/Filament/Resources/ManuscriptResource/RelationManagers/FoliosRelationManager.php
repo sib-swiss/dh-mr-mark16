@@ -9,6 +9,7 @@ use Filament\Resources\Form;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Resources\Table;
 use Filament\Tables;
+use Illuminate\Support\Facades\Storage;
 
 class FoliosRelationManager extends RelationManager
 {
@@ -87,9 +88,17 @@ class FoliosRelationManager extends RelationManager
                             $mediaItem->setCustomProperty('fontsize', $data['fontsize']);
                             $mediaItem->setCustomProperty('copyright', $data['copyright']);
                             $mediaItem->save();
+
+                            // delete cached image to regenerate with new copyright/size
+                            $filePath = 'images/'.$mediaItem->id.'_'.$mediaItem->file_name;
+                            $storage = Storage::disk('public');
+                            if ($storage->exists($filePath)) {
+                                return $storage->delete($filePath);
+                            }
                         }
 
                         return $record;
+
                     }),
             ])
             ->filters([
