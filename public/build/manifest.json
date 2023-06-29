@@ -96,7 +96,7 @@
     "src": "resources/images/logo-SNF.png"
   },
   "resources/images/logo-manuscript.png": {
-    "file": "assets/logo-manuscript-b0882db9.png",
+    "file": "assets/logo-manuscript-8540c03b.png",
     "src": "resources/images/logo-manuscript.png"
   },
   "resources/images/logo-snsf.png": {
@@ -125,7 +125,7 @@
     "src": "resources/js/app.js"
   },
   "resources/sass/app.scss": {
-    "file": "assets/app-07f17282.css",
+    "file": "assets/app-721a3ab9.css",
     "isEntry": true,
     "src": "resources/sass/app.scss"
   }

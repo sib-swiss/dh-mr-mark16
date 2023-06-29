@@ -8,21 +8,21 @@
 
                 <div class="flex items-center justify-between">
                     <a href="{{ route('home') }}"
-                        class="mr-4 block cursor-pointer py-1.5 text-sm font-normal leading-normal text-inherit antialiased">
-                        <img src="{{ Vite::asset('resources/images/logo-manuscript.png') }}" alt="homepage">
+                        class="mr-4 block cursor-pointer py-1.5 text-md font-normal leading-normal text-inherit antialiased">
+                        <img src="{{ Vite::asset('resources/images/logo-manuscript.png') }}" class="w-64 mr-4" alt="homepage">
                     </a>
                     <ul class="hidden items-center gap-6 lg:flex">
-                        <li class="block p-1 text-sm font-normal leading-normal text-inherit antialiased">
+                        <li class="block p-1 text-md font-normal leading-normal text-inherit antialiased">
                             <a class="flex items-center text-white hover:text-black" href="{{ route('about') }}">
                                 About
                             </a>
                         </li>
-                        <li class="block p-1 text-sm font-normal leading-normal text-inherit antialiased">
+                        <li class="block p-1 text-md font-normal leading-normal text-inherit antialiased">
                             <a class="flex items-center text-white hover:text-black" href="{{ route('home') }}">
                                 Content
                             </a>
                         </li>
-                        <li class="block p-1 text-sm font-normal leading-normal text-inherit antialiased">
+                        <li class="block p-1 text-md font-normal leading-normal text-inherit antialiased">
                             <a class="flex items-center text-white hover:text-black" href="{{ route('search') }}">
                                 Advanced Search
                             </a>
