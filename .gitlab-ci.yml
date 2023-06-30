@@ -72,3 +72,18 @@ deploy_dev:
     - ./vendor/bin/envoy run deploy -vvv
   only:
     - dev
+
+deploy_prod:
+  stage: deploy
+  needs:
+    - job: composer
+      artifacts: true
+  script:
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$SSH_PRIVATE_KEY")
+    - mkdir -p ~/.ssh
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+    - ./vendor/bin/envoy run deploy --server=prod
+  only:
+    - master
+  when: manual
