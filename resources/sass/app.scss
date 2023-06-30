@@ -1,0 +1,125 @@
+/**
+ * This injects Tailwind's base styles, which is a combination of
+ * Normalize.css and some additional base styles.
+ *
+ * You can see the styles here:
+ * https://unpkg.com/tailwindcss/dist/base.css
+ */
+@tailwind base;
+
+/**
+ * Remove the default box-shadow for invalid elements to prevent
+ * inputs in Livewire components showing with a
+ * red border by default in Firefox.
+ *
+ * See: https://github.com/laravel-frontend-presets/tall/issues/7
+ */
+input:invalid,
+textarea:invalid,
+select:invalid {
+    box-shadow: none;
+}
+
+/**
+ * This injects any component classes registered by plugins.
+ */
+@tailwind components;
+
+/**
+ * Here you would add any of your custom component classes; stuff that you'd
+ * want loaded *before* the utilities so that the utilities could still
+ * override them.
+ *
+ * Example:
+ *
+ * .btn { ... }
+ * .form-input { ... }
+ */
+
+/**
+ * This injects all of Tailwind's utility classes, generated based on your
+ * config file.
+ */
+@tailwind utilities;
+
+@import "@fortawesome/fontawesome-free/css/all.css";
+
+@import "fonts.css";
+
+/**
+ * Here you would add any custom utilities you need that don't come out of the
+ * box with Tailwind.
+ *
+ * Example :
+ *
+ * .bg-pattern-graph-paper { ... }
+ * .skew-45 { ... }
+ */
+
+[x-cloak] {
+    display: none;
+}
+
+body {
+    @apply font-Merriweather text-gray-800;
+}
+h1,
+h2 {
+    @apply text-4xl my-8 text-gray-700;
+}
+
+button[type="submit"] {
+    @apply bg-pink-800 hover:bg-pink-700 text-white py-2 px-4 rounded;
+}
+
+.abstract {
+    @apply text-gray-600 font-gentiumPlus text-base;
+}
+
+table.results {
+    @apply border-collapse table-auto w-full text-sm;
+    & > thead > tr > th {
+        @apply border-t font-medium py-4 pl-8 text-left text-base text-black font-bold;
+    }
+    & > tbody > tr {
+        @apply align-top;
+
+        & > td {
+            @apply p-4 pl-8 text-base;
+        }
+    }
+}
+table.results tbody tr:hover {
+    @apply bg-gray-100;
+}
+
+#form-search {
+    & > div {
+        @apply bg-gray-200 rounded mb-8 border border-gray-500;
+    }
+
+    & .row {
+        @apply lg:flex items-center p-3;
+        & > label {
+            @apply lg:w-1/2 block font-bold text-gray-900;
+        }
+        & > input {
+            @apply lg:w-1/2 block rounded border-none rounded w-full;
+        }
+        & > select {
+            @apply lg:w-1/2 block rounded border-none rounded w-full;
+        }
+    }
+}
+
+.show-metadata {
+    @apply font-bold;
+}
+
+.btn_blue {
+    @apply m-1 px-2 py-1 text-white bg-light-blue-300 rounded text-xs hover:bg-light-blue-600;
+}
+
+a {
+    @apply text-blue-600 hover:text-blue-800;
+}
