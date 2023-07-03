@@ -17,6 +17,13 @@ class ManuscriptController extends Controller
         return view('home', ['manuscripts' => $manuscripts]);
     }
 
+    public function showOld(Request $request): View
+    {
+        $manuscriptName = base64_decode($request->id);
+        // dd($manuscriptName);
+        return $this->show($manuscriptName);
+    }
+
     public function show(string $manuscriptName): View
     {
         $manuscript = Manuscript::firstWhere('name', $manuscriptName);
