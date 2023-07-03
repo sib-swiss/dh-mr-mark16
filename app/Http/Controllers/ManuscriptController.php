@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Manuscript;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class ManuscriptController extends Controller
@@ -17,11 +18,11 @@ class ManuscriptController extends Controller
         return view('home', ['manuscripts' => $manuscripts]);
     }
 
-    public function showOld(Request $request): View
+    public function showOld(Request $request): RedirectResponse
     {
         $manuscriptName = base64_decode($request->id);
-        // dd($manuscriptName);
-        return $this->show($manuscriptName);
+
+        return redirect(route('manuscript.show', $manuscriptName), 301);
     }
 
     public function show(string $manuscriptName): View
