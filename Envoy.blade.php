@@ -2,7 +2,7 @@
     $repository = 'git@gitlab.sib.swiss:mark16-vre-group/manuscript.git';
 
     $server_dev = 'mark16@mark16-dev8.vital-it.ch';
-    $server_prod = 'Waiting_to_be_Ready_to_deploy_on_prod';
+    $server_prod = 'mark16@mark16-prod8.vital-it.ch';
 
     $deploy_path_dev = '/var/vhosts/vital-it.ch/mark16-dev/htdocs';
     $deploy_path_prod = '/var/vhosts/vital-it.ch/mark16-prod/htdocs';
