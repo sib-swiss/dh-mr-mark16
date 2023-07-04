@@ -1,38 +1,95 @@
-before_script:
-  - apt-get update -qq
-  - apt-get install -qq git
-  # Setup SSH deploy keys
-  - "which ssh-agent || ( apt-get install -qq openssh-client )"
-  - eval $(ssh-agent -s)
-  - mkdir -p ~/.ssh
-  - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+stages:
+  - preparation
+  - testing
+  - deploy
+
+image: thecodingmachine/php:8.1-v4-cli
+
+# Variables
+variables:
+  PHP_EXTENSIONS: pdo_sqlite posix gd
+
+cache:
+  key: "$CI_JOB_NAME-$CI_COMMIT_REF_SLUG"
+
+composer:
+  stage: preparation
+  script:
+    - php -v
+    - composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
+    - cp .env.example .env
+    - php artisan key:generate
+    - php artisan storage:link
+  artifacts:
+    paths:
+      - vendor/
+      - .env
+    expire_in: 1 days
+    when: always
+  cache:
+    paths:
+      - vendor/
+
+phpunit:
+  stage: testing
+  dependencies:
+    - composer
+  script:
+    - php artisan storage:link
+    - php artisan test --parallel
+  artifacts:
+    paths:
+      - ./storage/app
+      - ./storage/logs
+    expire_in: 1 days
+    when: on_failure
+
+codestyle:
+  stage: testing
+  script:
+    - ./vendor/bin/pint --test
+  dependencies:
+    - composer
+
+security-checker:
+  stage: testing
+  needs:
+    - job: composer
+      artifacts: true
+  script:
+    - composer audit
 
 deploy_dev:
   stage: deploy
-  environment:
-    name: dev
-    url: $DEV_HOSTNAME
+  needs:
+    - job: composer
+      artifacts: true
   script:
+    - eval $(ssh-agent -s)
     - ssh-add <(echo "$SSH_PRIVATE_KEY")
-    - ssh $DEV_USERNAME@$DEV_HOSTNAME "cd $DEV_PATH && git checkout dev && git pull origin dev && cd htdocs && composer install && exit"
-    - curl $DEV_URL/admin/cache/clear -H "${ADMIN_AUTH}"
+    - mkdir -p ~/.ssh
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+    - ./vendor/bin/envoy run deploy -vvv
   only:
     - dev
 
 deploy_prod:
   stage: deploy
-  environment:
-    name: prod
-    url: $PROD_HOSTNAME
+  needs:
+    - job: composer
+      artifacts: true
   script:
-    - ssh-add <(echo "$PROD_SSH_PRIVATE_KEY")
-    - ssh $PROD_USERNAME@$PROD_HOSTNAME "cd $PROD_PATH && git checkout master && git pull origin master && cd htdocs && composer install && exit"
-    - curl $PROD_URL/admin/cache/clear -H "${ADMIN_AUTH}"
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$SSH_PRIVATE_KEY")
+    - mkdir -p ~/.ssh
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+    - ./vendor/bin/envoy run deploy --server=prod
   only:
     - master
   when: manual
 
 merge-master-to-mirrored:
+  stage: deploy
   only:
     - master
   script:
