@@ -2,7 +2,7 @@ The SNSF MARK16 MR API uses third party material from the projects listed below.
 
 The original copyright notice and the license under which MARK16 received such third party material are set forth below. MARK16 reserves all other rights not expressly granted, whether by implication, estoppel or otherwise. In the event that we accidentally failed to list a required notice, please bring it to our attention and email us: claire.clivaz@sib.swiss
 
-© 2021 SNSF MARK16, DH+, SIB Swiss Institute of Bioinformatics, Lausanne (CH)
+© 2023 SNSF MARK16, DH+, SIB Swiss Institute of Bioinformatics, Lausanne (CH)
 
 
 THIRD-PARTY SOFTWARE NOTICES AND INFORMATION
