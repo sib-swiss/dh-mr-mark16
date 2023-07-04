@@ -12,10 +12,14 @@ Do Not Translate or Localize
 3. TAILWINDCSS (https://github.com/tailwindlabs/tailwindcss/blob/master/LICENSE)
 4. ALPINE.JS (https://github.com/Alpine.js/alpine/blob/main/LICENSE.md)
 5. FONT AWESOME FREE (https://fontawesome.com/license/free)
-6. GENTIUM (https://software.sil.org/gentium/)
-7. ANTINOOUWEB (https://www.evertype.com/fonts/coptic/) (https://github.com/sib-swiss/dh-mr-mark16/blob/main/htdocs/resources/fonts/NTVMR/antinoou-licence.txt)
-8. PONOMAR (https://fontlibrary.org/en/font/ponomar-unicode)
-9. NOTO-SANS-COPTIC (https://fonts.google.com/noto/specimen/Noto+Sans+Coptic/about)
+6. LIVEWIRE/LIVEWIRE (https://github.com/livewire/livewire/blob/master/LICENSE.md)
+7. CONLECT/IMAGE-IIIF (https://github.com/conlect/image-iiif/blob/main/LICENSE.md)
+8. FILAMENT/FILAMENT (https://github.com/filamentphp/filament/blob/2.x/LICENSE.md)
+9. SPATIE/LARAVEL-MEDIALIBRARY (https://github.com/spatie/laravel-medialibrary/blob/main/LICENSE.md)
+10. GENTIUM (https://software.sil.org/gentium/)
+11. ANTINOOUWEB (https://www.evertype.com/fonts/coptic/) (https://github.com/sib-swiss/dh-mr-mark16/blob/main/htdocs/resources/fonts/NTVMR/antinoou-licence.txt)
+12. PONOMAR (https://fontlibrary.org/en/font/ponomar-unicode)
+13. NOTO-SANS-COPTIC (https://fonts.google.com/noto/specimen/Noto+Sans+Coptic/about)
 
 LARAVEL NOTICES, INFORMATION, AND LICENSE BEGIN HERE
 
@@ -492,6 +496,114 @@ to represent the company, product, or service to which they refer.**
 ---
 
 END OF FONT AWESOME FREE NOTICES, INFORMATION, AND LICENSE
+
+LIVEWIRE/LIVEWIRE NOTICES, INFORMATION, AND LICENSE
+
+---
+
+## MIT License
+
+Copyright © Caleb Porzio
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+---
+
+END OF LIVEWIRE/LIVEWIRE NOTICES, INFORMATION, AND LICENSE
+
+CONLECT/IMAGE-IIIF NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+
+---
+
+The MIT License (MIT)
+
+Copyright (c) jeremytubbs
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+---
+
+END OF CONLECT/IMAGE-IIIF NOTICES, INFORMATION, AND LICENSE
+
+FILAMENT/FILAMENT NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+
+---
+
+# MIT License
+
+Copyright (c) Filament
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+END OF FILAMENT/FILAMENT NOTICES, INFORMATION, AND LICENSE
+
+SPATIE/LARAVEL-MEDIALIBRARY NOTICES, INFORMATION, AND LICENSE BEGIN HERE
+
+---
+
+The MIT License (MIT)
+
+Copyright (c) Spatie bvba <info@spatie.be>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+---
+
+END OF SPATIE/LARAVEL-MEDIALIBRARY NOTICES, INFORMATION, AND LICENSE
 
 GENTIUM NOTICES, INFORMATION, AND LICENSE BEGIN HERE
 
