@@ -17,7 +17,7 @@ The use of an internal image server to make [Mirador](https://projectmirador.org
 
 The first implementation of this API has been developed by **Jonathan Barda** and **Silvano Aldà**, and the present version has been developed by **Silvano Aldà**.
 
-The PI of the 2018-2023 SNSF MARK16 project is **Claire Clivaz** and the team was composed of **Mina Monier**, post-doc, **Priscille Marschall**, post doc, **Elisa Nury**, research scientist, with **Jonathan Barda** and **Silvano Aldà**, Core-IT software developers. The project is hosted at Digital Humanities +, SIB Swiss Institute of Bioinformatics.
+The PI of the 2018-2023 SNSF MARK16 project is **Claire Clivaz** with a team composed of **Mina Monier**, post-doc, **Priscille Marschall**, post doc, **Elisa Nury**, research scientist, with **Jonathan Barda** and **Silvano Aldà**, Core-IT software developers. The project is hosted at Digital Humanities +, SIB Swiss Institute of Bioinformatics.
 
 ## Local development
 
