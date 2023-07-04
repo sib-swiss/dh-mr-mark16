@@ -1,0 +1,3 @@
+{{-- {!! $manuscriptContentHtml->content !!} --}}
+{!! $manuscriptContentHtml->getAlteredHtml() !!}
+
