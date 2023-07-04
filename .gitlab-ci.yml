@@ -89,6 +89,7 @@ deploy_prod:
   when: manual
 
 merge-master-to-mirrored:
+  stage: deploy
   only:
     - master
   script:
