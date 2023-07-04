@@ -15,6 +15,13 @@ This manuscript viewer makes it possible to view manuscripts along with their tr
 
 The use of an internal image server to make [Mirador](https://projectmirador.org/) being able to work with images served locally is based on a test case available at https://iiif.github.io/training/intro-to-iiif/. Copyrights of images respect the practice of each library or stakeholder. The data are available in OA on Nakala (CNRS, Human-Num, https://mark16-snsf-prima-project.nakala.fr) and DaSCH (Basel, CH, https://admin.dasch.swiss/project/n47nDVTHR2W9U8yjEIcj2Q).
 
-The first implementation of this API has been developed by __Jonathan Barda__ and __Silvano Aldà__, and the present version has been developed by __Silvano Aldà__.
+The first implementation of this API has been developed by **Jonathan Barda** and **Silvano Aldà**, and the present version has been developed by **Silvano Aldà**.
 
-The PI of the 2018-2023 SNSF MARK16 project is __Claire Clivaz__ and the team was composed of __Mina Monier__, post-doc, **Priscille Marschall**, post doc, __Elisa Nury__, research scientist, with __Jonathan Barda__ and __Silvano Aldà__, Core-IT software developers. The project is hosted at Digital Humanities +, SIB Swiss Institute of Bioinformatics.
+The PI of the 2018-2023 SNSF MARK16 project is **Claire Clivaz** and the team was composed of **Mina Monier**, post-doc, **Priscille Marschall**, post doc, **Elisa Nury**, research scientist, with **Jonathan Barda** and **Silvano Aldà**, Core-IT software developers. The project is hosted at Digital Humanities +, SIB Swiss Institute of Bioinformatics.
+
+## Local development
+
+in this project we use Laravel Sail for local development.  
+Follow the instructions at https://laravel.com/docs/10.x/sail#installing-sail-into-existing-applications
+
+Admin panel: follow the instructions at https://filamentphp.com/
