@@ -188,7 +188,7 @@
                                     <a class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
                                         data-tab-target="" x-bind:active="!lang" role="tab" aria-selected="true"
                                         active id="diplomaticBtn" @click="lang=''">
-                                        <span class="ml-1">{{ 'CSRPC' === $manuscript->name ? '' : 'Diplomatic' }}</span>
+                                        <span class="ml-1">{{ 'CSRPC' === $manuscript->name ? 'Transliteration' : 'Diplomatic' }}</span>
                                     </a>
                                 </li>
                                 @foreach ($manuscript->folios->first()->contentsTranslations as $translation)
