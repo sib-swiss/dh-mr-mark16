@@ -263,7 +263,7 @@
         <div data-dialog-backdrop="dialog" data-dialog-backdrop-close="true"
             class="pointer-events-none fixed inset-0 z-[9999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300">
             <div data-dialog="dialog"
-                class="relative m-4 w-2/5 min-w-[40%] max-w-[40%] rounded-lg bg-white font-sans text-base  leading-relaxed  antialiased shadow-2xl">
+                class="relative m-4  min-w-[40%] max-w-[80%] rounded-lg bg-white font-sans text-base  leading-relaxed  antialiased shadow-2xl">
                 <div
                     class="flex shrink-0 items-center p-4 font-sans text-2xl font-semibold leading-snug text-blue-gray-900 antialiased">
                     Abstract
