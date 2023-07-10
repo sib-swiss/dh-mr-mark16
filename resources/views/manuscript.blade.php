@@ -188,7 +188,7 @@
                                     <a class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
                                         data-tab-target="" x-bind:active="!lang" role="tab" aria-selected="true"
                                         active id="diplomaticBtn" @click="lang=''">
-                                        <span class="ml-1">{{ 'CSRPC' === $manuscript->name ? '' : 'Diplomatic' }}</span>
+                                        <span class="ml-1">{{ 'CSRPC' === $manuscript->name ? 'Transliteration' : 'Diplomatic' }}</span>
                                     </a>
                                 </li>
                                 @foreach ($manuscript->folios->first()->contentsTranslations as $translation)
@@ -263,7 +263,7 @@
         <div data-dialog-backdrop="dialog" data-dialog-backdrop-close="true"
             class="pointer-events-none fixed inset-0 z-[9999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300">
             <div data-dialog="dialog"
-                class="relative m-4 w-2/5 min-w-[40%] max-w-[40%] rounded-lg bg-white font-sans text-base  leading-relaxed  antialiased shadow-2xl">
+                class="relative m-4  min-w-[40%] max-w-[80%] rounded-lg bg-white font-sans text-base  leading-relaxed  antialiased shadow-2xl">
                 <div
                     class="flex shrink-0 items-center p-4 font-sans text-2xl font-semibold leading-snug text-blue-gray-900 antialiased">
                     Abstract
