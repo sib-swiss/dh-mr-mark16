@@ -195,8 +195,8 @@ class ManuscriptContentMeta extends ManuscriptContent implements HasMedia
             'type' => 'Canvas',
             // 'DEBUG_NAME' => $this->name,
             'label' => ['none' => [substr($this->name, 0, -4)]],
-            'height' => 1000,
-            'width' => 750,
+            'height' => $getimagesize[1],
+            'width' => $getimagesize[0],
             'items' => [
                 [
                     'id' => url("/iiif/{$this->manuscript->name}/canvas/p{$this->pageNumber}/1"), //"https://iiif.io/api/cookbook/recipe/0009-book-1/page/p1/1",
