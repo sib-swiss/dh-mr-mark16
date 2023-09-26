@@ -82,7 +82,9 @@ class Manuscript extends Model implements HasMedia
             );
         }
 
+        // logger()->info('Manuscript '.$manuscript->name, ['contentNames'=> $contentNames]);
         $manuscript->folios()->whereNotIn('name', $contentNames)->get()->each->delete();
+        $manuscript->contentsHtml()->whereNotIn('name', $contentNames)->get()->each->delete();
 
         return $manuscript;
     }
