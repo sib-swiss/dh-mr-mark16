@@ -36,7 +36,6 @@ class ManuscriptContentHtml extends ManuscriptContent
                 $styles,
                 'width: max-content',
                 ($this->manuscript->name === 'GA099' ? 'min-width: 800px' : ''), // avoid text overlapping in GA 099
-                'position: relative', // avoid text overlapping, GA 2937 folio 94r
                 'font-size: 100% !important',
                 'text-size-adjust: 100% !important',
                 'background-color: #FAE6C3',

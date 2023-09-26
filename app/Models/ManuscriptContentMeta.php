@@ -164,6 +164,9 @@ class ManuscriptContentMeta extends ManuscriptContent implements HasMedia
      */
     public function canvas(): object
     {
+        if ($this->media()->count() == 0) {
+            return (object) [];
+        }
 
         $items = [];
         foreach ($this->media as $media) {
