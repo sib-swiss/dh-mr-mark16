@@ -47,7 +47,9 @@
                         <dcterms:date xml:lang="en">{{ $manuscript->getMeta('date') }}</dcterms:date>
                     </p>
                     <p><span class="show-metadata">Language: </span>
-                        <dcterms:language xml:lang="en">{{ $manuscript->getLangExtended() }}</dcterms:language>
+                        @foreach ($manuscript->getMetas('language') as $metaLanguage )
+                        <dcterms:language xml:lang="en">{{ $manuscript->getLangExtended($metaLanguage['value']) }}</dcterms:language>@if (!$loop->last), @endif
+                    @endforeach
                     </p>
                 </div>
 
