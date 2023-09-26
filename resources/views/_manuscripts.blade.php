@@ -29,9 +29,10 @@
                         <span>
                             <dcterms:isformatof>{{ $manuscript->getMeta('isFormatOf') }}</dcterms:isformatof>
                         </span><br>
-                        <span>
-                            <dcterms:language xml:lang="en">{{ $manuscript->getLangExtended() }}</dcterms:language>
-                        </span><br>
+                        @foreach ($manuscript->getMetas('language') as $metaLanguage )
+                            <dcterms:language xml:lang="en">{{ $manuscript->getLangExtended($metaLanguage['value']) }}</dcterms:language>@if (!$loop->last), @endif
+                        @endforeach
+                        <br>
                         <span>
                             <dcterms:date xml:lang="en">{{ $manuscript->getMeta('date') }}</dcterms:date>
                         </span><br>

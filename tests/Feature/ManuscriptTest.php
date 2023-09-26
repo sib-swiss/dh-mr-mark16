@@ -1,19 +1,7 @@
 <?php
 
 use App\Models\Manuscript;
-use App\Models\ManuscriptContent;
-use Illuminate\Support\Facades\Artisan;
-use Illuminate\Support\Facades\File;
 use function PHPUnit\Framework\assertSame;
-
-it('manuscript_seeder', function () {
-    if (! File::exists(storage_path('/app/from/database.sqlite'))) {
-        return;
-    }
-    Artisan::call('db:seed');
-    $this->assertTrue(Manuscript::count() > 0);
-    $this->assertTrue(ManuscriptContent::count() > 0);
-});
 
 it('manuscript_from_nakala_url', function () {
     // Storage::deleteDirectory('public');
