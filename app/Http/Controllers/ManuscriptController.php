@@ -81,7 +81,14 @@ class ManuscriptController extends Controller
                     ||
                     ($request->docId && stripos($manuscript->getMeta('temporal'), $request->docId) !== false)
                     ||
-                    ($request->language && stripos($manuscript->getLangExtended(), $request->language) !== false)
+                    ($request->language
+                        &&
+
+                        $manuscript->getMetas('language')
+                            ->filter(function ($metaLanguage) use ($manuscript, $request) {
+                                return stripos($manuscript->getLangExtended($metaLanguage['value']), $request->language) !== false;
+                            })->count() > 0
+                    )
 
                 ) {
                     return true;

@@ -142,9 +142,11 @@ class Manuscript extends Model implements HasMedia
         return Nakala::getMeta($content, $key);
     }
 
-    public function getLangExtended(): string
+    public function getLangExtended(string $metaLanguage = null): string
     {
-        $metaLanguage = $this->getMeta('language');
+        if (! $metaLanguage) {
+            $metaLanguage = $this->getMeta('language');
+        }
 
         if (config("manuscript.languages.{$metaLanguage}.name")) {
             return config("manuscript.languages.{$metaLanguage}.name");
